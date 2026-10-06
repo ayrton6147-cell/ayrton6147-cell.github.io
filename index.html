@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ayrton Althman · Assessor que constrói agentes de IA</title>
+<meta name="description" content="Não sou programador. Sou assessor de investimentos e construo os agentes, skills e automações que rodam no meu escritório. Cases, provas e o que estou construindo agora.">
+<meta name="theme-color" content="#0E0D0B">
+<link rel="canonical" href="https://ayrton6147-cell.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ayrton6147-cell.github.io/">
+<meta property="og:title" content="Ayrton Althman · Não sou programador. Construo mesmo assim.">
+<meta property="og:description" content="Assessor de investimentos que transforma a rotina do mercado financeiro em agentes de IA. Cases reais, números reais.">
+<meta property="og:image" content="https://ayrton6147-cell.github.io/assets/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Ayrton Althman","jobTitle":"Assessor de investimentos","image":"https://ayrton6147-cell.github.io/assets/foto.jpg","url":"https://ayrton6147-cell.github.io/","sameAs":["https://www.linkedin.com/in/ayrton-althman-1556b8164/","https://www.instagram.com/ayrton_althman/"],"knowsAbout":["Agentes de IA","Model Context Protocol","Automação","Mercado financeiro","Assessoria de investimentos"]}
+</script>
+<style>
+:root{
+  --bg:#0E0D0B; --surface:#1A1814; --line:#2B2822;
+  --text:#EDE6D8; --muted:#9A9284; --gold:#C9A96E; --gold-soft:rgba(201,169,110,.12);
+  --up:#8FC79A; --down:#D98C7E;
+  --s1:4px; --s2:8px; --s3:16px; --s4:24px; --s5:32px; --s6:48px; --s7:64px; --s8:120px;
+  --r:6px;
+  --shadow:0 30px 60px -25px rgba(0,0,0,.8);
+  --serif:"Instrument Serif", Georgia, serif;
+  --sans:"Manrope", system-ui, sans-serif;
+  --mono:ui-monospace, "Cascadia Code", Consolas, monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--gold);color:var(--bg)}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 var(--s3)}
+@media(min-width:768px){.wrap{padding:0 var(--s5)}}
+h1,h2,h3{text-wrap:balance;font-weight:400}
+em{font-style:italic;color:var(--gold)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--gold);color:var(--bg);padding:8px 14px;border-radius:4px;z-index:200}
+.skip:focus{left:8px}
+
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
+nav.solid{background:rgba(14,13,11,.88);backdrop-filter:blur(12px);border-color:var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+.mono{font-family:var(--serif);font-size:26px}
+.mono span{color:var(--gold);font-style:italic}
+.links{display:none;gap:var(--s5);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.links a{transition:color .25s}.links a:hover{color:var(--text)}
+@media(min-width:960px){.links{display:flex}}
+.btn{display:inline-flex;align-items:center;gap:var(--s2);padding:13px 22px;border:1px solid var(--gold);color:var(--gold);border-radius:999px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:background .3s,color .3s,transform .2s}
+.btn:hover{background:var(--gold);color:var(--bg)}
+.btn:active{transform:scale(.97)}
+.btn.solid{background:var(--gold);color:var(--bg)}
+.btn.solid:hover{background:var(--text);border-color:var(--text)}
+nav .btn{padding:9px 18px;font-size:11px}
+
+/* hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:110px 0 0;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-15%;top:5%;width:70vw;height:70vw;max-width:900px;max-height:900px;background:radial-gradient(circle,rgba(201,169,110,.11),transparent 60%);pointer-events:none}
+.hero-grid{display:grid;gap:var(--s6);align-items:center;position:relative;z-index:1}
+@media(min-width:960px){.hero-grid{grid-template-columns:1.45fr 1fr}}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px}
+.eyebrow i{font-style:normal;color:var(--line)}
+h1{font-family:var(--serif);font-size:clamp(50px,8.6vw,112px);line-height:.94;letter-spacing:-.025em;margin:var(--s4) 0}
+h1 .strike{position:relative;color:var(--muted)}
+h1 .strike::after{content:"";position:absolute;left:-2%;right:-2%;top:55%;height:.06em;background:var(--gold);transform:scaleX(0);transform-origin:left;animation:strike 1s .9s cubic-bezier(.7,0,.2,1) forwards}
+@keyframes strike{to{transform:scaleX(1)}}
+.lead{font-size:clamp(17px,1.6vw,19px);color:var(--muted);max-width:580px}
+.lead b{color:var(--text);font-weight:600}
+.hero-cta{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s5)}
+.portrait{position:relative;aspect-ratio:4/5;max-width:370px;width:100%;justify-self:center;border-radius:var(--r);overflow:hidden;background:linear-gradient(160deg,#221F19,#0E0D0B);border:1px solid var(--line);box-shadow:var(--shadow)}
+.portrait img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:grayscale(.2) contrast(1.05)}
+.portrait .fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:140px;color:var(--gold);font-style:italic}
+.portrait figcaption{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:var(--s4);background:linear-gradient(transparent,rgba(14,13,11,.96) 45%);font-size:13px;color:var(--muted)}
+.portrait figcaption b{display:block;color:var(--text);font-family:var(--serif);font-size:26px;font-weight:400;line-height:1.1;margin-bottom:4px}
+.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--up);margin-right:6px;animation:pulse 2.4s infinite}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(143,199,154,.6)}70%{box-shadow:0 0 0 8px rgba(143,199,154,0)}100%{box-shadow:0 0 0 0 rgba(143,199,154,0)}}
+
+/* ticker */
+.ticker{margin-top:var(--s7);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;position:relative;z-index:1;background:rgba(14,13,11,.6)}
+.ticker-track{display:flex;width:max-content;animation:tick 48s linear infinite}
+.ticker:hover .ticker-track{animation-play-state:paused}
+@keyframes tick{to{transform:translateX(-50%)}}
+.tk{display:flex;align-items:baseline;gap:10px;padding:16px 28px;border-right:1px solid var(--line);font-family:var(--mono);font-size:13px;white-space:nowrap}
+.tk span{color:var(--muted);letter-spacing:.06em}
+.tk b{color:var(--text);font-weight:600;font-size:15px}
+.tk i{font-style:normal;color:var(--up);font-size:11px}
+
+/* sections */
+section{padding:var(--s8) 0}
+.tight{padding-top:0}
+.head{display:grid;gap:var(--s3);margin-bottom:var(--s6)}
+@media(min-width:960px){.head{grid-template-columns:1fr 1fr;align-items:end}}
+.kicker{font-family:var(--mono);font-size:12px;color:var(--gold);letter-spacing:.08em;margin-bottom:var(--s3);display:block}
+h2{font-family:var(--serif);font-size:clamp(38px,5.4vw,66px);line-height:1;letter-spacing:-.015em}
+.head p{color:var(--muted);max-width:500px}
+h3{font-family:var(--serif);font-size:28px;line-height:1.15}
+h4{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700}
+
+/* rules (manifesto) */
+.statement{font-family:var(--serif);font-size:clamp(30px,4.2vw,52px);line-height:1.15;max-width:1000px}
+.rules{display:grid;gap:1px;margin-top:var(--s7);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+@media(min-width:768px){.rules{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1100px){.rules{grid-template-columns:repeat(4,1fr)}}
+.rule{padding:var(--s5) var(--s4);outline:1px solid var(--line);transition:background .3s}
+.rule:hover{background:var(--surface)}
+.rule .n{font-family:var(--mono);font-size:12px;color:var(--gold)}
+.rule h3{font-size:26px;margin:var(--s3) 0 var(--s2)}
+.rule p{color:var(--muted);font-size:15px}
+
+/* origin story */
+.story{display:grid;gap:0}
+.chap{display:grid;gap:var(--s3);padding:var(--s5) 0;border-top:1px solid var(--line);align-items:baseline}
+.chap:last-child{border-bottom:1px solid var(--line)}
+@media(min-width:900px){.chap{grid-template-columns:140px 1fr 1.1fr;gap:var(--s6)}}
+.chap .yr{font-family:var(--serif);font-size:44px;line-height:1;color:var(--muted);transition:color .4s}
+.chap:hover .yr,.chap.now .yr{color:var(--gold)}
+.chap h3{font-size:clamp(26px,2.8vw,34px)}
+.chap p{color:var(--muted)}
+.chap p b{color:var(--text);font-weight:600}
+
+/* quote */
+.quote{display:grid;gap:var(--s6);align-items:center}
+@media(min-width:900px){.quote{grid-template-columns:1fr 1.2fr}}
+.quote figure{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);max-width:340px;justify-self:center}
+.quote blockquote{font-family:var(--serif);font-size:clamp(40px,6vw,80px);line-height:1;letter-spacing:-.02em}
+.quote blockquote span{color:var(--muted)}
+.quote cite{display:block;margin-top:var(--s4);font-style:normal;color:var(--muted);font-size:15px;max-width:480px}
+
+/* cases */
+.case{display:grid;gap:var(--s5);padding:var(--s7) 0;border-top:1px solid var(--line)}
+.case:last-of-type{border-bottom:1px solid var(--line)}
+@media(min-width:960px){.case{grid-template-columns:1fr 1fr;gap:var(--s7)}.case.flip .case-media{order:-1}}
+.case .num{font-family:var(--mono);font-size:12px;color:var(--gold);letter-spacing:.08em}
+.case h3{font-size:clamp(32px,3.6vw,46px);margin:var(--s2) 0 var(--s3);line-height:1.05}
+.case .sum{color:var(--muted)}
+.trad{margin-top:var(--s4);padding:var(--s3) var(--s4);border-left:2px solid var(--gold);background:var(--gold-soft);border-radius:0 var(--r) var(--r) 0;font-size:16px}
+.trad b{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--gold);font-size:20px;margin-right:4px}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);margin-top:var(--s5)}
+.kpi b{display:block;font-family:var(--serif);font-size:clamp(34px,3.6vw,48px);line-height:1;font-weight:400}
+.kpi span{font-size:12px;color:var(--muted);line-height:1.35;display:block;margin-top:6px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:var(--s4)}
+.tag{font-size:11px;letter-spacing:.04em;padding:4px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+.status{display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.status::before{content:"";width:6px;height:6px;border-radius:50%}
+.st-prod{color:var(--up)}.st-prod::before{background:var(--up)}
+.st-build{color:var(--gold)}.st-build::before{background:var(--gold)}
+.st-done{color:var(--muted)}.st-done::before{background:var(--muted)}
+.st-pause{color:var(--down)}.st-pause::before{background:var(--down)}
+.case{align-items:center}
+.gallery{align-items:start}
+.shot{align-self:start;height:fit-content;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:var(--surface)}
+.shot img{width:100%;height:auto;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
+.shot:hover img{transform:scale(1.02)}
+.shot figcaption{padding:10px 14px;font-size:12px;color:var(--muted);border-top:1px solid var(--line);font-family:var(--mono)}
+
+/* flow (ERP) */
+.flow{list-style:none;display:grid;gap:10px;counter-reset:f}
+.flow li{counter-increment:f;display:grid;grid-template-columns:36px 1fr;gap:var(--s3);align-items:start;padding:var(--s3);border:1px solid var(--line);border-radius:var(--r);background:var(--bg);position:relative}
+.flow li::before{content:counter(f,decimal-leading-zero);font-family:var(--mono);font-size:12px;color:var(--muted);padding-top:3px}
+.flow li b{display:block;font-weight:600}
+.flow li span{font-size:13px;color:var(--muted)}
+.flow li.me{border-color:var(--gold);background:var(--gold-soft)}
+.flow li.me::before{color:var(--gold)}
+.flow li.me b::after{content:"humano";margin-left:8px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--bg);background:var(--gold);padding:2px 6px;border-radius:3px;vertical-align:2px}
+.flow li.loop{border-style:dashed}
+.panel{padding:var(--s4);border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
+.panel h4{margin-bottom:var(--s3)}
+
+/* giro bar */
+.bar{display:flex;height:64px;border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
+.bar div{display:flex;flex-direction:column;justify-content:center;padding:0 10px;border-right:1px solid var(--bg);font-size:11px;line-height:1.25;color:var(--muted);background:var(--surface);min-width:0;overflow:hidden}
+.bar div:last-child{border-right:none}
+.bar div b{color:var(--text);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .hl{background:var(--gold);color:var(--bg)}
+.bar .hl b{color:var(--bg)}
+.bar-legend{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:8px}
+
+/* scars */
+.scars{display:grid;gap:var(--s3)}
+@media(min-width:768px){.scars{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1100px){.scars{grid-template-columns:repeat(3,1fr)}}
+.scar{padding:var(--s4);border:1px solid var(--line);border-radius:var(--r);display:flex;flex-direction:column;gap:var(--s3);transition:border-color .3s,transform .3s}
+.scar:hover{border-color:rgba(201,169,110,.45);transform:translateY(-3px)}
+.scar .broke{font-size:15px}
+.scar .broke::before{content:"quebrou";display:block;font-family:var(--mono);font-size:11px;color:var(--down);letter-spacing:.1em;margin-bottom:6px}
+.scar .rule2{font-family:var(--serif);font-size:23px;line-height:1.2;padding-top:var(--s3);border-top:1px solid var(--line);margin-top:auto}
+.scar .rule2::before{content:"virou regra";display:block;font-family:var(--mono);font-size:11px;color:var(--up);letter-spacing:.1em;margin-bottom:6px}
+
+/* gallery */
+.gallery{display:grid;gap:var(--s4)}
+@media(min-width:768px){.gallery{grid-template-columns:repeat(2,1fr)}}
+.gallery .wide{grid-column:1/-1}
+
+/* catalog */
+.filters{display:flex;flex-wrap:wrap;gap:var(--s2);margin-bottom:var(--s4)}
+.chip{background:none;border:1px solid var(--line);color:var(--muted);font:inherit;font-size:13px;padding:8px 16px;border-radius:999px;cursor:pointer;transition:all .25s}
+.chip:hover{color:var(--text);border-color:var(--muted)}
+.chip[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--bg);font-weight:700}
+.chip .c{opacity:.6;margin-left:4px}
+.rows{border-top:1px solid var(--line)}
+.row{display:grid;grid-template-columns:1fr auto;gap:4px var(--s4);padding:var(--s3) 0;border-bottom:1px solid var(--line);transition:background .25s,padding .25s}
+.row:hover{background:var(--surface)}
+@media(min-width:900px){.row{grid-template-columns:130px 1.1fr 1.6fr 150px;align-items:baseline;padding:var(--s3) var(--s2)}.row:hover{padding-left:var(--s3)}}
+.row .cat{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);grid-column:1/-1}
+@media(min-width:900px){.row .cat{grid-column:auto}}
+.row h3{font-size:22px}
+.row p{color:var(--muted);font-size:14px;grid-column:1/-1}
+@media(min-width:900px){.row p{grid-column:auto}}
+.row .status{grid-row:2;grid-column:2;justify-self:end}
+@media(min-width:900px){.row .status{grid-row:auto;grid-column:auto}}
+.row.hide{display:none}
+
+/* terminal */
+.term{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#0A0908;box-shadow:var(--shadow)}
+.term-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12px;color:var(--muted)}
+.term-bar i{width:10px;height:10px;border-radius:50%;background:var(--line);display:block}
+.term-bar span{margin-left:8px}
+.term-body{padding:var(--s4);font-family:var(--mono);font-size:14px;display:grid;gap:var(--s4)}
+.cmd{display:grid;gap:4px}
+.cmd .p{color:var(--gold)}
+.cmd .p::before{content:"› ";color:var(--muted)}
+.cmd .o{color:var(--muted);font-size:13px;padding-left:18px;line-height:1.55}
+.cmd .o b{color:var(--text);font-weight:500}
+.cursor{display:inline-block;width:9px;height:17px;background:var(--gold);vertical-align:-3px;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+
+/* now */
+.now-grid{display:grid;gap:var(--s3)}
+@media(min-width:768px){.now-grid{grid-template-columns:repeat(2,1fr)}}
+.nowc{padding:var(--s4);border:1px solid var(--line);border-radius:var(--r)}
+.nowc h3{font-size:24px;margin:var(--s2) 0}
+.nowc p{color:var(--muted);font-size:14px}
+.prog{height:3px;background:var(--line);border-radius:3px;margin-top:var(--s3);overflow:hidden}
+.prog i{display:block;height:100%;background:var(--gold);width:0;transition:width 1.6s cubic-bezier(.2,.7,.2,1)}
+.in .prog i{width:var(--w)}
+.prog-l{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:6px}
+
+/* stack + certs */
+.stack{display:grid;gap:var(--s5)}
+@media(min-width:768px){.stack{grid-template-columns:repeat(4,1fr)}}
+.stack ul{list-style:none;margin-top:var(--s3);display:grid;gap:var(--s2)}
+.stack li{font-size:15px;padding-bottom:var(--s2);border-bottom:1px solid var(--line)}
+.certs{display:grid;gap:1px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:var(--s4)}
+@media(min-width:640px){.certs{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.certs{grid-template-columns:repeat(3,1fr)}}
+.cert{padding:var(--s4);display:flex;flex-direction:column;gap:4px;outline:1px solid var(--line);transition:background .3s}
+.cert:hover{background:var(--surface)}
+.cert .iss{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.cert b{font-family:var(--serif);font-weight:400;font-size:21px;line-height:1.2}
+.cert span{font-size:13px;color:var(--muted)}
+.edu{display:grid;gap:var(--s3);margin-top:var(--s6)}
+@media(min-width:768px){.edu{grid-template-columns:repeat(3,1fr)}}
+.edu div{padding-top:var(--s3);border-top:1px solid var(--line)}
+.edu b{display:block;font-family:var(--serif);font-weight:400;font-size:22px}
+.edu span{font-size:14px;color:var(--muted)}
+
+/* contact */
+.contact{text-align:center;padding:var(--s8) 0}
+.contact h2{font-size:clamp(46px,8.4vw,110px);margin:var(--s4) auto var(--s4);max-width:1000px}
+.contact p{color:var(--muted);max-width:520px;margin:0 auto var(--s5)}
+.ch{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--s3)}
+footer{border-top:1px solid var(--line);padding:var(--s5) 0;color:var(--muted);font-size:12px}
+footer .wrap{display:grid;gap:var(--s3)}
+@media(min-width:768px){footer .wrap{grid-template-columns:1fr 2fr}}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  .rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}
+  .dot,.cursor{animation:none}.ticker-track{animation:none;flex-wrap:wrap;width:auto}
+  h1 .strike::after{animation:none;transform:scaleX(1)}.prog i{transition:none;width:var(--w)}
+}
+@media print{nav,.ticker,body::before{display:none}.rv{opacity:1;transform:none}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+<a class="skip" href="#cases">Pular para os cases</a>
+
+<nav id="nav" aria-label="Principal">
+  <div class="wrap">
+    <a href="#topo" class="mono" aria-label="Início">A<span>A</span></a>
+    <div class="links">
+      <a href="#origem">Origem</a>
+      <a href="#cases">Cases</a>
+      <a href="#cicatrizes">Cicatrizes</a>
+      <a href="#catalogo">Catálogo</a>
+      <a href="#agora">Agora</a>
+      <a href="#formacao">Formação</a>
+    </div>
+    <a href="#contato" class="btn">Conversar</a>
+  </div>
+</nav>
+
+<header class="hero" id="topo">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow rv">Assessor de investimentos <i>/</i> Ex-Polícia do Exército <i>/</i> Construtor de agentes de IA</p>
+      <h1 class="rv">Não sou <span class="strike">programador</span>.<br><em>Construo</em> mesmo assim.</h1>
+      <p class="lead rv">Eu atendo clientes no mercado financeiro. Nas horas entre uma reunião e outra, transformo a rotina do escritório em <b>agentes e skills de IA que rodam de verdade</b>, com uma regra que não negocio: <b>a IA prepara, eu confirmo.</b></p>
+      <div class="hero-cta rv">
+        <a href="#cases" class="btn solid">Ver o que já roda</a>
+        <a href="#origem" class="btn">Como cheguei aqui</a>
+      </div>
+    </div>
+    <figure class="portrait rv">
+      <img src="assets/foto.jpg" alt="Foto de Ayrton Althman" width="800" height="800" onerror="this.remove()">
+      <div class="fallback" aria-hidden="true">AA</div>
+      <figcaption><b>Ayrton Althman</b><span class="dot" aria-hidden="true"></span>Rio Grande do Sul · construindo o módulo 1 de 12 do mestrado em agentes</figcaption>
+    </figure>
+  </div>
+  <div class="ticker" aria-label="Números reais dos projetos">
+    <div class="ticker-track" id="ticker"></div>
+  </div>
+</header>
+
+<section id="regras">
+  <div class="wrap">
+    <span class="kicker rv">// as regras da casa</span>
+    <p class="statement rv">IA no mercado financeiro não é sobre gerar texto. É sobre <em>processo</em>: dado com fonte, trava de compliance, conferência antes de gravar e alguém que assina embaixo.</p>
+    <div class="rules">
+      <div class="rule rv"><span class="n">01</span><h3>A IA prepara. Eu confirmo.</h3><p>Toda ação que não dá para desfazer passa por mim. Agente bom é o que sabe onde parar.</p></div>
+      <div class="rule rv"><span class="n">02</span><h3>Número sem fonte não entra.</h3><p>Consenso de mercado nunca é estimado. Se não achei o dado, o relatório diz que não achou.</p></div>
+      <div class="rule rv"><span class="n">03</span><h3>Se não muda a ação, corta.</h3><p>Informação que não altera o que alguém vai fazer nas próximas 8 horas é ruído bem formatado.</p></div>
+      <div class="rule rv"><span class="n">04</span><h3>Nada com cara de IA.</h3><p>Se parece gerado, eu refaço. Já joguei fora carrossel inteiro por isso.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="origem" class="tight">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kicker rv">// de onde eu venho</span><h2 class="rv">Da porta giratória do banco ao <em>lado de dentro</em> do mercado.</h2></div>
+      <p class="rv">Não vim da tecnologia nem do mercado. Vim de lugares onde erro custa caro e protocolo não é opcional. Isso explica quase tudo no jeito que eu construo.</p>
+    </div>
+    <div class="story">
+      <div class="chap rv"><span class="yr">2018</span><h3>Polícia do Exército</h3><p>Serviço militar no 8º Batalhão de Polícia do Exército. Aprendi que <b>procedimento existe porque alguém já errou antes</b>.</p></div>
+      <div class="chap rv"><span class="yr">2020</span><h3>Segurança bancária</h3><p>Fiquei na porta giratória de agência bancária, testando sistemas de segurança todo dia antes de abrir. Eu via o dinheiro passar, <b>do lado de fora</b>.</p></div>
+      <div class="chap rv"><span class="yr">2022</span><h3>Primeiro telefone no mercado</h3><p>SDR em uma casa de investimentos em São Paulo. Prospecção, qualificação e a descoberta de que <b>eu sempre gostei de mercado</b>.</p></div>
+      <div class="chap rv"><span class="yr">2023</span><h3>Assessor de investimentos</h3><p>Certificado ANCORD, escritório credenciado à XP. Hoje <b>mais de 200 clientes</b>. Missão pessoal: traduzir o mercado para quem não tem tempo de entender.</p></div>
+      <div class="chap now rv"><span class="yr">2026</span><h3>Construtor de agentes</h3><p>Comecei a construir os sistemas que faltavam no escritório. <b>10 certificações em IA</b>, um mestrado prático em agentes em andamento e sistemas que fecham o mês inteiro sem divergência.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="tight">
+  <div class="wrap quote">
+    <figure class="rv"><img src="assets/prova-carrossel.jpg" alt="Primeira lâmina do carrossel Prazer, Ayrton, com a frase Eu não vendo investimento, eu cuido de quem investe" width="800" height="878" loading="lazy"></figure>
+    <div class="rv">
+      <span class="kicker">// o que eu digo no Instagram</span>
+      <blockquote><span>Eu não vendo investimento.</span><br>Eu cuido de <em>quem investe.</em></blockquote>
+      <cite>A frase abre o carrossel que reposicionou meu perfil. Os sistemas desta página existem pelo mesmo motivo: tirar de mim o trabalho repetitivo para sobrar tempo para o cliente.</cite>
+    </div>
+  </div>
+</section>
+
+<section id="cases">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kicker rv">// cases em produção</span><h2 class="rv">O que já <em>roda</em> no escritório.</h2></div>
+      <p class="rv">Cada case vem com a explicação técnica e, logo abaixo, a versão em português claro. Clientes, valores e dados internos foram omitidos.</p>
+    </div>
+
+    <article class="case">
+      <div class="rv">
+        <span class="num">CASE 01 · <span class="status st-prod">Em produção</span></span>
+        <h3>O robô que fecha o mês, mas não aperta o botão.</h3>
+        <p class="sum">O fechamento mensal exigia redigitar cada pagamento de uma planilha num ERP que roda por acesso remoto, onde nenhuma ferramenta de automação enxerga a tela. Testei a digitação automática até provar que ela embaralha campos sem avisar. Então redesenhei: a IA monta a fila, valida, aplica o de-para e confere no final. Eu digito e confirmo.</p>
+        <p class="trad"><b>Traduzindo:</b> o trabalho chato e propenso a erro ficou com a máquina. A decisão de gravar ficou comigo. Resultado: zero divergência.</p>
+        <div class="kpis">
+          <div class="kpi"><b>3</b><span>meses fechados</span></div>
+          <div class="kpi"><b>86</b><span>lançamentos conferidos um a um</span></div>
+          <div class="kpi"><b>100%</b><span>de cobertura da planilha</span></div>
+        </div>
+        <div class="tags"><span class="tag">Python</span><span class="tag">PowerShell</span><span class="tag">Visão por pixel</span><span class="tag">Excel COM</span><span class="tag">Claude Code</span></div>
+      </div>
+      <div class="case-media rv">
+        <div class="panel">
+          <h4>Como o fluxo funciona</h4>
+          <ol class="flow">
+            <li><div><b>Lê a planilha do mês</b><span>direto do servidor, nunca de uma cópia</span></div></li>
+            <li><div><b>Monta a fila validada</b><span>de-para de 30+ fornecedores; o que falta dado vai para "bloqueados"</span></div></li>
+            <li><div><b>Prova real</b><span>7 checagens contra a planilha antes de cada lançamento</span></div></li>
+            <li class="me"><div><b>Digito e confirmo</b><span>a única etapa que grava no sistema</span></div></li>
+            <li><div><b>Conferência na tela</b><span>só entra no registro o que a tela do ERP mostrou</span></div></li>
+            <li class="loop"><div><b>Livro-razão</b><span>a próxima fila pula o que já foi lançado: duplicata é impossível</span></div></li>
+          </ol>
+        </div>
+      </div>
+    </article>
+
+    <article class="case flip">
+      <div class="rv">
+        <span class="num">CASE 02 · <span class="status st-prod">Em produção</span></span>
+        <h3>Uma casa de research dentro de uma skill.</h3>
+        <p class="sum">Relatórios de mercado e de resultados trimestrais com padrão de casa de análise: dados atuais buscados na web, voz de analista sênior, identidade visual própria e memória entre edições. Cobre renda fixa, ações, fundos imobiliários, câmbio, cripto e o eixo de balanços, que compara o resultado com o consenso linha a linha.</p>
+        <p class="trad"><b>Traduzindo:</b> o que levava dias de pesquisa e diagramação sai numa sessão, com cada número apontando de onde veio.</p>
+        <div class="kpis">
+          <div class="kpi"><b>8</b><span>relatórios publicados</span></div>
+          <div class="kpi"><b>6</b><span>classes de ativo cobertas</span></div>
+          <div class="kpi"><b>2</b><span>computadores sincronizados via GitHub</span></div>
+        </div>
+        <div class="tags"><span class="tag">Skill Claude</span><span class="tag">Pesquisa web</span><span class="tag">Python</span><span class="tag">PDF / DOCX</span><span class="tag">Git</span></div>
+      </div>
+      <figure class="case-media shot rv"><img src="assets/prova-relatorio.jpg" alt="Capa de uma edição do relatório de mercado com o bloco Em 30 segundos" width="1000" height="693" loading="lazy"><figcaption>Capa real da edição 002 · marca omitida</figcaption></figure>
+    </article>
+
+    <article class="case">
+      <div class="rv">
+        <span class="num">CASE 03 · <span class="status st-build">Piloto</span></span>
+        <h3>Três minutos que dizem o que fazer, não o que aconteceu.</h3>
+        <p class="sum">O Giro do Time é um áudio diário às 7h30 no grupo dos assessores. A skill coleta os dados, escreve o roteiro para ser lido em voz alta (números por extenso) e monta a mensagem que o assessor encaminha ao cliente. Como áudio de mercado conta como relatório de análise para a regulação, o roteiro passa por travas de compliance antes de ir ao ar.</p>
+        <p class="trad"><b>Traduzindo:</b> resumo de mercado o time ouve três dias por educação e depois para. Este diz qual cliente ligar e o que falar.</p>
+        <div class="tags"><span class="tag">Skill Claude</span><span class="tag">Roteiro falado</span><span class="tag">Compliance CVM</span></div>
+      </div>
+      <div class="case-media rv">
+        <div class="panel">
+          <h4>A anatomia dos 3 minutos</h4>
+          <div class="bar" role="img" aria-label="Distribuição do tempo: O que mudou 40 segundos, Os números 30, A pauta de hoje 60, Atenção 20, Fecha 10">
+            <div style="flex:40"><b>O que mudou</b>0:40</div>
+            <div style="flex:30"><b>Números</b>0:30</div>
+            <div class="hl" style="flex:60"><b>A pauta de hoje</b>1:00</div>
+            <div style="flex:20"><b>Atenção</b>0:20</div>
+            <div style="flex:10"><b>Fim</b></div>
+          </div>
+          <div class="bar-legend"><span>7h30</span><span>40% dado · 60% ação</span><span>3:00</span></div>
+          <p style="margin-top:var(--s4);color:var(--muted);font-size:15px">A régua para cada frase: <span style="color:var(--text)">"isso muda o que o assessor vai fazer nas próximas 8 horas?"</span> Se não muda, sai.</p>
+        </div>
+      </div>
+    </article>
+
+    <article class="case flip">
+      <div class="rv">
+        <span class="num">CASE 04 · <span class="status st-prod">Em produção</span></span>
+        <h3>Um segundo cérebro com painel de controle.</h3>
+        <p class="sum">Tudo o que aprendo, cada erro e cada decisão de projeto vira nota no Obsidian, organizada em seis gavetas: aprendizados, contextos, playbooks, skills, agentes e referências. Um script lê o acervo e gera um painel em grafo 3D com alertas de nota órfã ou desatualizada. É a memória que os agentes consultam antes de trabalhar.</p>
+        <p class="trad"><b>Traduzindo:</b> eu não erro a mesma coisa duas vezes, e a IA também não, porque ela lê o que eu já aprendi.</p>
+        <div class="kpis">
+          <div class="kpi"><b>78</b><span>notas</span></div>
+          <div class="kpi"><b>316</b><span>conexões entre notas</span></div>
+          <div class="kpi"><b>6</b><span>gavetas de conhecimento</span></div>
+        </div>
+        <div class="tags"><span class="tag">Obsidian</span><span class="tag">Python</span><span class="tag">Three.js</span><span class="tag">Git</span></div>
+      </div>
+      <figure class="case-media shot rv"><img src="assets/prova-painel.jpg" alt="Painel holográfico do segundo cérebro com setores, contadores de nós e sinapses e um grafo 3D" width="1400" height="875" loading="lazy"><figcaption>Painel real, gerado a partir do acervo</figcaption></figure>
+    </article>
+  </div>
+</section>
+
+<section id="cicatrizes" class="tight">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kicker rv">// cicatrizes</span><h2 class="rv">O que eu só sei porque <em>quebrou.</em></h2></div>
+      <p class="rv">Ninguém mostra isso em portfólio. Eu mostro, porque cada regra que uso hoje nasceu de um erro real, registrado no segundo cérebro para não acontecer de novo.</p>
+    </div>
+    <div class="scars" id="scars"></div>
+  </div>
+</section>
+
+<section id="provas" class="tight">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kicker rv">// mais provas</span><h2 class="rv">Saiu do <em>papel.</em></h2></div>
+      <p class="rv">Peças reais de outros projetos: produto para captar clientes, conteúdo educativo e identidade visual.</p>
+    </div>
+    <div class="gallery">
+      <figure class="shot rv"><img src="assets/prova-quiz.jpg" alt="Tela do quiz de diagnóstico de operações estruturadas com quatro alternativas" width="900" height="761" loading="lazy"><figcaption>Quiz de diagnóstico · entrega relatório personalizado em PDF e WhatsApp</figcaption></figure>
+      <figure class="shot rv"><img src="assets/prova-coastfire.jpg" alt="Cola rápida sobre Coast FIRE com fórmulas, tabela de valores, passo a passo e erros comuns" width="1100" height="685" loading="lazy"><figcaption>Série Coast FIRE · conteúdo educativo, não é recomendação</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="catalogo" class="tight">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kicker rv">// catálogo completo</span><h2 class="rv">Tudo que eu já <em>construí.</em></h2></div>
+      <p class="rv">Do que roda todo mês ao que ficou pausado. Filtre por status ou por área.</p>
+    </div>
+    <div class="filters rv" role="group" aria-label="Filtrar projetos" id="filters"></div>
+    <div class="rows" id="rows"></div>
+  </div>
+</section>
+
+<section id="skills" class="tight">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kicker rv">// skills autorais</span><h2 class="rv">Processos que viraram <em>comando.</em></h2></div>
+      <p class="rv">Uma skill ensina a IA a executar um processo do meu jeito, sempre igual. Eu digito o comando, ela faz o resto. Estas eu escrevi do zero.</p>
+    </div>
+    <div class="term rv">
+      <div class="term-bar"><i></i><i></i><i></i><span>ayrton@escritorio: ~/skills</span></div>
+      <div class="term-body" id="term"></div>
+    </div>
+  </div>
+</section>
+
+<section id="agora" class="tight">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kicker rv">// agora · outubro de 2026</span><h2 class="rv">Na <em>bancada</em> neste momento.</h2></div>
+      <p class="rv">Portfólio que só mostra o que terminou esconde como a pessoa trabalha. Este é o meu em andamento.</p>
+    </div>
+    <div class="now-grid" id="now"></div>
+  </div>
+</section>
+
+<section id="formacao" class="tight">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kicker rv">// formação</span><h2 class="rv">Aprendi com quem <em>faz</em> os modelos.</h2></div>
+      <p class="rv">Certificações da Anthropic, Google, IBM e OpenAI, somadas à formação de mercado que o meu trabalho exige.</p>
+    </div>
+    <div class="certs" id="certs"></div>
+    <div class="edu">
+      <div class="rv"><b>Administração</b><span>Bacharelado · UNIASSELVI · 2024 a 2028, em curso</span></div>
+      <div class="rv"><b>Formação de Assessores</b><span>XP Educação · 2023 · e trilha B3: análise fundamentalista, ETFs, ações internacionais, Tesouro Direto</span></div>
+      <div class="rv"><b>Inside Sales</b><span>RD University · 2022</span></div>
+    </div>
+    <div class="stack" style="margin-top:var(--s7)">
+      <div class="rv"><h4>IA e agentes</h4><ul><li>Claude Code e Agent SDK</li><li>Skills e subagentes</li><li>MCP</li><li>Engenharia de contexto</li><li>NotebookLM e ChatGPT</li></ul></div>
+      <div class="rv"><h4>Automação</h4><ul><li>Python</li><li>PowerShell</li><li>Automação por visão</li><li>Excel via COM</li><li>Extensões Chrome</li></ul></div>
+      <div class="rv"><h4>Conteúdo e web</h4><ul><li>HTML, CSS e JavaScript</li><li>Vídeo programático</li><li>FFmpeg</li><li>WordPress</li><li>Design de carrosséis</li></ul></div>
+      <div class="rv"><h4>Mercado</h4><ul><li>Assessoria de investimentos</li><li>Macro e balanços</li><li>Operações estruturadas</li><li>Compliance CVM e LGPD</li><li>Planejamento financeiro</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contato">
+  <div class="wrap">
+    <span class="kicker rv">// contato</span>
+    <h2 class="rv">Tem um processo que <em>devia</em> rodar sozinho?</h2>
+    <p class="rv">Seja para falar de investimentos, de IA aplicada ao mercado ou de uma parceria, me chama. Eu respondo pessoalmente.</p>
+    <div class="ch rv">
+      <a class="btn solid" id="wa" href="https://wa.me/5511986580916" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn" href="https://www.linkedin.com/in/ayrton-althman-1556b8164/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://www.instagram.com/ayrton_althman/" target="_blank" rel="noopener">Instagram</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Ayrton Althman · Feito com Claude Code, do jeito que eu construo todo o resto.</span>
+    <span>Este portfólio apresenta projetos de tecnologia e não constitui recomendação de investimento. Nomes de clientes, valores e dados internos foram omitidos por confidencialidade.</span>
+  </div>
+</footer>
+
+<script>
+/* ============ Para atualizar o portfólio, edite só estas listas ============ */
+const WHATSAPP = "5511986580916";
+const WHATSAPP_MSG = "Oi Ayrton, vi seu portfólio e quero conversar.";
+
+const TICKER = [
+  ["LANÇAMENTOS ERP","86"],["COBERTURA DO MÊS","100%"],["MESES FECHADOS","3"],
+  ["CLIENTES ABERTOS EM LOTE","116"],["RELATÓRIOS PUBLICADOS","8"],["CERTIFICAÇÕES IA","10"],
+  ["SKILLS AUTORAIS","8"],["NOTAS NO 2º CÉREBRO","78"],["CONEXÕES","316"],["CLIENTES ATENDIDOS","200+"]
+];
+
+const SCARS = [
+  {b:"A digitação automática no ERP remoto embaralhou campos sem dar erro. Uma vez as teclas foram parar no WhatsApp.", r:"Ação irreversível, humano confirma."},
+  {b:"Data digitada com barras entrou corrompida no sistema, em silêncio, sem nenhum aviso.", r:"Só dígitos. E conferir o que a tela mostrou, não o que eu mandei."},
+  {b:"Salvar a planilha financeira por script apagou as listas suspensas que o time usa.", r:"Planilha de produção só se grava pelo próprio Excel."},
+  {b:"A primeira versão do carrossel de apresentação, clara e cheia de cards, ficou com cara de IA. Foi para o lixo.", r:"Escuro, tipografia gigante, fotos reais e prova concreta."},
+  {b:"O primeiro desenho do boletim diário era um resumo de mercado. Seria ouvido três dias e abandonado.", r:"Se não muda o que alguém faz hoje, corta."},
+  {b:"Uma fórmula nova na planilha foi gravada sem o prefixo certo e virou erro só ao abrir no Excel.", r:"Conferir valores calculados, não só se a fórmula existe."}
+];
+
+const PROJECTS = [
+  {t:"Robô de lançamentos em ERP", cat:"Automação", st:"prod", d:"Fechamento mensal assistido por IA, com fila validada, prova real e livro-razão."},
+  {t:"Kit de relatórios de research", cat:"Mercado", st:"prod", d:"Relatórios macro e de balanços com dados atuais e identidade visual."},
+  {t:"Giro do Time", cat:"Mercado", st:"build", d:"Boletim diário em áudio de 3 minutos para assessores."},
+  {t:"Segundo Cérebro", cat:"Conhecimento", st:"prod", d:"Base no Obsidian e painel em grafo 3D com alertas."},
+  {t:"Comprovantes automáticos", cat:"Automação", st:"prod", d:"Vincula notas e comprovantes do mês à planilha e audita o que falta."},
+  {t:"Abertura em massa de posições", cat:"Automação", st:"prod", d:"Abre a posição de 116 clientes em lotes, com checagem de faltantes."},
+  {t:"Exportador de relatórios web", cat:"Automação", st:"prod", d:"Extrai relatórios de um site WordPress para PDF em minutos."},
+  {t:"Copiloto de análise de carteira", cat:"Mercado", st:"prod", d:"Diagnóstico de carteira e simulações com números rodados em código."},
+  {t:"Mensagens a clientes", cat:"Mercado", st:"prod", d:"Redige e revisa comunicação com cliente no tom certo."},
+  {t:"Quiz de operações estruturadas", cat:"Produto", st:"build", d:"Qualifica leads e entrega análise personalizada em PDF e WhatsApp."},
+  {t:"YouTube Salvos", cat:"Produto", st:"build", d:"Extensão Chrome: biblioteca de vídeos com classificação automática."},
+  {t:"Mestrado em Agentes de IA", cat:"Aprendizado", st:"build", d:"12 módulos com laboratório, entrega e arguição."},
+  {t:"Reposicionamento no Instagram", cat:"Conteúdo", st:"build", d:"Bio, plano de 90 dias, capas geradas por script e carrosséis."},
+  {t:"Vídeos programáticos", cat:"Conteúdo", st:"build", d:"Vídeos em 16:9, 9:16 e reels feitos em código."},
+  {t:"Clonagem de voz", cat:"Conteúdo", st:"build", d:"Voz sintética própria para boletins e vídeos."},
+  {t:"Série Coast FIRE", cat:"Conteúdo", st:"done", d:"Planilha interativa e oito peças educativas."},
+  {t:"Sistema de Lançamento Semente", cat:"Conteúdo", st:"done", d:"Dois prompts encadeados que geram estratégia, copy e calendário."},
+  {t:"Acervo de pesquisa em IA", cat:"Conhecimento", st:"done", d:"Mais de 100 cadernos no NotebookLM, destilados em referências."},
+  {t:"Biblioteca digital de mentoria", cat:"Conhecimento", st:"done", d:"88 documentos e 41 ebooks com busca offline."},
+  {t:"Radar IA mensal", cat:"Conhecimento", st:"done", d:"Curadoria das novidades de IA para o mercado financeiro."},
+  {t:"Fluxo de entrega e agendamento", cat:"Automação", st:"done", d:"Chatbot que entrega material e leva o lead até a agenda."},
+  {t:"Analisador de conversas", cat:"Automação", st:"pause", d:"Extrai aprendizados das conversas com a IA. Hoje em uso manual."}
+];
+
+const SKILLS = [
+  {c:"/giro-mercado", o:"pauta, <b>roteiro falado de 3 min</b> e mensagem pronta para o cliente, com travas de compliance"},
+  {c:"/market-report", o:"relatório macro ou de balanço, <b>dados atuais com fonte</b>, entregue em PDF ou DOCX"},
+  {c:"/investment-advisor", o:"diagnóstico de carteira e projeções <b>calculadas em código</b>, nunca estimadas"},
+  {c:"/client-messages", o:"follow-up, resposta ou cobrança delicada <b>no tom de uma pessoa</b>, sem cara de IA"},
+  {c:"/erp-lancamentos", o:"fila validada, prova real e <b>livro-razão anti-duplicata</b> do fechamento mensal"},
+  {c:"/comprovantes", o:"liga cada comprovante à linha certa da planilha e <b>lista o que falta</b>"},
+  {c:"/abrir-posicoes", o:"abre a posição de todos os clientes de um operador com <b>verificação de cobertura</b>"},
+  {c:"/analisar-chats", o:"lê o histórico de conversas e transforma aprendizados em <b>notas do segundo cérebro</b>"}
+];
+
+const NOW = [
+  {k:"Aprendizado", t:"Mestrado em Agentes de IA", d:"Módulo 1: o loop e o harness. Cada módulo exige nota mínima 3 de 5 na arguição para avançar.", p:1, of:12, l:"módulo"},
+  {k:"Conteúdo", t:"Instagram: plano de 90 dias", d:"Dois posts por semana, alternando os três públicos. Revisão do primeiro mês em 26 de outubro.", p:1, of:3, l:"mês"},
+  {k:"Mercado", t:"Giro do Time em piloto", d:"Ajustando o roteiro diário com o time antes de virar rotina fixa."},
+  {k:"Produto", t:"YouTube Salvos", d:"Extensão pronta. Falta testar a barra no YouTube e a importação de playlists ao vivo."}
+];
+
+const CERTS = [
+  {i:"Anthropic", t:"Model Context Protocol: Advanced Topics", d:"Abr 2026"},
+  {i:"Anthropic", t:"Introduction to Model Context Protocol", d:"Abr 2026"},
+  {i:"OpenAI", t:"AI Foundations", d:"Jul 2026"},
+  {i:"Google", t:"Enterprise Agents and Use Cases", d:"Mai 2026"},
+  {i:"Google", t:"Agent Fundamentals", d:"Mai 2026"},
+  {i:"Google", t:"Introduction to AI Agents", d:"Mai 2026"},
+  {i:"IBM", t:"Build an AI Agent", d:"Jun 2026"},
+  {i:"IBM", t:"Getting Started with Artificial Intelligence", d:"Mai 2026"},
+  {i:"IBM", t:"AI Fundamentals: Foundations for Understanding AI", d:"Fev 2026"},
+  {i:"IBM", t:"AI Literacy", d:"Fev 2026"},
+  {i:"ANCORD", t:"Agente Autônomo de Investimento", d:"Certificação de mercado"},
+  {i:"Enap", t:"Prevenção à Lavagem de Dinheiro e ao Financiamento do Terrorismo", d:"2022"}
+];
+
+/* ============ render ============ */
+const $ = id => document.getElementById(id);
+const tk = TICKER.map(([k,v]) => `<div class="tk"><span>${k}</span><b>${v}</b><i>▲</i></div>`).join("");
+$("ticker").innerHTML = tk + tk.replace(/class="tk"/g,'class="tk" aria-hidden="true"');
+
+$("scars").innerHTML = SCARS.map(s => `<div class="scar rv"><p class="broke">${s.b}</p><p class="rule2">${s.r}</p></div>`).join("");
+
+const ST = {prod:["Em produção","st-prod"], build:["Em construção","st-build"], done:["Concluído","st-done"], pause:["Pausado","st-pause"]};
+$("rows").innerHTML = PROJECTS.map(p => `
+  <div class="row" data-st="${p.st}" data-cat="${p.cat}"><span class="cat">${p.cat}</span><h3>${p.t}</h3><p>${p.d}</p><span class="status ${ST[p.st][1]}">${ST[p.st][0]}</span></div>`).join("");
+const filters = [["all","Todos"],["st:prod","Em produção"],["st:build","Em construção"],["st:done","Concluídos"],
+  ...[...new Set(PROJECTS.map(p=>p.cat))].map(c=>["cat:"+c,c])];
+const match = (f,p) => f==="all" || (f.startsWith("st:") ? p.st===f.slice(3) : p.cat===f.slice(4));
+$("filters").innerHTML = filters.map(([f,l],i)=>`<button class="chip" data-f="${f}" aria-pressed="${i===0}">${l}<span class="c">${PROJECTS.filter(p=>match(f,p)).length}</span></button>`).join("");
+$("filters").addEventListener("click", e => {
+  const b = e.target.closest(".chip"); if(!b) return;
+  $("filters").querySelectorAll(".chip").forEach(x=>x.setAttribute("aria-pressed", x===b));
+  $("rows").querySelectorAll(".row").forEach(r=>r.classList.toggle("hide", !match(b.dataset.f, r.dataset)));
+});
+
+$("term").innerHTML = SKILLS.map(s => `<div class="cmd"><span class="p">${s.c}</span><span class="o">${s.o}</span></div>`).join("") + `<div class="cmd"><span class="p"><span class="cursor" aria-hidden="true"></span></span></div>`;
+
+$("now").innerHTML = NOW.map(n => `<div class="nowc rv"><h4>${n.k}</h4><h3>${n.t}</h3><p>${n.d}</p>${n.p ? `
+  <div class="prog"><i style="--w:${Math.round(n.p/n.of*100)}%"></i></div><div class="prog-l"><span>${n.l} ${n.p} de ${n.of}</span><span>${Math.round(n.p/n.of*100)}%</span></div>` : ""}</div>`).join("");
+
+$("certs").innerHTML = CERTS.map(c=>`<div class="cert rv"><span class="iss">${c.i}</span><b>${c.t}</b><span>${c.d}</span></div>`).join("");
+
+$("wa").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(WHATSAPP_MSG);
+
+const nav = $("nav");
+addEventListener("scroll", () => nav.classList.toggle("solid", scrollY > 40), {passive:true});
+
+const io = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+}), {threshold:.12});
+document.querySelectorAll(".rv").forEach(el => io.observe(el));
+</script>
+</body>
+</html>
