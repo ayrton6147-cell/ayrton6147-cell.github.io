@@ -161,6 +161,9 @@ h4{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold
 .st-done{color:var(--muted)}.st-done::before{background:var(--muted)}
 .st-pause{color:var(--down)}.st-pause::before{background:var(--down)}
 .case{align-items:center}
+.case>*,.quote>*,.hero-grid>*,.head>*{min-width:0}
+.kpis{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media(max-width:520px){.bar div{padding:0 6px;font-size:10px}.bar div b{font-size:10px}}
 .gallery{align-items:start}
 .shot{align-self:start;height:fit-content;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:var(--surface)}
 .shot img{width:100%;height:auto;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
