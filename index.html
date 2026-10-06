@@ -208,6 +208,41 @@ h4{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold
 @media(min-width:768px){.gallery{grid-template-columns:repeat(2,1fr)}}
 .gallery .wide{grid-column:1/-1}
 
+/* simulador */
+.sim{display:grid;gap:var(--s5);border:1px solid var(--line);border-radius:var(--r);padding:var(--s4);background:var(--surface)}
+@media(min-width:960px){.sim{grid-template-columns:340px 1fr;padding:var(--s5);gap:var(--s6)}}
+.sim>*{min-width:0}
+.sim-in{display:grid;gap:var(--s4);align-content:start}
+.sim-in label{display:grid;grid-template-columns:1fr auto;gap:6px var(--s3);font-size:14px;color:var(--muted)}
+.sim-in output{font-family:var(--serif);font-size:22px;color:var(--text);line-height:1}
+.sim-in input{grid-column:1/-1;width:100%;accent-color:var(--gold);height:28px;cursor:pointer}
+.sim-note{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:var(--s3)}
+.verdict{font-family:var(--serif);font-size:clamp(24px,2.6vw,32px);line-height:1.15;margin-bottom:var(--s4)}
+.verdict .ok{color:var(--up)}
+.sim-kpis{display:grid;gap:var(--s3);margin-bottom:var(--s4)}
+@media(min-width:640px){.sim-kpis{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.sim-kpis div{border-top:1px solid var(--line);padding-top:var(--s2)}
+.sim-kpis span{display:block;font-size:12px;color:var(--muted);line-height:1.35}
+.sim-kpis b{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.2}
+.legend{display:flex;flex-wrap:wrap;gap:6px 20px;font-size:12px;color:var(--muted);margin-bottom:var(--s2)}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.sw{display:inline-block;width:18px;height:0;border-top:2px solid}
+.sw-a{border-color:#B8892F}.sw-b{border-color:#5A8FD8;border-top-style:dashed}
+.chart{position:relative;height:300px}
+.chart svg{width:100%;height:100%;display:block;overflow:visible}
+.chart .grid line{stroke:var(--line);stroke-width:1}
+.chart .ax{font-family:var(--mono);font-size:11px;fill:var(--muted)}
+.chart .dl{font-size:12px;fill:var(--text);font-weight:600}
+.tip{position:absolute;top:0;pointer-events:none;background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:8px 12px;font-size:12px;color:var(--text);white-space:nowrap;box-shadow:var(--shadow);transform:translateX(-50%)}
+.tip b{font-family:var(--mono);color:var(--muted);font-weight:400;display:block;margin-bottom:4px}
+.tip i{display:inline-block;width:10px;height:0;border-top:2px solid;margin-right:6px;vertical-align:3px}
+.tbl{margin-top:var(--s3);font-size:13px;color:var(--muted)}
+.tbl summary{cursor:pointer;width:fit-content}
+.tbl table{width:100%;border-collapse:collapse;margin-top:var(--s2);font-family:var(--mono);font-size:12px}
+.tbl th,.tbl td{text-align:right;padding:6px 8px;border-bottom:1px solid var(--line)}
+.tbl th:first-child,.tbl td:first-child{text-align:left}
+.sim-disc{font-size:12px;color:var(--muted);margin-top:var(--s3)}
+
 /* catalog */
 .filters{display:flex;flex-wrap:wrap;gap:var(--s2);margin-bottom:var(--s4)}
 .chip{background:none;border:1px solid var(--line);color:var(--muted);font:inherit;font-size:13px;padding:8px 16px;border-radius:999px;cursor:pointer;transition:all .25s}
@@ -304,6 +339,7 @@ footer .wrap{display:grid;gap:var(--s3)}
       <a href="#origem">Origem</a>
       <a href="#cases">Cases</a>
       <a href="#cicatrizes">Cicatrizes</a>
+      <a href="#simulador">Demo</a>
       <a href="#catalogo">Catálogo</a>
       <a href="#agora">Agora</a>
       <a href="#formacao">Formação</a>
@@ -365,11 +401,11 @@ footer .wrap{display:grid;gap:var(--s3)}
 
 <section class="tight">
   <div class="wrap quote">
-    <figure class="rv"><img src="assets/prova-carrossel.jpg" alt="Primeira lâmina do carrossel Prazer, Ayrton, com a frase Eu não vendo investimento, eu cuido de quem investe" width="800" height="878" loading="lazy"></figure>
+    <figure class="rv"><img src="assets/prova-200clientes.jpg" alt="Lâmina do carrossel: mais de 200 clientes confiam a mim o plano do próprio dinheiro" width="800" height="878" loading="lazy"></figure>
     <div class="rv">
       <span class="kicker">// o que eu digo no Instagram</span>
       <blockquote><span>Eu não vendo investimento.</span><br>Eu cuido de <em>quem investe.</em></blockquote>
-      <cite>A frase abre o carrossel que reposicionou meu perfil. Os sistemas desta página existem pelo mesmo motivo: tirar de mim o trabalho repetitivo para sobrar tempo para o cliente.</cite>
+      <cite>A frase abre o carrossel que reposicionou meu perfil. Mais de 200 clientes depois, os sistemas desta página existem pelo mesmo motivo: tirar de mim o trabalho repetitivo para sobrar tempo para quem confia em mim.</cite>
     </div>
   </div>
 </section>
@@ -487,6 +523,37 @@ footer .wrap{display:grid;gap:var(--s3)}
       <figure class="shot rv"><img src="assets/prova-quiz.jpg" alt="Tela do quiz de diagnóstico de operações estruturadas com quatro alternativas" width="900" height="761" loading="lazy"><figcaption>Quiz de diagnóstico · entrega relatório personalizado em PDF e WhatsApp</figcaption></figure>
       <figure class="shot rv"><img src="assets/prova-coastfire.jpg" alt="Cola rápida sobre Coast FIRE com fórmulas, tabela de valores, passo a passo e erros comuns" width="1100" height="685" loading="lazy"><figcaption>Série Coast FIRE · conteúdo educativo, não é recomendação</figcaption></figure>
     </div>
+  </div>
+</section>
+
+<section id="simulador" class="tight">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kicker rv">// demo ao vivo · teste agora</span><h2 class="rv">Você já pode <em>parar</em> de investir?</h2></div>
+      <p class="rv">Este é o simulador Coast FIRE que eu uso para explicar aos clientes. Coast FIRE é o ponto em que o que você já investiu, só com juros, chega sozinho ao valor que banca sua aposentadoria. Mexa nos números.</p>
+    </div>
+    <div class="sim rv">
+      <form class="sim-in" id="simForm" onsubmit="return false" aria-label="Dados da simulação">
+        <label>Quanto quer gastar por mês aposentado<output id="o_g"></output><input type="range" id="g" min="2000" max="50000" step="500" value="10000"></label>
+        <label>Sua idade hoje<output id="o_a"></output><input type="range" id="a" min="18" max="70" step="1" value="30"></label>
+        <label>Idade em que quer parar<output id="o_t"></output><input type="range" id="t" min="35" max="80" step="1" value="55"></label>
+        <label>Quanto já tem investido<output id="o_p"></output><input type="range" id="p" min="0" max="3000000" step="10000" value="300000"></label>
+        <label>Juro real ao ano (acima da inflação)<output id="o_r"></output><input type="range" id="r" min="2" max="8" step="0.5" value="5"></label>
+        <p class="sim-note">Regra dos 4%: o alvo é o gasto anual × 25. Juro real é o que sobra depois da inflação.</p>
+      </form>
+      <div class="sim-out">
+        <div class="verdict" id="verdict" aria-live="polite"></div>
+        <div class="sim-kpis">
+          <div><span>Seu alvo de aposentadoria</span><b id="k_fire"></b></div>
+          <div><span>Coast FIRE: o mínimo para ter hoje</span><b id="k_coast"></b></div>
+          <div><span id="k_l3">Aporte mensal para chegar lá</span><b id="k_pmt"></b></div>
+        </div>
+        <div class="legend"><span><i class="sw sw-a"></i>Seu patrimônio, só com juros</span><span><i class="sw sw-b"></i>Mínimo para estar em Coast FIRE</span></div>
+        <div class="chart" id="chart"><svg id="svg" role="img" aria-label="Gráfico da projeção do patrimônio comparado ao mínimo do Coast FIRE por idade"></svg><div class="tip" id="tip" hidden></div></div>
+        <details class="tbl"><summary>Ver como tabela</summary><table id="tbl"></table></details>
+      </div>
+    </div>
+    <p class="sim-disc">Simulação educativa com retorno real hipotético e constante, sem impostos e sem aportes. Não é recomendação de investimento nem promessa de rentabilidade.</p>
   </div>
 </section>
 
@@ -672,6 +739,84 @@ $("now").innerHTML = NOW.map(n => `<div class="nowc rv"><h4>${n.k}</h4><h3>${n.t
 $("certs").innerHTML = CERTS.map(c=>`<div class="cert rv"><span class="iss">${c.i}</span><b>${c.t}</b><span>${c.d}</span></div>`).join("");
 
 $("wa").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(WHATSAPP_MSG);
+
+/* ============ simulador Coast FIRE ============ */
+(() => {
+  const C_A = "#B8892F", C_B = "#5A8FD8";
+  const brl = new Intl.NumberFormat("pt-BR",{style:"currency",currency:"BRL",maximumFractionDigits:0});
+  const short = v => v >= 1e6 ? "R$ " + (v/1e6).toLocaleString("pt-BR",{maximumFractionDigits:1}) + " mi" : v >= 1e3 ? "R$ " + Math.round(v/1e3) + " mil" : "R$ " + Math.round(v);
+  const ids = ["g","a","t","p","r"], el = Object.fromEntries(ids.map(i=>[i,$(i)]));
+  const svg = $("svg"), tip = $("tip"), chart = $("chart");
+  let pts = [];
+
+  function calc(){
+    let g=+el.g.value, a=+el.a.value, t=+el.t.value, p=+el.p.value, r=+el.r.value/100;
+    if (t <= a) { t = a + 1; el.t.value = t; }
+    const n = t - a, fire = g*12*25, coast = fire/Math.pow(1+r,n);
+    const i = Math.pow(1+r,1/12)-1, m = n*12, fv = p*Math.pow(1+r,n);
+    const pmt = fv >= fire ? 0 : (fire - fv) * i / (Math.pow(1+i,m)-1);
+    const ageHit = p > 0 ? a + Math.log(fire/p)/Math.log(1+r) : Infinity;
+    return {g,a,t,p,r,n,fire,coast,pmt,ageHit};
+  }
+
+  function render(){
+    const s = calc();
+    $("o_g").textContent = brl.format(s.g); $("o_a").textContent = s.a + " anos"; $("o_t").textContent = s.t + " anos";
+    $("o_p").textContent = brl.format(s.p);
+    $("o_r").textContent = (s.r*100).toLocaleString("pt-BR") + "%";
+    $("k_fire").textContent = short(s.fire); $("k_coast").textContent = short(s.coast);
+    const ok = s.p >= s.coast;
+    $("k_l3").textContent = ok ? "Aporte mensal necessário" : "Aporte mensal para o alvo aos " + s.t;
+    $("k_pmt").textContent = ok ? "R$ 0" : brl.format(s.pmt);
+    $("verdict").innerHTML = ok
+      ? `<span class="ok">Você já está em Coast FIRE.</span> Sem investir mais nada, os juros levam seu patrimônio ao alvo por volta dos ${Math.ceil(s.ageHit)} anos.`
+      : `Faltam <em>${short(s.coast - s.p)}</em> para o Coast FIRE. Depois disso, os juros fazem o resto até os ${s.t}.`;
+    pts = []; for (let k=0;k<=s.n;k++) pts.push({age:s.a+k, A:s.p*Math.pow(1+s.r,k), B:s.fire/Math.pow(1+s.r,s.n-k)});
+    draw(s);
+    const step = Math.max(1, Math.round(s.n/8));
+    $("tbl").innerHTML = `<tr><th>Idade</th><th>Só com juros</th><th>Mínimo Coast</th></tr>` +
+      pts.filter((q,k)=>k%step===0||k===pts.length-1).map(q=>`<tr><td>${q.age}</td><td>${brl.format(q.A)}</td><td>${brl.format(q.B)}</td></tr>`).join("");
+  }
+
+  function draw(s){
+    tip.hidden = true;
+    const W = chart.clientWidth, H = chart.clientHeight, L = 64, R = 16, T = 12, B = 28;
+    const top = Math.max(...pts.map(q=>Math.max(q.A,q.B))) || 1;
+    const raw = top/4, mag = Math.pow(10, Math.floor(Math.log10(raw))), nr = raw/mag;
+    const stp = (nr<=1?1:nr<=2?2:nr<=2.5?2.5:nr<=5?5:10)*mag, max = Math.ceil(top/stp)*stp;
+    const x = age => L + (age - s.a)/(s.n) * (W - L - R), y = v => T + (1 - v/max) * (H - T - B);
+    const grid = [...Array(Math.round(max/stp)+1)].map((_,k)=>stp*k);
+    const line = key => pts.map((q,k)=>(k?"L":"M")+x(q.age).toFixed(1)+","+y(q[key]).toFixed(1)).join("");
+    const xt = [...new Set([s.a, Math.round(s.a+s.n/3), Math.round(s.a+2*s.n/3), s.t])];
+    svg.setAttribute("viewBox",`0 0 ${W} ${H}`);
+    svg.innerHTML = `<g class="grid">${grid.map(v=>`<line x1="${L}" x2="${W-R}" y1="${y(v)}" y2="${y(v)}"/>`).join("")}</g>
+      ${grid.map(v=>`<text class="ax" x="${L-8}" y="${y(v)+4}" text-anchor="end">${short(v)}</text>`).join("")}
+      ${xt.map(a=>`<text class="ax" x="${x(a)}" y="${H-8}" text-anchor="middle">${a} anos</text>`).join("")}
+      <path d="${line("B")}" fill="none" stroke="${C_B}" stroke-width="2" stroke-dasharray="6 5" stroke-linecap="round"/>
+      <path d="${line("A")}" fill="none" stroke="${C_A}" stroke-width="2" stroke-linecap="round"/>
+      <line id="xh" y1="${T}" y2="${H-B}" stroke="#9A9284" stroke-width="1" visibility="hidden"/>
+      <circle id="dA" r="5" fill="${C_A}" stroke="#1A1814" stroke-width="2" visibility="hidden"/>
+      <circle id="dB" r="5" fill="${C_B}" stroke="#1A1814" stroke-width="2" visibility="hidden"/>
+      <rect x="${L}" y="${T}" width="${W-L-R}" height="${H-T-B}" fill="transparent" id="hit"/>`;
+    const hit = svg.querySelector("#hit"), xh = svg.querySelector("#xh"), dA = svg.querySelector("#dA"), dB = svg.querySelector("#dB");
+    const show = ev => {
+      const bx = svg.getBoundingClientRect(), px = (ev.touches?ev.touches[0].clientX:ev.clientX) - bx.left;
+      const k = Math.max(0, Math.min(pts.length-1, Math.round((px - L)/(W - L - R) * s.n))), q = pts[k], X = x(q.age);
+      [xh,dA,dB].forEach(e=>e.setAttribute("visibility","visible"));
+      xh.setAttribute("x1",X); xh.setAttribute("x2",X);
+      dA.setAttribute("cx",X); dA.setAttribute("cy",y(q.A)); dB.setAttribute("cx",X); dB.setAttribute("cy",y(q.B));
+      tip.hidden = false; tip.style.left = Math.max(90, Math.min(W-90, X)) + "px";
+      tip.innerHTML = `<b>${q.age} anos</b><i style="border-color:${C_A}"></i>${brl.format(q.A)}<br><i style="border-color:${C_B};border-top-style:dashed"></i>${brl.format(q.B)}`;
+    };
+    const hide = () => { [xh,dA,dB].forEach(e=>e.setAttribute("visibility","hidden")); tip.hidden = true; };
+    hit.addEventListener("mousemove", show); hit.addEventListener("touchmove", show, {passive:true}); hit.addEventListener("touchstart", show, {passive:true});
+    hit.addEventListener("mouseleave", hide); hit.addEventListener("touchend", hide);
+  }
+
+  ids.forEach(i => el[i].addEventListener("input", render));
+  addEventListener("resize", () => draw(calc()));
+  render();
+})();
 
 const nav = $("nav");
 addEventListener("scroll", () => nav.classList.toggle("solid", scrollY > 40), {passive:true});
