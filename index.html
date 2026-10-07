@@ -822,6 +822,7 @@ $("waSim").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(WH
   function draw(s){
     tip.hidden = true;
     const W = chart.clientWidth, H = chart.clientHeight, L = 64, R = 16, T = 12, B = 28;
+    if (W < L + R + 40 || H < T + B + 40) return; /* sem tamanho ainda: o ResizeObserver redesenha depois */
     const top = Math.max(...pts.map(q=>Math.max(q.A,q.B))) || 1;
     const raw = top/4, mag = Math.pow(10, Math.floor(Math.log10(raw))), nr = raw/mag;
     const stp = (nr<=1?1:nr<=2?2:nr<=2.5?2.5:nr<=5?5:10)*mag, max = Math.ceil(top/stp)*stp;
@@ -855,6 +856,7 @@ $("waSim").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(WH
   }
 
   ids.forEach(i => el[i].addEventListener("input", render));
+  new ResizeObserver(() => draw(calc())).observe(chart);
   addEventListener("resize", () => draw(calc()));
   render();
 })();
