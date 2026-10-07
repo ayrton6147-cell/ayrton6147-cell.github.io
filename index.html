@@ -295,10 +295,6 @@ h4{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue
 @media(min-width:768px){.edu{grid-template-columns:repeat(3,1fr)}}
 .edu b{display:block;font-family:var(--serif);font-weight:400;font-size:22px}
 .edu span{font-size:14px;color:var(--muted)}
-.stack{display:grid;gap:var(--s5);margin-top:var(--s7)}
-@media(min-width:768px){.stack{grid-template-columns:repeat(4,1fr)}}
-.stack ul{list-style:none;margin-top:var(--s3)}
-.stack li{font-size:15px;padding:8px 0;border-bottom:1px solid var(--line)}
 
 /* contato */
 .contact{padding:var(--s8) 0;text-align:center}
@@ -312,6 +308,38 @@ h4{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue
 footer{background:var(--navy);border-top:1px solid var(--line-dark);padding:var(--s5) 0;color:var(--muted-dark);font-size:12px}
 footer .wrap{display:grid;gap:var(--s3)}
 @media(min-width:768px){footer .wrap{grid-template-columns:1fr 2fr}}
+
+/* cartão de prova (+200) */
+.proof{background:var(--navy);color:var(--on-dark);padding:var(--s6) var(--s5);max-width:380px;width:100%;justify-self:center;box-shadow:0 30px 60px -30px rgba(11,26,44,.45)}
+.proof-l{display:flex;align-items:center;gap:12px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-light);font-weight:600}
+.proof-l::before{content:"";width:28px;height:1px;background:currentColor}
+.proof>b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(96px,11vw,140px);line-height:.9;color:var(--white);margin:var(--s5) 0 var(--s3);letter-spacing:-.03em}
+.proof>b sup{font-size:.45em;color:var(--blue-light);vertical-align:.9em;margin-left:2px}
+.proof>p{font-family:var(--serif);font-weight:300;font-size:24px;line-height:1.25}
+.proof-f{display:grid;grid-template-columns:auto 1fr;gap:var(--s3);align-items:start;margin-top:var(--s5);padding-top:var(--s4);border-top:1px solid var(--line-dark);font-size:13px;color:var(--muted-dark);line-height:1.5}
+.seal{width:48px;height:48px;border:1px solid var(--blue-light);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:18px;color:var(--white)}
+.proof-f small{display:block;font-size:11px;margin-top:6px;opacity:.8}
+
+/* outras entregas dentro dos cases */
+.also{padding-top:var(--s6)}
+.also h4{margin-bottom:var(--s4)}
+
+/* recolher e expandir */
+.collapsible:not(.open) .x{display:none}
+.rows.filtered .x{display:grid}
+.row.hide{display:none!important}
+.more{margin-top:var(--s4);background:none;border:1px solid var(--line);color:var(--ink);font:inherit;font-size:11px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;padding:13px 22px;border-radius:var(--r);cursor:pointer;transition:background .25s,color .25s,border-color .25s}
+.more::after{content:" ↓"}
+.open>.more::after{content:" ↑"}
+.more:hover{background:var(--navy);border-color:var(--navy);color:var(--white)}
+.more[hidden]{display:none}
+
+/* ritmo vertical mais enxuto */
+section{padding:104px 0}
+@media(max-width:767px){section{padding:72px 0}.case{padding:var(--s6) 0}.contact{padding:96px 0}}
+
+/* no celular, o botão do menu só aparece depois de rolar (a abertura já tem o seu) */
+@media(max-width:999px){nav:not(.solid) .btn{opacity:0;pointer-events:none}nav .btn{transition:opacity .3s,background .3s,color .3s}}
 
 /* reveal */
 .rv{opacity:0;transform:translateY(14px);transition:opacity 1s ease,transform 1s ease}
@@ -394,7 +422,12 @@ footer .wrap{display:grid;gap:var(--s3)}
 
 <section>
   <div class="wrap quote">
-    <figure class="rv"><img src="assets/prova-200clientes.jpg" alt="Lâmina do carrossel: mais de 200 clientes confiam a mim o plano do próprio dinheiro" width="800" height="878" loading="lazy"></figure>
+    <div class="proof rv">
+      <span class="proof-l">Em números</span>
+      <b>200<sup>+</sup></b>
+      <p>clientes confiam a mim o plano do próprio dinheiro.</p>
+      <div class="proof-f"><span class="seal">8×</span><span>Trabalho vinculado à XP, eleita pela oitava vez consecutiva a melhor assessoria de investimentos.<small>Prêmio O Melhor de São Paulo, Folha de S.Paulo, 2026.</small></span></div>
+    </div>
     <div class="rv">
       <span class="kicker">O que me move</span>
       <blockquote><span>Eu não vendo investimento.</span><br>Eu cuido de <em>quem investe.</em></blockquote>
@@ -493,6 +526,14 @@ footer .wrap{display:grid;gap:var(--s3)}
       </div>
       <figure class="case-media shot rv"><img src="assets/prova-painel.jpg" alt="Painel do segundo cérebro com setores, contadores de nós e conexões e um grafo 3D" width="1400" height="875" loading="lazy"><figcaption>Painel real, gerado a partir do acervo</figcaption></figure>
     </article>
+
+    <div class="also">
+      <h4 class="rv">Outras entregas que chegaram ao cliente</h4>
+      <div class="gallery">
+        <figure class="shot rv"><img src="assets/prova-quiz.jpg" alt="Tela do quiz de diagnóstico de operações estruturadas com quatro alternativas" width="900" height="761" loading="lazy"><figcaption>Quiz de diagnóstico · entrega relatório personalizado em PDF e WhatsApp</figcaption></figure>
+        <figure class="shot rv"><img src="assets/prova-coastfire.jpg" alt="Guia rápido sobre Coast FIRE com fórmulas, tabela de valores, passo a passo e erros comuns" width="1100" height="685" loading="lazy"><figcaption>Série Coast FIRE · conteúdo educativo</figcaption></figure>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -537,38 +578,27 @@ footer .wrap{display:grid;gap:var(--s3)}
       <div><span class="kicker rv">V · Cicatrizes</span><h2 class="rv">O que eu só sei porque <em>deu errado.</em></h2></div>
       <p class="rv">Portfólio costuma esconder isso. Eu mostro, porque cada regra que sigo hoje nasceu de um erro real, registrado para não se repetir.</p>
     </div>
-    <div class="scars" id="scars"></div>
-  </div>
-</section>
-
-<section style="padding-top:0">
-  <div class="wrap">
-    <div class="head">
-      <div><span class="kicker rv">VI · Outras entregas</span><h2 class="rv">Do papel para a <em>mesa do cliente.</em></h2></div>
-      <p class="rv">Peças reais de outros projetos: um produto para qualificar clientes e conteúdo educativo.</p>
-    </div>
-    <div class="gallery">
-      <figure class="shot rv"><img src="assets/prova-quiz.jpg" alt="Tela do quiz de diagnóstico de operações estruturadas com quatro alternativas" width="900" height="761" loading="lazy"><figcaption>Quiz de diagnóstico · entrega relatório personalizado em PDF e WhatsApp</figcaption></figure>
-      <figure class="shot rv"><img src="assets/prova-coastfire.jpg" alt="Guia rápido sobre Coast FIRE com fórmulas, tabela de valores, passo a passo e erros comuns" width="1100" height="685" loading="lazy"><figcaption>Série Coast FIRE · conteúdo educativo</figcaption></figure>
-    </div>
+    <div class="collapsible" id="scarsBox"><div class="scars" id="scars"></div>
+    <button class="more" data-more="scarsBox" data-l="Ver mais três cicatrizes" data-c="Mostrar menos">Ver mais três cicatrizes</button></div>
   </div>
 </section>
 
 <section id="catalogo" style="padding-top:0">
   <div class="wrap">
     <div class="head">
-      <div><span class="kicker rv">VII · Catálogo</span><h2 class="rv">Tudo o que construí <em>até aqui.</em></h2></div>
+      <div><span class="kicker rv">VI · Catálogo</span><h2 class="rv">Tudo o que construí <em>até aqui.</em></h2></div>
       <p class="rv">Do que roda todo mês ao que ficou pausado. Filtre por situação ou por área.</p>
     </div>
     <div class="filters rv" role="group" aria-label="Filtrar projetos" id="filters"></div>
-    <div class="rows" id="rows"></div>
+    <div class="collapsible" id="rowsBox"><div class="rows" id="rows"></div>
+    <button class="more" id="rowsMore" data-more="rowsBox" data-c="Mostrar menos"></button></div>
   </div>
 </section>
 
 <section id="skills" class="dark">
   <div class="wrap">
     <div class="head">
-      <div><span class="kicker rv">VIII · Skills autorais</span><h2 class="rv">Processos que viraram <em>comando.</em></h2></div>
+      <div><span class="kicker rv">VII · Skills autorais</span><h2 class="rv">Processos que viraram <em>comando.</em></h2></div>
       <p class="rv">Uma skill ensina a IA a executar um processo do meu jeito, sempre igual. Eu digito o comando; ela faz o resto. Todas escritas por mim.</p>
     </div>
     <div class="ledger" id="ledger"></div>
@@ -578,7 +608,7 @@ footer .wrap{display:grid;gap:var(--s3)}
 <section id="agora">
   <div class="wrap">
     <div class="head">
-      <div><span class="kicker rv">IX · Em andamento</span><h2 class="rv">Na mesa <em>neste momento.</em></h2></div>
+      <div><span class="kicker rv">VIII · Em andamento</span><h2 class="rv">Na mesa <em>neste momento.</em></h2></div>
       <p class="rv">Quem só mostra o que terminou esconde como trabalha. Este é o meu trabalho em curso, em outubro de 2026.</p>
     </div>
     <div class="now-grid" id="now"></div>
@@ -588,20 +618,15 @@ footer .wrap{display:grid;gap:var(--s3)}
 <section id="formacao" style="padding-top:0">
   <div class="wrap">
     <div class="head">
-      <div><span class="kicker rv">X · Formação</span><h2 class="rv">Formado por quem <em>constrói os modelos.</em></h2></div>
+      <div><span class="kicker rv">IX · Formação</span><h2 class="rv">Formado por quem <em>constrói os modelos.</em></h2></div>
       <p class="rv">Certificações da Anthropic, Google, IBM e OpenAI, somadas à formação de mercado que a profissão exige.</p>
     </div>
-    <div class="certs" id="certs"></div>
+    <div class="collapsible" id="certsBox"><div class="certs" id="certs"></div>
+    <button class="more" data-more="certsBox" data-l="Ver as 12 certificações" data-c="Mostrar menos">Ver as 12 certificações</button></div>
     <div class="edu">
       <div class="rv"><b>Administração</b><span>Bacharelado · UNIASSELVI · 2024 a 2028, em curso</span></div>
       <div class="rv"><b>Formação de Assessores</b><span>XP Educação · 2023 · trilha B3: análise fundamentalista, ETFs, ações internacionais e Tesouro Direto</span></div>
       <div class="rv"><b>Inside Sales</b><span>RD University · 2022</span></div>
-    </div>
-    <div class="stack">
-      <div class="rv"><h4>IA e agentes</h4><ul><li>Claude Code e Agent SDK</li><li>Skills e subagentes</li><li>MCP</li><li>Engenharia de contexto</li><li>NotebookLM e ChatGPT</li></ul></div>
-      <div class="rv"><h4>Automação</h4><ul><li>Python</li><li>PowerShell</li><li>Automação por visão</li><li>Excel via COM</li><li>Extensões Chrome</li></ul></div>
-      <div class="rv"><h4>Conteúdo e web</h4><ul><li>HTML, CSS e JavaScript</li><li>Vídeo programático</li><li>FFmpeg</li><li>WordPress</li><li>Design editorial</li></ul></div>
-      <div class="rv"><h4>Mercado</h4><ul><li>Assessoria de investimentos</li><li>Macro e balanços</li><li>Operações estruturadas</li><li>Compliance CVM e LGPD</li><li>Planejamento financeiro</li></ul></div>
     </div>
   </div>
 </section>
@@ -726,12 +751,33 @@ $("filters").addEventListener("click", e => {
   $("rows").querySelectorAll(".row").forEach(r=>r.classList.toggle("hide", !match(b.dataset.f, r.dataset)));
 });
 
+/* recolher: mostra só os primeiros itens de cada lista longa */
+const VISIBLE = {scars:3, rows:8, certs:6};
+const collapseLists = () => Object.entries(VISIBLE).forEach(([id,n]) => [...$(id).children].forEach((c,k) => c.classList.toggle("x", k >= n)));
+$("rowsMore").dataset.l = "Ver todos os " + PROJECTS.length + " projetos";
+$("rowsMore").textContent = $("rowsMore").dataset.l;
+document.querySelectorAll("[data-more]").forEach(b => b.addEventListener("click", () => {
+  const box = $(b.dataset.more), open = box.classList.toggle("open");
+  b.textContent = open ? b.dataset.c : b.dataset.l;
+  b.setAttribute("aria-expanded", open);
+  box.querySelectorAll(".x.rv").forEach(e => e.classList.add("in"));
+  if (!open) box.scrollIntoView({block:"start"});
+}));
+/* com filtro ativo, o catálogo mostra todos os resultados e o botão some */
+$("filters").addEventListener("click", e => {
+  const b = e.target.closest(".chip"); if(!b) return;
+  const filtered = b.dataset.f !== "all";
+  $("rows").classList.toggle("filtered", filtered);
+  $("rowsMore").hidden = filtered;
+});
+
 $("ledger").innerHTML = SKILLS.map(s => `<div class="led rv"><code>${s.c}</code><span>${s.o}</span></div>`).join("");
 
 $("now").innerHTML = NOW.map(n => `<div class="nowc rv"><h4>${n.k}</h4><h3>${n.t}</h3><p>${n.d}</p>${n.p ? `
   <div class="prog"><i style="--w:${Math.round(n.p/n.of*100)}%"></i></div><div class="prog-l"><span>${n.l} ${n.p} de ${n.of}</span><span>${Math.round(n.p/n.of*100)}%</span></div>` : ""}</div>`).join("");
 
 $("certs").innerHTML = CERTS.map(c=>`<div class="cert rv"><span class="iss">${c.i}</span><b>${c.t}</b><span>${c.d}</span></div>`).join("");
+collapseLists();
 
 $("wa").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(WHATSAPP_MSG);
 $("waSim").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(WHATSAPP_SIM);
