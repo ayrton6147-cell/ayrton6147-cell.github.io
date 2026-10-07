@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ayrton Althman · Assessor que constrói agentes de IA</title>
-<meta name="description" content="Não sou programador. Sou assessor de investimentos e construo os agentes, skills e automações que rodam no meu escritório. Cases, provas e o que estou construindo agora.">
-<meta name="theme-color" content="#0E0D0B">
+<title>Ayrton Althman · Assessor de investimentos que constrói com IA</title>
+<meta name="description" content="Cuido do patrimônio de mais de 200 clientes e construo, com inteligência artificial, os sistemas que devolvem tempo à relação com cada um deles. Cases reais, números reais.">
+<meta name="theme-color" content="#0B1A2C">
 <link rel="canonical" href="https://ayrton6147-cell.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ayrton6147-cell.github.io/">
 <meta property="og:title" content="Ayrton Althman · Não sou programador. Construo mesmo assim.">
-<meta property="og:description" content="Assessor de investimentos que transforma a rotina do mercado financeiro em agentes de IA. Cases reais, números reais.">
+<meta property="og:description" content="Assessor de investimentos que constrói, com IA, os sistemas que devolvem tempo ao cliente. Cases reais, números reais.">
 <meta property="og:image" content="https://ayrton6147-cell.github.io/assets/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -18,315 +18,306 @@
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,300;1,6..72,400&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Person","name":"Ayrton Althman","jobTitle":"Assessor de investimentos","image":"https://ayrton6147-cell.github.io/assets/foto.jpg","url":"https://ayrton6147-cell.github.io/","sameAs":["https://www.linkedin.com/in/ayrton-althman-1556b8164/","https://www.instagram.com/ayrton_althman/"],"knowsAbout":["Agentes de IA","Model Context Protocol","Automação","Mercado financeiro","Assessoria de investimentos"]}
+{"@context":"https://schema.org","@type":"Person","name":"Ayrton Althman","jobTitle":"Assessor de investimentos","image":"https://ayrton6147-cell.github.io/assets/foto-hero.jpg","url":"https://ayrton6147-cell.github.io/","sameAs":["https://www.linkedin.com/in/ayrton-althman-1556b8164/","https://www.instagram.com/ayrton_althman/"],"knowsAbout":["Agentes de IA","Model Context Protocol","Automação","Mercado financeiro","Assessoria de investimentos"]}
 </script>
 <style>
 :root{
-  --bg:#0E0D0B; --surface:#1A1814; --line:#2B2822;
-  --text:#EDE6D8; --muted:#9A9284; --gold:#C9A96E; --gold-soft:rgba(201,169,110,.12);
-  --up:#8FC79A; --down:#D98C7E;
-  --s1:4px; --s2:8px; --s3:16px; --s4:24px; --s5:32px; --s6:48px; --s7:64px; --s8:120px;
-  --r:6px;
-  --shadow:0 30px 60px -25px rgba(0,0,0,.8);
-  --serif:"Instrument Serif", Georgia, serif;
+  --navy:#0B1A2C; --navy-2:#122841; --ink:#0F1E33; --paper:#F6F4EF; --white:#FFFFFF;
+  --line:#DCD6CB; --muted:#5E6878; --blue:#2A5A92; --blue-soft:#E7EDF5;
+  --on-dark:#E9EEF4; --muted-dark:#9DAABB; --line-dark:rgba(233,238,244,.14); --blue-light:#A9C3E3;
+  --ok:#2F7A55; --warn:#A0574A;
+  --s1:4px; --s2:8px; --s3:16px; --s4:24px; --s5:32px; --s6:48px; --s7:72px; --s8:128px;
+  --r:2px;
+  --serif:"Newsreader", Georgia, serif;
   --sans:"Manrope", system-ui, sans-serif;
   --mono:ui-monospace, "Cascadia Code", Consolas, monospace;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-::selection{background:var(--gold);color:var(--bg)}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+::selection{background:var(--blue);color:var(--white)}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;height:auto;display:block}
-:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:2px}
-.wrap{max-width:1180px;margin:0 auto;padding:0 var(--s3)}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.dark :focus-visible{outline-color:var(--blue-light)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 var(--s3)}
 @media(min-width:768px){.wrap{padding:0 var(--s5)}}
-h1,h2,h3{text-wrap:balance;font-weight:400}
-em{font-style:italic;color:var(--gold)}
-.skip{position:absolute;left:-999px;top:8px;background:var(--gold);color:var(--bg);padding:8px 14px;border-radius:4px;z-index:200}
+h1,h2,h3{font-family:var(--serif);font-weight:300;text-wrap:balance;letter-spacing:-.01em}
+em{font-style:italic;color:var(--blue)}
+.dark em{color:var(--blue-light)}
+.skip{position:absolute;left:-999px;top:8px;background:var(--white);color:var(--ink);padding:8px 14px;z-index:200}
 .skip:focus{left:8px}
 
-body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:100;opacity:.05;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.dark{background:var(--navy);color:var(--on-dark)}
 
 /* nav */
-nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s,border-color .4s;border-bottom:1px solid transparent}
-nav.solid{background:rgba(14,13,11,.88);backdrop-filter:blur(12px);border-color:var(--line)}
-nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
-.mono{font-family:var(--serif);font-size:26px}
-.mono span{color:var(--gold);font-style:italic}
-.links{display:none;gap:var(--s5);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
-.links a{transition:color .25s}.links a:hover{color:var(--text)}
-@media(min-width:960px){.links{display:flex}}
-.btn{display:inline-flex;align-items:center;gap:var(--s2);padding:13px 22px;border:1px solid var(--gold);color:var(--gold);border-radius:999px;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;transition:background .3s,color .3s,transform .2s}
-.btn:hover{background:var(--gold);color:var(--bg)}
-.btn:active{transform:scale(.97)}
-.btn.solid{background:var(--gold);color:var(--bg)}
-.btn.solid:hover{background:var(--text);border-color:var(--text)}
-nav .btn{padding:9px 18px;font-size:11px}
+nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s,border-color .4s,color .4s;border-bottom:1px solid transparent;color:var(--on-dark)}
+nav.solid{background:rgba(11,26,44,.96);backdrop-filter:blur(10px);border-color:var(--line-dark)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.mono{font-family:var(--serif);font-size:24px;letter-spacing:.04em}
+.mono span{font-style:italic;color:var(--blue-light)}
+.links{display:none;gap:var(--s5);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-dark)}
+.links a{transition:color .25s}.links a:hover{color:var(--on-dark)}
+@media(min-width:1000px){.links{display:flex}}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border:1px solid currentColor;border-radius:var(--r);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;transition:background .3s,color .3s,border-color .3s}
+.btn::after{content:"→";font-size:14px;letter-spacing:0;transition:transform .3s}
+.btn:hover::after{transform:translateX(4px)}
+.btn.primary{background:var(--navy);border-color:var(--navy);color:var(--white)}
+.btn.primary:hover{background:var(--blue);border-color:var(--blue)}
+.btn.ghost{color:var(--navy)}
+.btn.ghost:hover{background:var(--navy);color:var(--white)}
+.dark .btn.primary{background:var(--white);border-color:var(--white);color:var(--navy)}
+.dark .btn.primary:hover{background:var(--blue-light);border-color:var(--blue-light)}
+.dark .btn.ghost{color:var(--on-dark)}
+.dark .btn.ghost:hover{background:var(--on-dark);color:var(--navy)}
+nav .btn{padding:9px 16px;font-size:11px;color:var(--on-dark)}
+nav .btn::after{display:none}
+nav .btn:hover{background:var(--on-dark);color:var(--navy)}
 
 /* hero */
-.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:110px 0 0;position:relative;overflow:hidden}
-.hero::after{content:"";position:absolute;right:-15%;top:5%;width:70vw;height:70vw;max-width:900px;max-height:900px;background:radial-gradient(circle,rgba(201,169,110,.11),transparent 60%);pointer-events:none}
-.hero-grid{display:grid;gap:var(--s6);align-items:center;position:relative;z-index:1}
-@media(min-width:960px){.hero-grid{grid-template-columns:1.45fr 1fr}}
-.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px}
-.eyebrow i{font-style:normal;color:var(--line)}
-h1{font-family:var(--serif);font-size:clamp(50px,8.6vw,112px);line-height:.94;letter-spacing:-.025em;margin:var(--s4) 0}
-h1 .strike{position:relative;color:var(--muted)}
-h1 .strike::after{content:"";position:absolute;left:-2%;right:-2%;top:55%;height:.06em;background:var(--gold);transform:scaleX(0);transform-origin:left;animation:strike 1s .9s cubic-bezier(.7,0,.2,1) forwards}
-@keyframes strike{to{transform:scaleX(1)}}
-.lead{font-size:clamp(17px,1.6vw,19px);color:var(--muted);max-width:580px}
-.lead b{color:var(--text);font-weight:600}
+.hero{padding:140px 0 0;position:relative}
+.hero-grid{display:grid;gap:var(--s6);align-items:end}
+@media(min-width:960px){.hero-grid{grid-template-columns:1.5fr 1fr;gap:var(--s7)}}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted-dark)}
+h1{font-size:clamp(48px,7.6vw,100px);line-height:.98;margin:var(--s4) 0 var(--s5)}
+h1 s{color:var(--muted-dark);text-decoration-thickness:2px;text-decoration-color:var(--blue-light)}
+.lead{font-size:clamp(17px,1.5vw,19px);color:var(--muted-dark);max-width:560px}
+.lead b{color:var(--on-dark);font-weight:600}
 .hero-cta{display:flex;flex-wrap:wrap;gap:var(--s3);margin-top:var(--s5)}
-.portrait{position:relative;aspect-ratio:4/5;max-width:370px;width:100%;justify-self:center;border-radius:var(--r);overflow:hidden;background:linear-gradient(160deg,#221F19,#0E0D0B);border:1px solid var(--line);box-shadow:var(--shadow)}
-.portrait img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;object-position:center 30%;filter:grayscale(.2) contrast(1.05)}
-.portrait .fallback{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:140px;color:var(--gold);font-style:italic}
-.portrait figcaption{position:absolute;z-index:2;left:0;right:0;bottom:0;padding:var(--s4);background:linear-gradient(transparent,rgba(14,13,11,.96) 45%);font-size:13px;color:var(--muted)}
-.portrait figcaption b{display:block;color:var(--text);font-family:var(--serif);font-size:26px;font-weight:400;line-height:1.1;margin-bottom:4px}
-.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--up);margin-right:6px;animation:pulse 2.4s infinite}
-@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(143,199,154,.6)}70%{box-shadow:0 0 0 8px rgba(143,199,154,0)}100%{box-shadow:0 0 0 0 rgba(143,199,154,0)}}
+.portrait{position:relative;aspect-ratio:4/5;max-width:380px;width:100%;justify-self:center;overflow:hidden;background:var(--navy-2)}
+.portrait img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.portrait figcaption{position:absolute;left:0;right:0;bottom:0;padding:var(--s4);background:linear-gradient(transparent,rgba(11,26,44,.95) 50%);font-size:12px;letter-spacing:.06em;color:var(--muted-dark)}
+.portrait figcaption b{display:block;color:var(--white);font-family:var(--serif);font-size:24px;font-weight:400;letter-spacing:0;margin-bottom:2px}
 
-/* ticker */
-.ticker{margin-top:var(--s7);border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;position:relative;z-index:1;background:rgba(14,13,11,.6)}
-.ticker-track{display:flex;width:max-content;animation:tick 48s linear infinite}
-.ticker:hover .ticker-track{animation-play-state:paused}
-@keyframes tick{to{transform:translateX(-50%)}}
-.tk{display:flex;align-items:baseline;gap:10px;padding:16px 28px;border-right:1px solid var(--line);font-family:var(--mono);font-size:13px;white-space:nowrap}
-.tk span{color:var(--muted);letter-spacing:.06em}
-.tk b{color:var(--text);font-weight:600;font-size:15px}
-.tk i{font-style:normal;color:var(--up);font-size:11px}
+/* indicadores */
+.facts{margin-top:var(--s7);border-top:1px solid var(--line-dark)}
+.facts-h{display:flex;justify-content:space-between;gap:var(--s3);padding:var(--s3) 0;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted-dark)}
+.facts-g{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--line-dark)}
+@media(min-width:900px){.facts-g{grid-template-columns:repeat(4,1fr)}}
+.fact{padding:var(--s4) var(--s4) var(--s5) 0;border-bottom:1px solid var(--line-dark)}
+@media(min-width:900px){.fact{border-bottom:none;border-right:1px solid var(--line-dark);padding-left:var(--s4)}.fact:first-child{padding-left:0}.fact:last-child{border-right:none}}
+.fact b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(40px,4.4vw,56px);line-height:1;color:var(--white)}
+.fact span{display:block;font-size:13px;color:var(--muted-dark);margin-top:var(--s2);line-height:1.45}
 
 /* sections */
 section{padding:var(--s8) 0}
-.tight{padding-top:0}
-.head{display:grid;gap:var(--s3);margin-bottom:var(--s6)}
-@media(min-width:960px){.head{grid-template-columns:1fr 1fr;align-items:end}}
-.kicker{font-family:var(--mono);font-size:12px;color:var(--gold);letter-spacing:.08em;margin-bottom:var(--s3);display:block}
-h2{font-family:var(--serif);font-size:clamp(38px,5.4vw,66px);line-height:1;letter-spacing:-.015em}
-.head p{color:var(--muted);max-width:500px}
-h3{font-family:var(--serif);font-size:28px;line-height:1.15}
-h4{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);font-weight:700}
+.head{display:grid;gap:var(--s4);margin-bottom:var(--s6)}
+@media(min-width:960px){.head{grid-template-columns:1.1fr 1fr;align-items:end;gap:var(--s7)}}
+.head>*{min-width:0}
+.kicker{display:flex;align-items:center;gap:12px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);font-weight:600;margin-bottom:var(--s3)}
+.kicker::before{content:"";width:28px;height:1px;background:currentColor}
+.dark .kicker{color:var(--blue-light)}
+h2{font-size:clamp(36px,4.8vw,60px);line-height:1.04}
+.head p{color:var(--muted);font-size:17px}
+.dark .head p{color:var(--muted-dark)}
+h3{font-size:26px;line-height:1.2;font-weight:400}
+h4{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);font-weight:700}
 
-/* rules (manifesto) */
-.statement{font-family:var(--serif);font-size:clamp(30px,4.2vw,52px);line-height:1.15;max-width:1000px}
-.rules{display:grid;gap:1px;margin-top:var(--s7);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+/* tese + principios */
+.thesis{font-family:var(--serif);font-weight:300;font-size:clamp(28px,3.6vw,44px);line-height:1.22;max-width:960px}
+.thesis-sub{color:var(--muted);font-size:17px;max-width:640px;margin-top:var(--s4)}
+.rules{display:grid;margin-top:var(--s7);border-top:1px solid var(--ink)}
 @media(min-width:768px){.rules{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1100px){.rules{grid-template-columns:repeat(4,1fr)}}
-.rule{padding:var(--s5) var(--s4);outline:1px solid var(--line);transition:background .3s}
-.rule:hover{background:var(--surface)}
-.rule .n{font-family:var(--mono);font-size:12px;color:var(--gold)}
-.rule h3{font-size:26px;margin:var(--s3) 0 var(--s2)}
+.rule{padding:var(--s4) var(--s4) var(--s5) 0;border-bottom:1px solid var(--line)}
+@media(min-width:1100px){.rule{border-bottom:none;border-right:1px solid var(--line);padding-left:var(--s4)}.rule:first-child{padding-left:0}.rule:last-child{border-right:none}}
+.rule .n{font-family:var(--serif);font-style:italic;font-size:18px;color:var(--blue)}
+.rule h3{font-size:24px;margin:var(--s2) 0}
 .rule p{color:var(--muted);font-size:15px}
 
-/* origin story */
-.story{display:grid;gap:0}
-.chap{display:grid;gap:var(--s3);padding:var(--s5) 0;border-top:1px solid var(--line);align-items:baseline}
-.chap:last-child{border-bottom:1px solid var(--line)}
-@media(min-width:900px){.chap{grid-template-columns:140px 1fr 1.1fr;gap:var(--s6)}}
-.chap .yr{font-family:var(--serif);font-size:44px;line-height:1;color:var(--muted);transition:color .4s}
-.chap:hover .yr,.chap.now .yr{color:var(--gold)}
-.chap h3{font-size:clamp(26px,2.8vw,34px)}
-.chap p{color:var(--muted)}
-.chap p b{color:var(--text);font-weight:600}
+/* origem */
+.story{border-top:1px solid var(--line-dark)}
+.chap{display:grid;gap:var(--s2) var(--s6);padding:var(--s5) 0;border-bottom:1px solid var(--line-dark)}
+@media(min-width:900px){.chap{grid-template-columns:120px 1fr 1.2fr;align-items:baseline}}
+.chap .yr{font-family:var(--serif);font-size:36px;font-weight:300;color:var(--muted-dark)}
+.chap.now .yr{color:var(--blue-light)}
+.chap h3{font-size:28px;color:var(--white)}
+.chap p{color:var(--muted-dark)}
+.chap p b{color:var(--on-dark);font-weight:600}
 
 /* quote */
 .quote{display:grid;gap:var(--s6);align-items:center}
-@media(min-width:900px){.quote{grid-template-columns:1fr 1.2fr}}
-.quote figure{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);max-width:340px;justify-self:center}
-.quote blockquote{font-family:var(--serif);font-size:clamp(40px,6vw,80px);line-height:1;letter-spacing:-.02em}
+@media(min-width:900px){.quote{grid-template-columns:1fr 1.3fr;gap:var(--s7)}}
+.quote>*{min-width:0}
+.quote figure{max-width:360px;justify-self:center;box-shadow:0 30px 60px -30px rgba(11,26,44,.45)}
+.quote blockquote{font-family:var(--serif);font-weight:300;font-size:clamp(40px,5.4vw,72px);line-height:1.02}
 .quote blockquote span{color:var(--muted)}
-.quote cite{display:block;margin-top:var(--s4);font-style:normal;color:var(--muted);font-size:15px;max-width:480px}
+.quote cite{display:block;margin-top:var(--s4);font-style:normal;color:var(--muted);max-width:500px}
 
 /* cases */
-.case{display:grid;gap:var(--s5);padding:var(--s7) 0;border-top:1px solid var(--line)}
+.case{display:grid;gap:var(--s5);padding:var(--s7) 0;border-top:1px solid var(--line);align-items:center}
 .case:last-of-type{border-bottom:1px solid var(--line)}
 @media(min-width:960px){.case{grid-template-columns:1fr 1fr;gap:var(--s7)}.case.flip .case-media{order:-1}}
-.case .num{font-family:var(--mono);font-size:12px;color:var(--gold);letter-spacing:.08em}
-.case h3{font-size:clamp(32px,3.6vw,46px);margin:var(--s2) 0 var(--s3);line-height:1.05}
+.case>*{min-width:0}
+.case .num{display:flex;align-items:center;gap:var(--s3);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.case h3{font-size:clamp(30px,3.2vw,42px);font-weight:300;margin:var(--s3) 0;line-height:1.08}
 .case .sum{color:var(--muted)}
-.trad{margin-top:var(--s4);padding:var(--s3) var(--s4);border-left:2px solid var(--gold);background:var(--gold-soft);border-radius:0 var(--r) var(--r) 0;font-size:16px}
-.trad b{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--gold);font-size:20px;margin-right:4px}
-.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3);margin-top:var(--s5)}
-.kpi b{display:block;font-family:var(--serif);font-size:clamp(34px,3.6vw,48px);line-height:1;font-weight:400}
-.kpi span{font-size:12px;color:var(--muted);line-height:1.35;display:block;margin-top:6px}
-.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:var(--s4)}
-.tag{font-size:11px;letter-spacing:.04em;padding:4px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
-.status{display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:700}
+.trad{margin-top:var(--s4);padding:var(--s3) 0 var(--s3) var(--s4);border-left:2px solid var(--blue);font-size:16px}
+.trad b{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--blue);font-size:19px;margin-right:4px}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:var(--s3);margin-top:var(--s5);border-top:1px solid var(--line);padding-top:var(--s4)}
+.kpi b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(32px,3.4vw,44px);line-height:1;color:var(--navy)}
+.kpi span{font-size:12px;color:var(--muted);line-height:1.4;display:block;margin-top:6px}
+.tags{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:var(--s4);font-size:12px;color:var(--muted);letter-spacing:.04em}
+.tags span::before{content:"· ";color:var(--blue)}
+.status{display:inline-flex;align-items:center;gap:6px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700}
 .status::before{content:"";width:6px;height:6px;border-radius:50%}
-.st-prod{color:var(--up)}.st-prod::before{background:var(--up)}
-.st-build{color:var(--gold)}.st-build::before{background:var(--gold)}
+.st-prod{color:var(--ok)}.st-prod::before{background:var(--ok)}
+.st-build{color:var(--blue)}.st-build::before{background:var(--blue)}
 .st-done{color:var(--muted)}.st-done::before{background:var(--muted)}
-.st-pause{color:var(--down)}.st-pause::before{background:var(--down)}
-.case{align-items:center}
-.case>*,.quote>*,.hero-grid>*,.head>*{min-width:0}
-.kpis{grid-template-columns:repeat(3,minmax(0,1fr))}
-@media(max-width:520px){.bar div{padding:0 6px;font-size:10px}.bar div b{font-size:10px}}
-.gallery{align-items:start}
-.shot{align-self:start;height:fit-content;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);background:var(--surface)}
-.shot img{width:100%;height:auto;transition:transform 1.2s cubic-bezier(.2,.7,.2,1)}
-.shot:hover img{transform:scale(1.02)}
-.shot figcaption{padding:10px 14px;font-size:12px;color:var(--muted);border-top:1px solid var(--line);font-family:var(--mono)}
+.st-pause{color:var(--warn)}.st-pause::before{background:var(--warn)}
+.shot{align-self:start;background:var(--white);border:1px solid var(--line);box-shadow:0 30px 60px -36px rgba(11,26,44,.4)}
+.case .shot{align-self:center}
+.shot img{width:100%}
+.shot figcaption{padding:10px 14px;font-size:12px;color:var(--muted);border-top:1px solid var(--line)}
 
-/* flow (ERP) */
-.flow{list-style:none;display:grid;gap:10px;counter-reset:f}
-.flow li{counter-increment:f;display:grid;grid-template-columns:36px 1fr;gap:var(--s3);align-items:start;padding:var(--s3);border:1px solid var(--line);border-radius:var(--r);background:var(--bg);position:relative}
-.flow li::before{content:counter(f,decimal-leading-zero);font-family:var(--mono);font-size:12px;color:var(--muted);padding-top:3px}
-.flow li b{display:block;font-weight:600}
+/* flow + painel */
+.panel{padding:var(--s5);background:var(--white);border:1px solid var(--line)}
+.panel h4{margin-bottom:var(--s4)}
+.flow{list-style:none;counter-reset:f;display:grid}
+.flow li{counter-increment:f;display:grid;grid-template-columns:40px 1fr;gap:var(--s3);padding:14px 0;border-bottom:1px solid var(--line)}
+.flow li:last-child{border-bottom:none}
+.flow li::before{content:counter(f,upper-roman);font-family:var(--serif);font-style:italic;color:var(--muted);font-size:17px}
+.flow li b{display:block;font-weight:600;font-size:15px}
 .flow li span{font-size:13px;color:var(--muted)}
-.flow li.me{border-color:var(--gold);background:var(--gold-soft)}
-.flow li.me::before{color:var(--gold)}
-.flow li.me b::after{content:"humano";margin-left:8px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--bg);background:var(--gold);padding:2px 6px;border-radius:3px;vertical-align:2px}
-.flow li.loop{border-style:dashed}
-.panel{padding:var(--s4);border:1px solid var(--line);border-radius:var(--r);background:var(--surface)}
-.panel h4{margin-bottom:var(--s3)}
-
-/* giro bar */
-.bar{display:flex;height:64px;border-radius:var(--r);overflow:hidden;border:1px solid var(--line)}
-.bar div{display:flex;flex-direction:column;justify-content:center;padding:0 10px;border-right:1px solid var(--bg);font-size:11px;line-height:1.25;color:var(--muted);background:var(--surface);min-width:0;overflow:hidden}
+.flow li.me{background:var(--blue-soft);margin:0 calc(-1 * var(--s3));padding:14px var(--s3)}
+.flow li.me::before{color:var(--blue)}
+.flow li.me b::after{content:"etapa humana";margin-left:10px;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:700}
+.bar{display:flex;height:60px;border:1px solid var(--line)}
+.bar div{display:flex;flex-direction:column;justify-content:center;padding:0 10px;border-right:1px solid var(--line);font-size:11px;line-height:1.25;color:var(--muted);min-width:0;overflow:hidden}
 .bar div:last-child{border-right:none}
-.bar div b{color:var(--text);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.bar .hl{background:var(--gold);color:var(--bg)}
-.bar .hl b{color:var(--bg)}
-.bar-legend{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:8px}
-
-/* scars */
-.scars{display:grid;gap:var(--s3)}
-@media(min-width:768px){.scars{grid-template-columns:repeat(2,1fr)}}
-@media(min-width:1100px){.scars{grid-template-columns:repeat(3,1fr)}}
-.scar{padding:var(--s4);border:1px solid var(--line);border-radius:var(--r);display:flex;flex-direction:column;gap:var(--s3);transition:border-color .3s,transform .3s}
-.scar:hover{border-color:rgba(201,169,110,.45);transform:translateY(-3px)}
-.scar .broke{font-size:15px}
-.scar .broke::before{content:"quebrou";display:block;font-family:var(--mono);font-size:11px;color:var(--down);letter-spacing:.1em;margin-bottom:6px}
-.scar .rule2{font-family:var(--serif);font-size:23px;line-height:1.2;padding-top:var(--s3);border-top:1px solid var(--line);margin-top:auto}
-.scar .rule2::before{content:"virou regra";display:block;font-family:var(--mono);font-size:11px;color:var(--up);letter-spacing:.1em;margin-bottom:6px}
-
-/* gallery */
-.gallery{display:grid;gap:var(--s4)}
-@media(min-width:768px){.gallery{grid-template-columns:repeat(2,1fr)}}
-.gallery .wide{grid-column:1/-1}
+.bar div b{color:var(--ink);font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar .hl{background:var(--navy);color:var(--blue-light)}
+.bar .hl b{color:var(--white)}
+.bar-legend{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:8px;letter-spacing:.04em}
+@media(max-width:520px){.bar div{padding:0 6px;font-size:10px}.bar div b{font-size:10px}}
 
 /* simulador */
-.sim{display:grid;gap:var(--s5);border:1px solid var(--line);border-radius:var(--r);padding:var(--s4);background:var(--surface)}
-@media(min-width:960px){.sim{grid-template-columns:340px 1fr;padding:var(--s5);gap:var(--s6)}}
+.sim{display:grid;gap:var(--s5);background:var(--white);border:1px solid var(--line);padding:var(--s4)}
+@media(min-width:960px){.sim{grid-template-columns:340px 1fr;padding:var(--s6);gap:var(--s6)}}
 .sim>*{min-width:0}
 .sim-in{display:grid;gap:var(--s4);align-content:start}
 .sim-in label{display:grid;grid-template-columns:1fr auto;gap:6px var(--s3);font-size:14px;color:var(--muted)}
-.sim-in output{font-family:var(--serif);font-size:22px;color:var(--text);line-height:1}
-.sim-in input{grid-column:1/-1;width:100%;accent-color:var(--gold);height:28px;cursor:pointer}
+.sim-in output{font-family:var(--serif);font-size:22px;color:var(--ink);line-height:1}
+.sim-in input{grid-column:1/-1;width:100%;accent-color:var(--blue);height:28px;cursor:pointer}
 .sim-note{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding-top:var(--s3)}
-.verdict{font-family:var(--serif);font-size:clamp(24px,2.6vw,32px);line-height:1.15;margin-bottom:var(--s4)}
-.verdict .ok{color:var(--up)}
+.verdict{font-family:var(--serif);font-weight:300;font-size:clamp(24px,2.4vw,30px);line-height:1.2;margin-bottom:var(--s4)}
+.verdict .ok{color:var(--ok)}
 .sim-kpis{display:grid;gap:var(--s3);margin-bottom:var(--s4)}
 @media(min-width:640px){.sim-kpis{grid-template-columns:repeat(3,minmax(0,1fr))}}
 .sim-kpis div{border-top:1px solid var(--line);padding-top:var(--s2)}
 .sim-kpis span{display:block;font-size:12px;color:var(--muted);line-height:1.35}
-.sim-kpis b{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.2}
+.sim-kpis b{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.2;color:var(--navy)}
 .legend{display:flex;flex-wrap:wrap;gap:6px 20px;font-size:12px;color:var(--muted);margin-bottom:var(--s2)}
 .legend span{display:inline-flex;align-items:center;gap:8px}
 .sw{display:inline-block;width:18px;height:0;border-top:2px solid}
-.sw-a{border-color:#B8892F}.sw-b{border-color:#5A8FD8;border-top-style:dashed}
+.sw-a{border-color:#2A5A92}.sw-b{border-color:#0E9BB5;border-top-style:dashed}
 .chart{position:relative;height:300px}
 .chart svg{width:100%;height:100%;display:block;overflow:visible}
-.chart .grid line{stroke:var(--line);stroke-width:1}
+.chart .grid line{stroke:#E6E1D7;stroke-width:1}
 .chart .ax{font-family:var(--mono);font-size:11px;fill:var(--muted)}
-.chart .dl{font-size:12px;fill:var(--text);font-weight:600}
-.tip{position:absolute;top:0;pointer-events:none;background:var(--bg);border:1px solid var(--line);border-radius:var(--r);padding:8px 12px;font-size:12px;color:var(--text);white-space:nowrap;box-shadow:var(--shadow);transform:translateX(-50%)}
-.tip b{font-family:var(--mono);color:var(--muted);font-weight:400;display:block;margin-bottom:4px}
+.tip{position:absolute;top:0;pointer-events:none;background:var(--white);border:1px solid var(--line);padding:8px 12px;font-size:12px;white-space:nowrap;box-shadow:0 12px 30px -12px rgba(11,26,44,.3);transform:translateX(-50%)}
+.tip b{color:var(--muted);font-weight:500;display:block;margin-bottom:4px}
 .tip i{display:inline-block;width:10px;height:0;border-top:2px solid;margin-right:6px;vertical-align:3px}
 .tbl{margin-top:var(--s3);font-size:13px;color:var(--muted)}
 .tbl summary{cursor:pointer;width:fit-content}
-.tbl table{width:100%;border-collapse:collapse;margin-top:var(--s2);font-family:var(--mono);font-size:12px}
+.tbl table{width:100%;border-collapse:collapse;margin-top:var(--s2);font-size:12px}
 .tbl th,.tbl td{text-align:right;padding:6px 8px;border-bottom:1px solid var(--line)}
 .tbl th:first-child,.tbl td:first-child{text-align:left}
+.sim-cta{display:grid;gap:var(--s4);align-items:center;margin-top:var(--s4);padding:var(--s5);background:var(--navy);color:var(--on-dark)}
+@media(min-width:900px){.sim-cta{grid-template-columns:1fr auto}}
+.sim-cta p{font-family:var(--serif);font-weight:300;font-size:clamp(22px,2.2vw,28px);line-height:1.25}
+.sim-cta p span{display:block;font-family:var(--sans);font-size:14px;color:var(--muted-dark);margin-top:6px}
 .sim-disc{font-size:12px;color:var(--muted);margin-top:var(--s3)}
 
-/* catalog */
-.filters{display:flex;flex-wrap:wrap;gap:var(--s2);margin-bottom:var(--s4)}
-.chip{background:none;border:1px solid var(--line);color:var(--muted);font:inherit;font-size:13px;padding:8px 16px;border-radius:999px;cursor:pointer;transition:all .25s}
-.chip:hover{color:var(--text);border-color:var(--muted)}
-.chip[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--bg);font-weight:700}
+/* cicatrizes */
+.scars{display:grid;border-top:1px solid var(--ink)}
+@media(min-width:768px){.scars{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1100px){.scars{grid-template-columns:repeat(3,1fr)}}
+.scar{padding:var(--s4) var(--s4) var(--s5) 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:var(--s3)}
+@media(min-width:768px){.scar{padding-right:var(--s5)}}
+.scar .broke{font-size:15px;color:var(--muted)}
+.scar .broke::before{content:"O que aconteceu";display:block;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--warn);font-weight:700;margin-bottom:6px}
+.scar .rule2{font-family:var(--serif);font-size:22px;line-height:1.25;margin-top:auto}
+.scar .rule2::before{content:"A regra que ficou";display:block;font-family:var(--sans);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ok);font-weight:700;margin-bottom:6px}
+
+/* galeria */
+.gallery{display:grid;gap:var(--s4);align-items:start}
+@media(min-width:768px){.gallery{grid-template-columns:repeat(2,1fr)}}
+
+/* catalogo */
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:var(--s4)}
+.chip{background:none;border:1px solid var(--line);color:var(--muted);font:inherit;font-size:12px;letter-spacing:.06em;padding:8px 14px;border-radius:var(--r);cursor:pointer;transition:all .25s}
+.chip:hover{color:var(--ink);border-color:var(--muted)}
+.chip[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:var(--white)}
 .chip .c{opacity:.6;margin-left:4px}
-.rows{border-top:1px solid var(--line)}
-.row{display:grid;grid-template-columns:1fr auto;gap:4px var(--s4);padding:var(--s3) 0;border-bottom:1px solid var(--line);transition:background .25s,padding .25s}
-.row:hover{background:var(--surface)}
-@media(min-width:900px){.row{grid-template-columns:130px 1.1fr 1.6fr 150px;align-items:baseline;padding:var(--s3) var(--s2)}.row:hover{padding-left:var(--s3)}}
-.row .cat{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);grid-column:1/-1}
+.rows{border-top:1px solid var(--ink)}
+.row{display:grid;grid-template-columns:1fr auto;gap:4px var(--s4);padding:var(--s3) 0;border-bottom:1px solid var(--line)}
+@media(min-width:900px){.row{grid-template-columns:130px 1.1fr 1.6fr 150px;align-items:baseline}}
+.row .cat{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);grid-column:1/-1}
 @media(min-width:900px){.row .cat{grid-column:auto}}
-.row h3{font-size:22px}
+.row h3{font-size:21px}
 .row p{color:var(--muted);font-size:14px;grid-column:1/-1}
 @media(min-width:900px){.row p{grid-column:auto}}
 .row .status{grid-row:2;grid-column:2;justify-self:end}
 @media(min-width:900px){.row .status{grid-row:auto;grid-column:auto}}
 .row.hide{display:none}
 
-/* terminal */
-.term{border:1px solid var(--line);border-radius:var(--r);overflow:hidden;background:#0A0908;box-shadow:var(--shadow)}
-.term-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12px;color:var(--muted)}
-.term-bar i{width:10px;height:10px;border-radius:50%;background:var(--line);display:block}
-.term-bar span{margin-left:8px}
-.term-body{padding:var(--s4);font-family:var(--mono);font-size:14px;display:grid;gap:var(--s4)}
-.cmd{display:grid;gap:4px}
-.cmd .p{color:var(--gold)}
-.cmd .p::before{content:"› ";color:var(--muted)}
-.cmd .o{color:var(--muted);font-size:13px;padding-left:18px;line-height:1.55}
-.cmd .o b{color:var(--text);font-weight:500}
-.cursor{display:inline-block;width:9px;height:17px;background:var(--gold);vertical-align:-3px;animation:blink 1.1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
+/* skills ledger */
+.ledger{border-top:1px solid var(--line-dark)}
+.led{display:grid;gap:4px var(--s5);padding:var(--s3) 0;border-bottom:1px solid var(--line-dark)}
+@media(min-width:800px){.led{grid-template-columns:260px 1fr}}
+.led code{font-family:var(--mono);font-size:14px;color:var(--blue-light)}
+.led span{color:var(--muted-dark);font-size:15px}
+.led span b{color:var(--on-dark);font-weight:500}
 
-/* now */
-.now-grid{display:grid;gap:var(--s3)}
+/* agora */
+.now-grid{display:grid;border-top:1px solid var(--ink)}
 @media(min-width:768px){.now-grid{grid-template-columns:repeat(2,1fr)}}
-.nowc{padding:var(--s4);border:1px solid var(--line);border-radius:var(--r)}
+.nowc{padding:var(--s4) var(--s5) var(--s4) 0;border-bottom:1px solid var(--line)}
 .nowc h3{font-size:24px;margin:var(--s2) 0}
 .nowc p{color:var(--muted);font-size:14px}
-.prog{height:3px;background:var(--line);border-radius:3px;margin-top:var(--s3);overflow:hidden}
-.prog i{display:block;height:100%;background:var(--gold);width:0;transition:width 1.6s cubic-bezier(.2,.7,.2,1)}
+.prog{height:2px;background:var(--line);margin-top:var(--s3);overflow:hidden}
+.prog i{display:block;height:100%;background:var(--blue);width:0;transition:width 1.6s cubic-bezier(.2,.7,.2,1)}
 .in .prog i{width:var(--w)}
-.prog-l{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:6px}
+.prog-l{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:6px;letter-spacing:.04em}
 
-/* stack + certs */
-.stack{display:grid;gap:var(--s5)}
-@media(min-width:768px){.stack{grid-template-columns:repeat(4,1fr)}}
-.stack ul{list-style:none;margin-top:var(--s3);display:grid;gap:var(--s2)}
-.stack li{font-size:15px;padding-bottom:var(--s2);border-bottom:1px solid var(--line)}
-.certs{display:grid;gap:1px;border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:var(--s4)}
+/* formacao */
+.certs{display:grid;border-top:1px solid var(--ink)}
 @media(min-width:640px){.certs{grid-template-columns:repeat(2,1fr)}}
 @media(min-width:1024px){.certs{grid-template-columns:repeat(3,1fr)}}
-.cert{padding:var(--s4);display:flex;flex-direction:column;gap:4px;outline:1px solid var(--line);transition:background .3s}
-.cert:hover{background:var(--surface)}
-.cert .iss{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
-.cert b{font-family:var(--serif);font-weight:400;font-size:21px;line-height:1.2}
+.cert{padding:var(--s4) var(--s4) var(--s4) 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:2px}
+.cert .iss{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--blue);font-weight:700}
+.cert b{font-family:var(--serif);font-weight:400;font-size:20px;line-height:1.25}
 .cert span{font-size:13px;color:var(--muted)}
-.edu{display:grid;gap:var(--s3);margin-top:var(--s6)}
+.edu{display:grid;gap:var(--s4);margin-top:var(--s6)}
 @media(min-width:768px){.edu{grid-template-columns:repeat(3,1fr)}}
-.edu div{padding-top:var(--s3);border-top:1px solid var(--line)}
 .edu b{display:block;font-family:var(--serif);font-weight:400;font-size:22px}
 .edu span{font-size:14px;color:var(--muted)}
+.stack{display:grid;gap:var(--s5);margin-top:var(--s7)}
+@media(min-width:768px){.stack{grid-template-columns:repeat(4,1fr)}}
+.stack ul{list-style:none;margin-top:var(--s3)}
+.stack li{font-size:15px;padding:8px 0;border-bottom:1px solid var(--line)}
 
-/* contact */
-.contact{text-align:center;padding:var(--s8) 0}
-.contact h2{font-size:clamp(46px,8.4vw,110px);margin:var(--s4) auto var(--s4);max-width:1000px}
-.contact p{color:var(--muted);max-width:520px;margin:0 auto var(--s5)}
-.ch{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--s3)}
+/* contato */
+.contact{padding:var(--s8) 0;text-align:center}
 .avatar{display:flex;flex-direction:column;align-items:center;gap:var(--s3);margin-bottom:var(--s5)}
-.avatar img{width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:center 30%;border:1px solid var(--gold);padding:4px;background:var(--bg);filter:grayscale(.15)}
-.avatar figcaption{font-size:13px;color:var(--muted)}
-footer{border-top:1px solid var(--line);padding:var(--s5) 0;color:var(--muted);font-size:12px}
+.avatar img{width:112px;height:112px;border-radius:50%;object-fit:cover;object-position:center 30%;border:1px solid var(--line-dark);padding:4px}
+.avatar figcaption{font-size:13px;color:var(--muted-dark)}
+.contact .kicker{justify-content:center}
+.contact h2{font-size:clamp(42px,6.4vw,84px);max-width:960px;margin:0 auto var(--s4)}
+.contact p{color:var(--muted-dark);max-width:540px;margin:0 auto var(--s5)}
+.ch{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--s3)}
+footer{background:var(--navy);border-top:1px solid var(--line-dark);padding:var(--s5) 0;color:var(--muted-dark);font-size:12px}
 footer .wrap{display:grid;gap:var(--s3)}
 @media(min-width:768px){footer .wrap{grid-template-columns:1fr 2fr}}
 
 /* reveal */
-.rv{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1)}
+.rv{opacity:0;transform:translateY(14px);transition:opacity 1s ease,transform 1s ease}
 .rv.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){
-  .rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}
-  .dot,.cursor{animation:none}.ticker-track{animation:none;flex-wrap:wrap;width:auto}
-  h1 .strike::after{animation:none;transform:scaleX(1)}.prog i{transition:none;width:var(--w)}
-}
-@media print{nav,.ticker,body::before{display:none}.rv{opacity:1;transform:none}body{background:#fff;color:#000}}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.prog i{transition:none;width:var(--w)}}
+@media print{nav{display:none}.rv{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -336,110 +327,112 @@ footer .wrap{display:grid;gap:var(--s3)}
   <div class="wrap">
     <a href="#topo" class="mono" aria-label="Início">A<span>A</span></a>
     <div class="links">
+      <a href="#tese">Tese</a>
       <a href="#origem">Origem</a>
       <a href="#cases">Cases</a>
-      <a href="#cicatrizes">Cicatrizes</a>
-      <a href="#simulador">Demo</a>
+      <a href="#simulador">Simulador</a>
       <a href="#catalogo">Catálogo</a>
-      <a href="#agora">Agora</a>
       <a href="#formacao">Formação</a>
     </div>
-    <a href="#contato" class="btn">Conversar</a>
+    <a href="#contato" class="btn">Fale comigo</a>
   </div>
 </nav>
 
-<header class="hero" id="topo">
-  <div class="wrap hero-grid">
-    <div>
-      <p class="eyebrow rv">Assessor de investimentos <i>/</i> Ex-Polícia do Exército <i>/</i> Construtor de agentes de IA</p>
-      <h1 class="rv">Não sou <span class="strike">programador</span>.<br><em>Construo</em> mesmo assim.</h1>
-      <p class="lead rv">Eu atendo clientes no mercado financeiro. Nas horas entre uma reunião e outra, transformo a rotina do escritório em <b>agentes e skills de IA que rodam de verdade</b>, com uma regra que não negocio: <b>a IA prepara, eu confirmo.</b></p>
-      <div class="hero-cta rv">
-        <a href="#cases" class="btn solid">Ver o que já roda</a>
-        <a href="#origem" class="btn">Como cheguei aqui</a>
+<header class="hero dark" id="topo">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow rv">Ayrton Althman · Assessor de investimentos · Rio Grande do Sul</p>
+        <h1 class="rv">Não sou <s>programador</s>.<br><em>Construo</em> mesmo assim.</h1>
+        <p class="lead rv">Cuido do patrimônio de <b>mais de 200 clientes</b>. E construo, com inteligência artificial, os sistemas que tiram do meu dia tudo o que não é decisão nem relacionamento. O resultado é simples: <b>mais tempo para quem confia em mim, e zero improviso onde o erro custa caro.</b></p>
+        <div class="hero-cta rv">
+          <a href="#cases" class="btn primary">Conheça o trabalho</a>
+          <a href="#contato" class="btn ghost">Fale comigo</a>
+        </div>
       </div>
+      <figure class="portrait rv">
+        <img src="assets/foto-hero.jpg" alt="Ayrton Althman de terno escuro, em ângulo de três quartos" width="640" height="640" fetchpriority="high">
+        <figcaption><b>Ayrton Althman</b>Assessor de investimentos · Ex-Polícia do Exército</figcaption>
+      </figure>
     </div>
-    <figure class="portrait rv">
-      <img src="assets/foto-hero.jpg" alt="Ayrton Althman de terno escuro, em ângulo de três quartos, no escritório" width="640" height="640" fetchpriority="high" onerror="this.remove()">
-      <div class="fallback" aria-hidden="true">AA</div>
-      <figcaption><b>Ayrton Althman</b><span class="dot" aria-hidden="true"></span>Rio Grande do Sul · construindo o módulo 1 de 12 do mestrado em agentes</figcaption>
-    </figure>
-  </div>
-  <div class="ticker" aria-label="Números reais dos projetos">
-    <div class="ticker-track" id="ticker"></div>
+    <div class="facts rv" aria-label="Indicadores">
+      <div class="facts-h"><span>Indicadores</span><span>Atualizado em outubro de 2026</span></div>
+      <div class="facts-g" id="facts"></div>
+    </div>
   </div>
 </header>
 
-<section id="regras">
+<section id="tese">
   <div class="wrap">
-    <span class="kicker rv">// as regras da casa</span>
-    <p class="statement rv">IA no mercado financeiro não é sobre gerar texto. É sobre <em>processo</em>: dado com fonte, trava de compliance, conferência antes de gravar e alguém que assina embaixo.</p>
+    <span class="kicker rv">I · A tese</span>
+    <p class="thesis rv">No mercado financeiro, o ativo mais mal alocado não é o dinheiro. <em>É o tempo do assessor.</em></p>
+    <p class="thesis-sub rv">Horas conferindo planilha, abrindo posição de cliente uma a uma, montando relatório. Cada uma dessas horas é uma conversa que deixou de acontecer. Eu decidi resolver isso do único jeito que funciona: construindo, com regras que não negocio.</p>
     <div class="rules">
-      <div class="rule rv"><span class="n">01</span><h3>A IA prepara. Eu confirmo.</h3><p>Toda ação que não dá para desfazer passa por mim. Agente bom é o que sabe onde parar.</p></div>
-      <div class="rule rv"><span class="n">02</span><h3>Número sem fonte não entra.</h3><p>Consenso de mercado nunca é estimado. Se não achei o dado, o relatório diz que não achou.</p></div>
-      <div class="rule rv"><span class="n">03</span><h3>Se não muda a ação, corta.</h3><p>Informação que não altera o que alguém vai fazer nas próximas 8 horas é ruído bem formatado.</p></div>
-      <div class="rule rv"><span class="n">04</span><h3>Nada com cara de IA.</h3><p>Se parece gerado, eu refaço. Já joguei fora carrossel inteiro por isso.</p></div>
+      <div class="rule rv"><span class="n">i.</span><h3>A IA prepara. Eu confirmo.</h3><p>Nenhuma ação irreversível acontece sem a minha assinatura. Automação boa é a que sabe onde parar.</p></div>
+      <div class="rule rv"><span class="n">ii.</span><h3>Número sem fonte não entra.</h3><p>Se o dado não foi encontrado, o relatório diz que não encontrou. Estimativa disfarçada de fato é proibida.</p></div>
+      <div class="rule rv"><span class="n">iii.</span><h3>Se não muda a decisão, sai.</h3><p>Informação que não altera o que alguém vai fazer hoje é ruído bem formatado.</p></div>
+      <div class="rule rv"><span class="n">iv.</span><h3>Nada com cara de máquina.</h3><p>O que chega ao cliente tem a minha voz. Se parece gerado, eu refaço.</p></div>
     </div>
   </div>
 </section>
 
-<section id="origem" class="tight">
+<section id="origem" class="dark">
   <div class="wrap">
     <div class="head">
-      <div><span class="kicker rv">// de onde eu venho</span><h2 class="rv">Da porta giratória do banco ao <em>lado de dentro</em> do mercado.</h2></div>
-      <p class="rv">Não vim da tecnologia nem do mercado. Vim de lugares onde erro custa caro e protocolo não é opcional. Isso explica quase tudo no jeito que eu construo.</p>
+      <div><span class="kicker rv">II · Origem</span><h2 class="rv">Comecei do lado de fora do mercado. <em>Literalmente.</em></h2></div>
+      <p class="rv">Antes de cuidar de patrimônio, eu protegia agências bancárias. Disciplina, protocolo e conferência não são método que aprendi em curso. São hábito de quem trabalhou onde erro não tem segunda chance.</p>
     </div>
     <div class="story">
-      <div class="chap rv"><span class="yr">2018</span><h3>Polícia do Exército</h3><p>Serviço militar no 8º Batalhão de Polícia do Exército. Aprendi que <b>procedimento existe porque alguém já errou antes</b>.</p></div>
-      <div class="chap rv"><span class="yr">2020</span><h3>Segurança bancária</h3><p>Fiquei na porta giratória de agência bancária, testando sistemas de segurança todo dia antes de abrir. Eu via o dinheiro passar, <b>do lado de fora</b>.</p></div>
-      <div class="chap rv"><span class="yr">2022</span><h3>Primeiro telefone no mercado</h3><p>SDR em uma casa de investimentos em São Paulo. Prospecção, qualificação e a descoberta de que <b>eu sempre gostei de mercado</b>.</p></div>
-      <div class="chap rv"><span class="yr">2023</span><h3>Assessor de investimentos</h3><p>Certificado ANCORD, escritório credenciado à XP. Hoje <b>mais de 200 clientes</b>. Missão pessoal: traduzir o mercado para quem não tem tempo de entender.</p></div>
-      <div class="chap now rv"><span class="yr">2026</span><h3>Construtor de agentes</h3><p>Comecei a construir os sistemas que faltavam no escritório. <b>10 certificações em IA</b>, um mestrado prático em agentes em andamento e sistemas que fecham o mês inteiro sem divergência.</p></div>
+      <div class="chap rv"><span class="yr">2018</span><h3>Polícia do Exército</h3><p>Serviço militar no 8º Batalhão de Polícia do Exército. Ali aprendi que <b>todo procedimento existe porque alguém já errou antes</b>.</p></div>
+      <div class="chap rv"><span class="yr">2020</span><h3>Segurança bancária</h3><p>Na porta giratória da agência, testando os sistemas de segurança antes de cada abertura. Eu via o dinheiro circular, <b>do lado de fora</b>.</p></div>
+      <div class="chap rv"><span class="yr">2022</span><h3>O primeiro telefone</h3><p>Prospecção numa casa de investimentos em São Paulo. Foi quando confirmei o que sempre soube: <b>eu gosto de mercado</b>.</p></div>
+      <div class="chap rv"><span class="yr">2023</span><h3>Assessor de investimentos</h3><p>Certificado ANCORD, em escritório credenciado à XP. Hoje são <b>mais de 200 clientes</b>, e uma missão: traduzir o mercado para quem não tem tempo de entendê-lo.</p></div>
+      <div class="chap now rv"><span class="yr">2026</span><h3>Construtor de sistemas</h3><p>Passei a construir o que faltava no escritório. <b>Dez certificações em IA</b>, um mestrado prático em agentes em andamento e sistemas que fecham o mês inteiro sem uma divergência.</p></div>
     </div>
   </div>
 </section>
 
-<section class="tight">
+<section>
   <div class="wrap quote">
     <figure class="rv"><img src="assets/prova-200clientes.jpg" alt="Lâmina do carrossel: mais de 200 clientes confiam a mim o plano do próprio dinheiro" width="800" height="878" loading="lazy"></figure>
     <div class="rv">
-      <span class="kicker">// o que eu digo no Instagram</span>
+      <span class="kicker">O que me move</span>
       <blockquote><span>Eu não vendo investimento.</span><br>Eu cuido de <em>quem investe.</em></blockquote>
-      <cite>A frase abre o carrossel que reposicionou meu perfil. Mais de 200 clientes depois, os sistemas desta página existem pelo mesmo motivo: tirar de mim o trabalho repetitivo para sobrar tempo para quem confia em mim.</cite>
+      <cite>É a frase que abre o meu perfil. Os sistemas desta página existem pelo mesmo motivo: tirar de mim o trabalho repetitivo para sobrar tempo para quem confia em mim o plano do próprio dinheiro.</cite>
     </div>
   </div>
 </section>
 
-<section id="cases">
+<section id="cases" style="padding-top:0">
   <div class="wrap">
     <div class="head">
-      <div><span class="kicker rv">// cases em produção</span><h2 class="rv">O que já <em>roda</em> no escritório.</h2></div>
-      <p class="rv">Cada case vem com a explicação técnica e, logo abaixo, a versão em português claro. Clientes, valores e dados internos foram omitidos.</p>
+      <div><span class="kicker rv">III · Cases</span><h2 class="rv">Quatro sistemas. <em>Todos em uso real.</em></h2></div>
+      <p class="rv">Cada um nasceu de um problema concreto do escritório. Primeiro a explicação técnica, depois a tradução. Clientes, valores e dados internos foram omitidos.</p>
     </div>
 
     <article class="case">
       <div class="rv">
-        <span class="num">CASE 01 · <span class="status st-prod">Em produção</span></span>
+        <span class="num">Case 01 <span class="status st-prod">Em produção</span></span>
         <h3>O robô que fecha o mês, mas não aperta o botão.</h3>
-        <p class="sum">O fechamento mensal exigia redigitar cada pagamento de uma planilha num ERP que roda por acesso remoto, onde nenhuma ferramenta de automação enxerga a tela. Testei a digitação automática até provar que ela embaralha campos sem avisar. Então redesenhei: a IA monta a fila, valida, aplica o de-para e confere no final. Eu digito e confirmo.</p>
-        <p class="trad"><b>Traduzindo:</b> o trabalho chato e propenso a erro ficou com a máquina. A decisão de gravar ficou comigo. Resultado: zero divergência.</p>
+        <p class="sum">O fechamento mensal exigia redigitar cada pagamento de uma planilha num ERP acessado remotamente, onde nenhuma ferramenta de automação enxerga a tela. Testei a digitação automática até provar que ela embaralha campos sem avisar. Redesenhei o processo: a IA monta a fila, valida, aplica o de-para e confere no final. Eu digito e confirmo.</p>
+        <p class="trad"><b>Traduzindo:</b> o trabalho repetitivo e sujeito a erro ficou com a máquina. A decisão de gravar ficou comigo. Resultado: nenhuma divergência.</p>
         <div class="kpis">
-          <div class="kpi"><b>3</b><span>meses fechados</span></div>
+          <div class="kpi"><b>3</b><span>fechamentos mensais concluídos</span></div>
           <div class="kpi"><b>86</b><span>lançamentos conferidos um a um</span></div>
           <div class="kpi"><b>100%</b><span>de cobertura da planilha</span></div>
         </div>
-        <div class="tags"><span class="tag">Python</span><span class="tag">PowerShell</span><span class="tag">Visão por pixel</span><span class="tag">Excel COM</span><span class="tag">Claude Code</span></div>
+        <div class="tags"><span>Python</span><span>PowerShell</span><span>Visão por pixel</span><span>Excel COM</span><span>Claude Code</span></div>
       </div>
       <div class="case-media rv">
         <div class="panel">
-          <h4>Como o fluxo funciona</h4>
+          <h4>O fluxo, etapa por etapa</h4>
           <ol class="flow">
-            <li><div><b>Lê a planilha do mês</b><span>direto do servidor, nunca de uma cópia</span></div></li>
-            <li><div><b>Monta a fila validada</b><span>de-para de 30+ fornecedores; o que falta dado vai para "bloqueados"</span></div></li>
+            <li><div><b>Leitura da planilha do mês</b><span>direto do servidor, nunca de uma cópia</span></div></li>
+            <li><div><b>Fila validada</b><span>de-para de mais de 30 fornecedores; o que falta dado fica retido</span></div></li>
             <li><div><b>Prova real</b><span>7 checagens contra a planilha antes de cada lançamento</span></div></li>
             <li class="me"><div><b>Digito e confirmo</b><span>a única etapa que grava no sistema</span></div></li>
-            <li><div><b>Conferência na tela</b><span>só entra no registro o que a tela do ERP mostrou</span></div></li>
-            <li class="loop"><div><b>Livro-razão</b><span>a próxima fila pula o que já foi lançado: duplicata é impossível</span></div></li>
+            <li><div><b>Conferência na tela</b><span>só é registrado o que o ERP efetivamente mostrou</span></div></li>
+            <li><div><b>Livro-razão</b><span>a próxima fila ignora o que já foi lançado: duplicidade é impossível</span></div></li>
           </ol>
         </div>
       </div>
@@ -447,188 +440,189 @@ footer .wrap{display:grid;gap:var(--s3)}
 
     <article class="case flip">
       <div class="rv">
-        <span class="num">CASE 02 · <span class="status st-prod">Em produção</span></span>
+        <span class="num">Case 02 <span class="status st-prod">Em produção</span></span>
         <h3>Uma casa de research dentro de uma skill.</h3>
-        <p class="sum">Relatórios de mercado e de resultados trimestrais com padrão de casa de análise: dados atuais buscados na web, voz de analista sênior, identidade visual própria e memória entre edições. Cobre renda fixa, ações, fundos imobiliários, câmbio, cripto e o eixo de balanços, que compara o resultado com o consenso linha a linha.</p>
+        <p class="sum">Relatórios de mercado e de resultados trimestrais com padrão de casa de análise: dados atuais buscados na web, voz de analista sênior, identidade visual própria e memória entre edições. Cobre renda fixa, ações, fundos imobiliários, câmbio, cripto e balanços, comparando o resultado com o consenso linha a linha.</p>
         <p class="trad"><b>Traduzindo:</b> o que levava dias de pesquisa e diagramação sai numa sessão, com cada número apontando de onde veio.</p>
         <div class="kpis">
-          <div class="kpi"><b>8</b><span>relatórios publicados</span></div>
+          <div class="kpi"><b>2</b><span>edições periódicas publicadas</span></div>
+          <div class="kpi"><b>6</b><span>relatórios temáticos</span></div>
           <div class="kpi"><b>6</b><span>classes de ativo cobertas</span></div>
-          <div class="kpi"><b>2</b><span>computadores sincronizados via GitHub</span></div>
         </div>
-        <div class="tags"><span class="tag">Skill Claude</span><span class="tag">Pesquisa web</span><span class="tag">Python</span><span class="tag">PDF / DOCX</span><span class="tag">Git</span></div>
+        <div class="tags"><span>Skill Claude</span><span>Pesquisa web</span><span>Python</span><span>PDF e DOCX</span><span>Git</span></div>
       </div>
       <figure class="case-media shot rv"><img src="assets/prova-relatorio.jpg" alt="Capa de uma edição do relatório de mercado com o bloco Em 30 segundos" width="1000" height="693" loading="lazy"><figcaption>Capa real da edição 002 · marca omitida</figcaption></figure>
     </article>
 
     <article class="case">
       <div class="rv">
-        <span class="num">CASE 03 · <span class="status st-build">Piloto</span></span>
+        <span class="num">Case 03 <span class="status st-build">Piloto</span></span>
         <h3>Três minutos que dizem o que fazer, não o que aconteceu.</h3>
-        <p class="sum">O Giro do Time é um áudio diário às 7h30 no grupo dos assessores. A skill coleta os dados, escreve o roteiro para ser lido em voz alta (números por extenso) e monta a mensagem que o assessor encaminha ao cliente. Como áudio de mercado conta como relatório de análise para a regulação, o roteiro passa por travas de compliance antes de ir ao ar.</p>
-        <p class="trad"><b>Traduzindo:</b> resumo de mercado o time ouve três dias por educação e depois para. Este diz qual cliente ligar e o que falar.</p>
-        <div class="tags"><span class="tag">Skill Claude</span><span class="tag">Roteiro falado</span><span class="tag">Compliance CVM</span></div>
+        <p class="sum">O Giro do Time é um áudio diário às 7h30 no grupo dos assessores. A skill coleta os dados, escreve o roteiro para ser lido em voz alta e monta a mensagem que o assessor encaminha ao cliente. Como áudio de mercado é tratado como relatório de análise pela regulação, o roteiro passa por travas de compliance antes de ir ao ar.</p>
+        <p class="trad"><b>Traduzindo:</b> resumo de mercado o time ouve três dias por educação e abandona. Este diz qual cliente ligar e o que dizer a ele.</p>
+        <div class="tags"><span>Skill Claude</span><span>Roteiro falado</span><span>Compliance CVM</span></div>
       </div>
       <div class="case-media rv">
         <div class="panel">
-          <h4>A anatomia dos 3 minutos</h4>
-          <div class="bar" role="img" aria-label="Distribuição do tempo: O que mudou 40 segundos, Os números 30, A pauta de hoje 60, Atenção 20, Fecha 10">
+          <h4>A anatomia dos três minutos</h4>
+          <div class="bar" role="img" aria-label="Distribuição do tempo: O que mudou 40 segundos, Números 30, A pauta de hoje 60, Alerta 20, Encerramento 10">
             <div style="flex:40"><b>O que mudou</b>0:40</div>
             <div style="flex:30"><b>Números</b>0:30</div>
             <div class="hl" style="flex:60"><b>A pauta de hoje</b>1:00</div>
-            <div style="flex:20"><b>Atenção</b>0:20</div>
+            <div style="flex:20"><b>Alerta</b>0:20</div>
             <div style="flex:10"><b>Fim</b></div>
           </div>
           <div class="bar-legend"><span>7h30</span><span>40% dado · 60% ação</span><span>3:00</span></div>
-          <p style="margin-top:var(--s4);color:var(--muted);font-size:15px">A régua para cada frase: <span style="color:var(--text)">"isso muda o que o assessor vai fazer nas próximas 8 horas?"</span> Se não muda, sai.</p>
+          <p style="margin-top:var(--s4);color:var(--muted);font-size:15px">O critério para cada frase: <span style="color:var(--ink)">“isso muda o que o assessor vai fazer nas próximas oito horas?”</span> Se não muda, sai.</p>
         </div>
       </div>
     </article>
 
     <article class="case flip">
       <div class="rv">
-        <span class="num">CASE 04 · <span class="status st-prod">Em produção</span></span>
+        <span class="num">Case 04 <span class="status st-prod">Em produção</span></span>
         <h3>Um segundo cérebro com painel de controle.</h3>
-        <p class="sum">Tudo o que aprendo, cada erro e cada decisão de projeto vira nota no Obsidian, organizada em seis gavetas: aprendizados, contextos, playbooks, skills, agentes e referências. Um script lê o acervo e gera um painel em grafo 3D com alertas de nota órfã ou desatualizada. É a memória que os agentes consultam antes de trabalhar.</p>
-        <p class="trad"><b>Traduzindo:</b> eu não erro a mesma coisa duas vezes, e a IA também não, porque ela lê o que eu já aprendi.</p>
+        <p class="sum">Cada aprendizado, erro e decisão vira nota no Obsidian, organizada em seis gavetas: aprendizados, contextos, playbooks, skills, agentes e referências. Um script lê o acervo e gera um painel em grafo 3D com alertas de nota órfã ou desatualizada. É a memória que os agentes consultam antes de trabalhar.</p>
+        <p class="trad"><b>Traduzindo:</b> eu não cometo o mesmo erro duas vezes. E a IA também não, porque ela lê o que eu já aprendi.</p>
         <div class="kpis">
           <div class="kpi"><b>78</b><span>notas</span></div>
           <div class="kpi"><b>316</b><span>conexões entre notas</span></div>
           <div class="kpi"><b>6</b><span>gavetas de conhecimento</span></div>
         </div>
-        <div class="tags"><span class="tag">Obsidian</span><span class="tag">Python</span><span class="tag">Three.js</span><span class="tag">Git</span></div>
+        <div class="tags"><span>Obsidian</span><span>Python</span><span>Three.js</span><span>Git</span></div>
       </div>
-      <figure class="case-media shot rv"><img src="assets/prova-painel.jpg" alt="Painel holográfico do segundo cérebro com setores, contadores de nós e sinapses e um grafo 3D" width="1400" height="875" loading="lazy"><figcaption>Painel real, gerado a partir do acervo</figcaption></figure>
+      <figure class="case-media shot rv"><img src="assets/prova-painel.jpg" alt="Painel do segundo cérebro com setores, contadores de nós e conexões e um grafo 3D" width="1400" height="875" loading="lazy"><figcaption>Painel real, gerado a partir do acervo</figcaption></figure>
     </article>
   </div>
 </section>
 
-<section id="cicatrizes" class="tight">
+<section id="simulador" style="padding-top:0">
   <div class="wrap">
     <div class="head">
-      <div><span class="kicker rv">// cicatrizes</span><h2 class="rv">O que eu só sei porque <em>quebrou.</em></h2></div>
-      <p class="rv">Ninguém mostra isso em portfólio. Eu mostro, porque cada regra que uso hoje nasceu de um erro real, registrado no segundo cérebro para não acontecer de novo.</p>
-    </div>
-    <div class="scars" id="scars"></div>
-  </div>
-</section>
-
-<section id="provas" class="tight">
-  <div class="wrap">
-    <div class="head">
-      <div><span class="kicker rv">// mais provas</span><h2 class="rv">Saiu do <em>papel.</em></h2></div>
-      <p class="rv">Peças reais de outros projetos: produto para captar clientes, conteúdo educativo e identidade visual.</p>
-    </div>
-    <div class="gallery">
-      <figure class="shot rv"><img src="assets/prova-quiz.jpg" alt="Tela do quiz de diagnóstico de operações estruturadas com quatro alternativas" width="900" height="761" loading="lazy"><figcaption>Quiz de diagnóstico · entrega relatório personalizado em PDF e WhatsApp</figcaption></figure>
-      <figure class="shot rv"><img src="assets/prova-coastfire.jpg" alt="Cola rápida sobre Coast FIRE com fórmulas, tabela de valores, passo a passo e erros comuns" width="1100" height="685" loading="lazy"><figcaption>Série Coast FIRE · conteúdo educativo, não é recomendação</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<section id="simulador" class="tight">
-  <div class="wrap">
-    <div class="head">
-      <div><span class="kicker rv">// demo ao vivo · teste agora</span><h2 class="rv">Você já pode <em>parar</em> de investir?</h2></div>
-      <p class="rv">Este é o simulador Coast FIRE que eu uso para explicar aos clientes. Coast FIRE é o ponto em que o que você já investiu, só com juros, chega sozinho ao valor que banca sua aposentadoria. Mexa nos números.</p>
+      <div><span class="kicker rv">IV · Simulador</span><h2 class="rv">Você já pode <em>parar</em> de investir?</h2></div>
+      <p class="rv">É a conta que eu faço com clientes. Coast FIRE é o ponto em que o patrimônio que você já tem, apenas rendendo, chega sozinho ao valor que sustenta a sua aposentadoria. Ajuste os números.</p>
     </div>
     <div class="sim rv">
-      <form class="sim-in" id="simForm" onsubmit="return false" aria-label="Dados da simulação">
+      <form class="sim-in" onsubmit="return false" aria-label="Dados da simulação">
         <label>Quanto quer gastar por mês aposentado<output id="o_g"></output><input type="range" id="g" min="2000" max="50000" step="500" value="10000"></label>
         <label>Sua idade hoje<output id="o_a"></output><input type="range" id="a" min="18" max="70" step="1" value="30"></label>
         <label>Idade em que quer parar<output id="o_t"></output><input type="range" id="t" min="35" max="80" step="1" value="55"></label>
         <label>Quanto já tem investido<output id="o_p"></output><input type="range" id="p" min="0" max="3000000" step="10000" value="300000"></label>
         <label>Juro real ao ano (acima da inflação)<output id="o_r"></output><input type="range" id="r" min="2" max="8" step="0.5" value="5"></label>
-        <p class="sim-note">Regra dos 4%: o alvo é o gasto anual × 25. Juro real é o que sobra depois da inflação.</p>
+        <p class="sim-note">Regra dos 4%: o alvo é o gasto anual multiplicado por 25. Juro real é o que sobra depois da inflação.</p>
       </form>
-      <div class="sim-out">
+      <div>
         <div class="verdict" id="verdict" aria-live="polite"></div>
         <div class="sim-kpis">
           <div><span>Seu alvo de aposentadoria</span><b id="k_fire"></b></div>
           <div><span>Coast FIRE: o mínimo para ter hoje</span><b id="k_coast"></b></div>
           <div><span id="k_l3">Aporte mensal para chegar lá</span><b id="k_pmt"></b></div>
         </div>
-        <div class="legend"><span><i class="sw sw-a"></i>Seu patrimônio, só com juros</span><span><i class="sw sw-b"></i>Mínimo para estar em Coast FIRE</span></div>
+        <div class="legend"><span><i class="sw sw-a"></i>Seu patrimônio, apenas rendendo</span><span><i class="sw sw-b"></i>Mínimo para estar em Coast FIRE</span></div>
         <div class="chart" id="chart"><svg id="svg" role="img" aria-label="Gráfico da projeção do patrimônio comparado ao mínimo do Coast FIRE por idade"></svg><div class="tip" id="tip" hidden></div></div>
         <details class="tbl"><summary>Ver como tabela</summary><table id="tbl"></table></details>
       </div>
+    </div>
+    <div class="sim-cta rv">
+      <p>Essa conta é o começo, não a resposta.<span>Impostos, a sua carteira atual e o seu momento de vida mudam tudo. Se quiser fazer com os seus números reais, eu faço com você.</span></p>
+      <a class="btn primary" id="waSim" href="https://wa.me/5511986580916" target="_blank" rel="noopener">Fazer com os meus números</a>
     </div>
     <p class="sim-disc">Simulação educativa com retorno real hipotético e constante, sem impostos e sem aportes. Não é recomendação de investimento nem promessa de rentabilidade.</p>
   </div>
 </section>
 
-<section id="catalogo" class="tight">
+<section id="cicatrizes" style="padding-top:0">
   <div class="wrap">
     <div class="head">
-      <div><span class="kicker rv">// catálogo completo</span><h2 class="rv">Tudo que eu já <em>construí.</em></h2></div>
-      <p class="rv">Do que roda todo mês ao que ficou pausado. Filtre por status ou por área.</p>
+      <div><span class="kicker rv">V · Cicatrizes</span><h2 class="rv">O que eu só sei porque <em>deu errado.</em></h2></div>
+      <p class="rv">Portfólio costuma esconder isso. Eu mostro, porque cada regra que sigo hoje nasceu de um erro real, registrado para não se repetir.</p>
+    </div>
+    <div class="scars" id="scars"></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kicker rv">VI · Outras entregas</span><h2 class="rv">Do papel para a <em>mesa do cliente.</em></h2></div>
+      <p class="rv">Peças reais de outros projetos: um produto para qualificar clientes e conteúdo educativo.</p>
+    </div>
+    <div class="gallery">
+      <figure class="shot rv"><img src="assets/prova-quiz.jpg" alt="Tela do quiz de diagnóstico de operações estruturadas com quatro alternativas" width="900" height="761" loading="lazy"><figcaption>Quiz de diagnóstico · entrega relatório personalizado em PDF e WhatsApp</figcaption></figure>
+      <figure class="shot rv"><img src="assets/prova-coastfire.jpg" alt="Guia rápido sobre Coast FIRE com fórmulas, tabela de valores, passo a passo e erros comuns" width="1100" height="685" loading="lazy"><figcaption>Série Coast FIRE · conteúdo educativo</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="catalogo" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kicker rv">VII · Catálogo</span><h2 class="rv">Tudo o que construí <em>até aqui.</em></h2></div>
+      <p class="rv">Do que roda todo mês ao que ficou pausado. Filtre por situação ou por área.</p>
     </div>
     <div class="filters rv" role="group" aria-label="Filtrar projetos" id="filters"></div>
     <div class="rows" id="rows"></div>
   </div>
 </section>
 
-<section id="skills" class="tight">
+<section id="skills" class="dark">
   <div class="wrap">
     <div class="head">
-      <div><span class="kicker rv">// skills autorais</span><h2 class="rv">Processos que viraram <em>comando.</em></h2></div>
-      <p class="rv">Uma skill ensina a IA a executar um processo do meu jeito, sempre igual. Eu digito o comando, ela faz o resto. Estas eu escrevi do zero.</p>
+      <div><span class="kicker rv">VIII · Skills autorais</span><h2 class="rv">Processos que viraram <em>comando.</em></h2></div>
+      <p class="rv">Uma skill ensina a IA a executar um processo do meu jeito, sempre igual. Eu digito o comando; ela faz o resto. Todas escritas por mim.</p>
     </div>
-    <div class="term rv">
-      <div class="term-bar"><i></i><i></i><i></i><span>ayrton@escritorio: ~/skills</span></div>
-      <div class="term-body" id="term"></div>
-    </div>
+    <div class="ledger" id="ledger"></div>
   </div>
 </section>
 
-<section id="agora" class="tight">
+<section id="agora">
   <div class="wrap">
     <div class="head">
-      <div><span class="kicker rv">// agora · outubro de 2026</span><h2 class="rv">Na <em>bancada</em> neste momento.</h2></div>
-      <p class="rv">Portfólio que só mostra o que terminou esconde como a pessoa trabalha. Este é o meu em andamento.</p>
+      <div><span class="kicker rv">IX · Em andamento</span><h2 class="rv">Na mesa <em>neste momento.</em></h2></div>
+      <p class="rv">Quem só mostra o que terminou esconde como trabalha. Este é o meu trabalho em curso, em outubro de 2026.</p>
     </div>
     <div class="now-grid" id="now"></div>
   </div>
 </section>
 
-<section id="formacao" class="tight">
+<section id="formacao" style="padding-top:0">
   <div class="wrap">
     <div class="head">
-      <div><span class="kicker rv">// formação</span><h2 class="rv">Aprendi com quem <em>faz</em> os modelos.</h2></div>
-      <p class="rv">Certificações da Anthropic, Google, IBM e OpenAI, somadas à formação de mercado que o meu trabalho exige.</p>
+      <div><span class="kicker rv">X · Formação</span><h2 class="rv">Formado por quem <em>constrói os modelos.</em></h2></div>
+      <p class="rv">Certificações da Anthropic, Google, IBM e OpenAI, somadas à formação de mercado que a profissão exige.</p>
     </div>
     <div class="certs" id="certs"></div>
     <div class="edu">
       <div class="rv"><b>Administração</b><span>Bacharelado · UNIASSELVI · 2024 a 2028, em curso</span></div>
-      <div class="rv"><b>Formação de Assessores</b><span>XP Educação · 2023 · e trilha B3: análise fundamentalista, ETFs, ações internacionais, Tesouro Direto</span></div>
+      <div class="rv"><b>Formação de Assessores</b><span>XP Educação · 2023 · trilha B3: análise fundamentalista, ETFs, ações internacionais e Tesouro Direto</span></div>
       <div class="rv"><b>Inside Sales</b><span>RD University · 2022</span></div>
     </div>
-    <div class="stack" style="margin-top:var(--s7)">
+    <div class="stack">
       <div class="rv"><h4>IA e agentes</h4><ul><li>Claude Code e Agent SDK</li><li>Skills e subagentes</li><li>MCP</li><li>Engenharia de contexto</li><li>NotebookLM e ChatGPT</li></ul></div>
       <div class="rv"><h4>Automação</h4><ul><li>Python</li><li>PowerShell</li><li>Automação por visão</li><li>Excel via COM</li><li>Extensões Chrome</li></ul></div>
-      <div class="rv"><h4>Conteúdo e web</h4><ul><li>HTML, CSS e JavaScript</li><li>Vídeo programático</li><li>FFmpeg</li><li>WordPress</li><li>Design de carrosséis</li></ul></div>
+      <div class="rv"><h4>Conteúdo e web</h4><ul><li>HTML, CSS e JavaScript</li><li>Vídeo programático</li><li>FFmpeg</li><li>WordPress</li><li>Design editorial</li></ul></div>
       <div class="rv"><h4>Mercado</h4><ul><li>Assessoria de investimentos</li><li>Macro e balanços</li><li>Operações estruturadas</li><li>Compliance CVM e LGPD</li><li>Planejamento financeiro</li></ul></div>
     </div>
   </div>
 </section>
 
-<section class="contact" id="contato">
+<section class="contact dark" id="contato">
   <div class="wrap">
-    <figure class="avatar rv"><img src="assets/foto.jpg" alt="Ayrton Althman de frente" width="800" height="800" loading="lazy"><figcaption><span class="dot" aria-hidden="true"></span>Quem responde é o Ayrton, não um robô</figcaption></figure>
-    <span class="kicker rv">// contato</span>
-    <h2 class="rv">Tem um processo que <em>devia</em> rodar sozinho?</h2>
-    <p class="rv">Seja para falar de investimentos, de IA aplicada ao mercado ou de uma parceria, me chama. Eu respondo pessoalmente.</p>
+    <figure class="avatar rv"><img src="assets/foto.jpg" alt="Ayrton Althman de frente" width="800" height="800" loading="lazy"><figcaption>Quem responde sou eu, não um robô.</figcaption></figure>
+    <span class="kicker rv">Contato</span>
+    <h2 class="rv">Uma conversa <em>resolve mais</em> do que esta página inteira.</h2>
+    <p class="rv">Para cuidar do seu patrimônio, para levar IA ao seu negócio ou para uma parceria. Me chame pelo canal que preferir.</p>
     <div class="ch rv">
-      <a class="btn solid" id="wa" href="https://wa.me/5511986580916" target="_blank" rel="noopener">WhatsApp</a>
-      <a class="btn" href="https://www.linkedin.com/in/ayrton-althman-1556b8164/" target="_blank" rel="noopener">LinkedIn</a>
-      <a class="btn" href="https://www.instagram.com/ayrton_althman/" target="_blank" rel="noopener">Instagram</a>
+      <a class="btn primary" id="wa" href="https://wa.me/5511986580916" target="_blank" rel="noopener">WhatsApp</a>
+      <a class="btn ghost" href="https://www.linkedin.com/in/ayrton-althman-1556b8164/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn ghost" href="https://www.instagram.com/ayrton_althman/" target="_blank" rel="noopener">Instagram</a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Ayrton Althman · Feito com Claude Code, do jeito que eu construo todo o resto.</span>
+    <span>© 2026 Ayrton Althman. Feito com Claude Code, do mesmo jeito que construo todo o resto.</span>
     <span>Este portfólio apresenta projetos de tecnologia e não constitui recomendação de investimento. Nomes de clientes, valores e dados internos foram omitidos por confidencialidade.</span>
   </div>
 </footer>
@@ -637,63 +631,66 @@ footer .wrap{display:grid;gap:var(--s3)}
 /* ============ Para atualizar o portfólio, edite só estas listas ============ */
 const WHATSAPP = "5511986580916";
 const WHATSAPP_MSG = "Oi Ayrton, vi seu portfólio e quero conversar.";
+const WHATSAPP_SIM = "Oi Ayrton, fiz a simulação Coast FIRE no seu site e quero ver com os meus números.";
 
-const TICKER = [
-  ["LANÇAMENTOS ERP","86"],["COBERTURA DO MÊS","100%"],["MESES FECHADOS","3"],
-  ["CLIENTES ABERTOS EM LOTE","116"],["RELATÓRIOS PUBLICADOS","8"],["CERTIFICAÇÕES IA","10"],
-  ["SKILLS AUTORAIS","8"],["NOTAS NO 2º CÉREBRO","78"],["CONEXÕES","316"],["CLIENTES ATENDIDOS","200+"]
+const FACTS = [
+  ["200+","clientes atendidos"],
+  ["86","lançamentos conferidos, nenhuma divergência"],
+  ["10","certificações em IA: Anthropic, Google, IBM e OpenAI"],
+  ["8","sistemas em produção no escritório"]
 ];
 
 const SCARS = [
-  {b:"A digitação automática no ERP remoto embaralhou campos sem dar erro. Uma vez as teclas foram parar no WhatsApp.", r:"Ação irreversível, humano confirma."},
-  {b:"Data digitada com barras entrou corrompida no sistema, em silêncio, sem nenhum aviso.", r:"Só dígitos. E conferir o que a tela mostrou, não o que eu mandei."},
-  {b:"Salvar a planilha financeira por script apagou as listas suspensas que o time usa.", r:"Planilha de produção só se grava pelo próprio Excel."},
-  {b:"A primeira versão do carrossel de apresentação, clara e cheia de cards, ficou com cara de IA. Foi para o lixo.", r:"Escuro, tipografia gigante, fotos reais e prova concreta."},
-  {b:"O primeiro desenho do boletim diário era um resumo de mercado. Seria ouvido três dias e abandonado.", r:"Se não muda o que alguém faz hoje, corta."},
-  {b:"Uma fórmula nova na planilha foi gravada sem o prefixo certo e virou erro só ao abrir no Excel.", r:"Conferir valores calculados, não só se a fórmula existe."}
+  {b:"A digitação automática no ERP remoto embaralhou campos sem gerar erro. Numa das vezes, as teclas foram parar no WhatsApp.", r:"Ação irreversível, humano confirma."},
+  {b:"Uma data digitada com barras entrou corrompida no sistema, em silêncio, sem nenhum aviso.", r:"Só dígitos. E vale o que a tela mostrou, não o que eu enviei."},
+  {b:"Salvar a planilha financeira por script apagou as listas de seleção que o time usa.", r:"Planilha de produção só se grava pelo próprio Excel."},
+  {b:"A primeira versão do carrossel de apresentação, clara e cheia de cartões, ficou com cara de IA. Foi descartada.", r:"Fotos reais, tipografia forte e prova concreta."},
+  {b:"O primeiro desenho do boletim diário era um resumo de mercado. Seria ouvido por três dias e abandonado.", r:"Se não muda o que alguém faz hoje, sai."},
+  {b:"Uma fórmula nova foi gravada sem o prefixo certo e só virou erro quando a planilha foi aberta no Excel.", r:"Conferir os valores calculados, não apenas se a fórmula existe."}
 ];
 
 const PROJECTS = [
   {t:"Robô de lançamentos em ERP", cat:"Automação", st:"prod", d:"Fechamento mensal assistido por IA, com fila validada, prova real e livro-razão."},
   {t:"Kit de relatórios de research", cat:"Mercado", st:"prod", d:"Relatórios macro e de balanços com dados atuais e identidade visual."},
-  {t:"Giro do Time", cat:"Mercado", st:"build", d:"Boletim diário em áudio de 3 minutos para assessores."},
+  {t:"Giro do Time", cat:"Mercado", st:"build", d:"Boletim diário em áudio de três minutos para assessores."},
   {t:"Segundo Cérebro", cat:"Conhecimento", st:"prod", d:"Base no Obsidian e painel em grafo 3D com alertas."},
-  {t:"Comprovantes automáticos", cat:"Automação", st:"prod", d:"Vincula notas e comprovantes do mês à planilha e audita o que falta."},
+  {t:"Comprovantes automáticos", cat:"Automação", st:"prod", d:"Vincula notas e comprovantes do mês à planilha e aponta o que falta."},
   {t:"Abertura em massa de posições", cat:"Automação", st:"prod", d:"Abre a posição de 116 clientes em lotes, com checagem de faltantes."},
   {t:"Exportador de relatórios web", cat:"Automação", st:"prod", d:"Extrai relatórios de um site WordPress para PDF em minutos."},
-  {t:"Copiloto de análise de carteira", cat:"Mercado", st:"prod", d:"Diagnóstico de carteira e simulações com números rodados em código."},
-  {t:"Mensagens a clientes", cat:"Mercado", st:"prod", d:"Redige e revisa comunicação com cliente no tom certo."},
-  {t:"Quiz de operações estruturadas", cat:"Produto", st:"build", d:"Qualifica leads e entrega análise personalizada em PDF e WhatsApp."},
-  {t:"YouTube Salvos", cat:"Produto", st:"build", d:"Extensão Chrome: biblioteca de vídeos com classificação automática."},
-  {t:"Mestrado em Agentes de IA", cat:"Aprendizado", st:"build", d:"12 módulos com laboratório, entrega e arguição."},
+  {t:"Copiloto de análise de carteira", cat:"Mercado", st:"prod", d:"Diagnóstico de carteira e simulações com números calculados em código."},
+  {t:"Mensagens a clientes", cat:"Mercado", st:"prod", d:"Redige e revisa a comunicação com cliente no tom certo."},
+  {t:"Simulador Coast FIRE", cat:"Produto", st:"prod", d:"Simulador interativo publicado neste portfólio."},
+  {t:"Quiz de operações estruturadas", cat:"Produto", st:"build", d:"Qualifica clientes e entrega análise personalizada em PDF e WhatsApp."},
+  {t:"YouTube Salvos", cat:"Produto", st:"build", d:"Extensão para Chrome: biblioteca de vídeos com classificação automática."},
+  {t:"Mestrado em Agentes de IA", cat:"Aprendizado", st:"build", d:"Doze módulos com laboratório, entrega e arguição."},
   {t:"Reposicionamento no Instagram", cat:"Conteúdo", st:"build", d:"Bio, plano de 90 dias, capas geradas por script e carrosséis."},
   {t:"Vídeos programáticos", cat:"Conteúdo", st:"build", d:"Vídeos em 16:9, 9:16 e reels feitos em código."},
   {t:"Clonagem de voz", cat:"Conteúdo", st:"build", d:"Voz sintética própria para boletins e vídeos."},
   {t:"Série Coast FIRE", cat:"Conteúdo", st:"done", d:"Planilha interativa e oito peças educativas."},
-  {t:"Sistema de Lançamento Semente", cat:"Conteúdo", st:"done", d:"Dois prompts encadeados que geram estratégia, copy e calendário."},
+  {t:"Sistema de Lançamento Semente", cat:"Conteúdo", st:"done", d:"Dois prompts encadeados que geram estratégia, texto e calendário."},
   {t:"Acervo de pesquisa em IA", cat:"Conhecimento", st:"done", d:"Mais de 100 cadernos no NotebookLM, destilados em referências."},
-  {t:"Biblioteca digital de mentoria", cat:"Conhecimento", st:"done", d:"88 documentos e 41 ebooks com busca offline."},
+  {t:"Biblioteca digital de mentoria", cat:"Conhecimento", st:"done", d:"88 documentos e 41 livros digitais com busca offline."},
   {t:"Radar IA mensal", cat:"Conhecimento", st:"done", d:"Curadoria das novidades de IA para o mercado financeiro."},
-  {t:"Fluxo de entrega e agendamento", cat:"Automação", st:"done", d:"Chatbot que entrega material e leva o lead até a agenda."},
+  {t:"Fluxo de entrega e agendamento", cat:"Automação", st:"done", d:"Chatbot que entrega material e leva o contato até a agenda."},
   {t:"Analisador de conversas", cat:"Automação", st:"pause", d:"Extrai aprendizados das conversas com a IA. Hoje em uso manual."}
 ];
 
 const SKILLS = [
-  {c:"/giro-mercado", o:"pauta, <b>roteiro falado de 3 min</b> e mensagem pronta para o cliente, com travas de compliance"},
-  {c:"/market-report", o:"relatório macro ou de balanço, <b>dados atuais com fonte</b>, entregue em PDF ou DOCX"},
+  {c:"/giro-mercado", o:"pauta, <b>roteiro falado de três minutos</b> e mensagem pronta para o cliente, com travas de compliance"},
+  {c:"/market-report", o:"relatório macro ou de balanço com <b>dados atuais e fonte em cada número</b>, em PDF ou DOCX"},
   {c:"/investment-advisor", o:"diagnóstico de carteira e projeções <b>calculadas em código</b>, nunca estimadas"},
-  {c:"/client-messages", o:"follow-up, resposta ou cobrança delicada <b>no tom de uma pessoa</b>, sem cara de IA"},
-  {c:"/erp-lancamentos", o:"fila validada, prova real e <b>livro-razão anti-duplicata</b> do fechamento mensal"},
-  {c:"/comprovantes", o:"liga cada comprovante à linha certa da planilha e <b>lista o que falta</b>"},
+  {c:"/client-messages", o:"follow-up, resposta ou cobrança delicada <b>no tom de uma pessoa</b>"},
+  {c:"/erp-lancamentos", o:"fila validada, prova real e <b>livro-razão contra duplicidade</b> no fechamento mensal"},
+  {c:"/comprovantes", o:"liga cada comprovante à linha certa da planilha e <b>aponta o que falta</b>"},
   {c:"/abrir-posicoes", o:"abre a posição de todos os clientes de um operador com <b>verificação de cobertura</b>"},
   {c:"/analisar-chats", o:"lê o histórico de conversas e transforma aprendizados em <b>notas do segundo cérebro</b>"}
 ];
 
 const NOW = [
   {k:"Aprendizado", t:"Mestrado em Agentes de IA", d:"Módulo 1: o loop e o harness. Cada módulo exige nota mínima 3 de 5 na arguição para avançar.", p:1, of:12, l:"módulo"},
-  {k:"Conteúdo", t:"Instagram: plano de 90 dias", d:"Dois posts por semana, alternando os três públicos. Revisão do primeiro mês em 26 de outubro.", p:1, of:3, l:"mês"},
+  {k:"Conteúdo", t:"Instagram: plano de 90 dias", d:"Dois posts por semana, alternando três públicos. Revisão do primeiro mês em 26 de outubro.", p:1, of:3, l:"mês"},
   {k:"Mercado", t:"Giro do Time em piloto", d:"Ajustando o roteiro diário com o time antes de virar rotina fixa."},
-  {k:"Produto", t:"YouTube Salvos", d:"Extensão pronta. Falta testar a barra no YouTube e a importação de playlists ao vivo."}
+  {k:"Produto", t:"YouTube Salvos", d:"Extensão pronta. Falta validar a barra no YouTube e a importação de playlists em uso real."}
 ];
 
 const CERTS = [
@@ -713,9 +710,7 @@ const CERTS = [
 
 /* ============ render ============ */
 const $ = id => document.getElementById(id);
-const tk = TICKER.map(([k,v]) => `<div class="tk"><span>${k}</span><b>${v}</b><i>▲</i></div>`).join("");
-$("ticker").innerHTML = tk + tk.replace(/class="tk"/g,'class="tk" aria-hidden="true"');
-
+$("facts").innerHTML = FACTS.map(([v,l]) => `<div class="fact"><b>${v}</b><span>${l}</span></div>`).join("");
 $("scars").innerHTML = SCARS.map(s => `<div class="scar rv"><p class="broke">${s.b}</p><p class="rule2">${s.r}</p></div>`).join("");
 
 const ST = {prod:["Em produção","st-prod"], build:["Em construção","st-build"], done:["Concluído","st-done"], pause:["Pausado","st-pause"]};
@@ -731,7 +726,7 @@ $("filters").addEventListener("click", e => {
   $("rows").querySelectorAll(".row").forEach(r=>r.classList.toggle("hide", !match(b.dataset.f, r.dataset)));
 });
 
-$("term").innerHTML = SKILLS.map(s => `<div class="cmd"><span class="p">${s.c}</span><span class="o">${s.o}</span></div>`).join("") + `<div class="cmd"><span class="p"><span class="cursor" aria-hidden="true"></span></span></div>`;
+$("ledger").innerHTML = SKILLS.map(s => `<div class="led rv"><code>${s.c}</code><span>${s.o}</span></div>`).join("");
 
 $("now").innerHTML = NOW.map(n => `<div class="nowc rv"><h4>${n.k}</h4><h3>${n.t}</h3><p>${n.d}</p>${n.p ? `
   <div class="prog"><i style="--w:${Math.round(n.p/n.of*100)}%"></i></div><div class="prog-l"><span>${n.l} ${n.p} de ${n.of}</span><span>${Math.round(n.p/n.of*100)}%</span></div>` : ""}</div>`).join("");
@@ -739,10 +734,11 @@ $("now").innerHTML = NOW.map(n => `<div class="nowc rv"><h4>${n.k}</h4><h3>${n.t
 $("certs").innerHTML = CERTS.map(c=>`<div class="cert rv"><span class="iss">${c.i}</span><b>${c.t}</b><span>${c.d}</span></div>`).join("");
 
 $("wa").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(WHATSAPP_MSG);
+$("waSim").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(WHATSAPP_SIM);
 
 /* ============ simulador Coast FIRE ============ */
 (() => {
-  const C_A = "#B8892F", C_B = "#5A8FD8";
+  const C_A = "#2A5A92", C_B = "#0E9BB5";
   const brl = new Intl.NumberFormat("pt-BR",{style:"currency",currency:"BRL",maximumFractionDigits:0});
   const short = v => v >= 1e6 ? "R$ " + (v/1e6).toLocaleString("pt-BR",{maximumFractionDigits:1}) + " mi" : v >= 1e3 ? "R$ " + Math.round(v/1e3) + " mil" : "R$ " + Math.round(v);
   const ids = ["g","a","t","p","r"], el = Object.fromEntries(ids.map(i=>[i,$(i)]));
@@ -762,19 +758,18 @@ $("wa").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(WHATS
   function render(){
     const s = calc();
     $("o_g").textContent = brl.format(s.g); $("o_a").textContent = s.a + " anos"; $("o_t").textContent = s.t + " anos";
-    $("o_p").textContent = brl.format(s.p);
-    $("o_r").textContent = (s.r*100).toLocaleString("pt-BR") + "%";
+    $("o_p").textContent = brl.format(s.p); $("o_r").textContent = (s.r*100).toLocaleString("pt-BR") + "%";
     $("k_fire").textContent = short(s.fire); $("k_coast").textContent = short(s.coast);
     const ok = s.p >= s.coast;
     $("k_l3").textContent = ok ? "Aporte mensal necessário" : "Aporte mensal para o alvo aos " + s.t;
     $("k_pmt").textContent = ok ? "R$ 0" : brl.format(s.pmt);
     $("verdict").innerHTML = ok
-      ? `<span class="ok">Você já está em Coast FIRE.</span> Sem investir mais nada, os juros levam seu patrimônio ao alvo por volta dos ${Math.ceil(s.ageHit)} anos.`
-      : `Faltam <em>${short(s.coast - s.p)}</em> para o Coast FIRE. Depois disso, os juros fazem o resto até os ${s.t}.`;
+      ? `<span class="ok">Você já está em Coast FIRE.</span> Sem investir mais nada, os juros levam o seu patrimônio ao alvo por volta dos ${Math.ceil(s.ageHit)} anos.`
+      : `Faltam <em>${short(s.coast - s.p)}</em> para o Coast FIRE. A partir daí, os juros fazem o resto até os ${s.t}.`;
     pts = []; for (let k=0;k<=s.n;k++) pts.push({age:s.a+k, A:s.p*Math.pow(1+s.r,k), B:s.fire/Math.pow(1+s.r,s.n-k)});
     draw(s);
     const step = Math.max(1, Math.round(s.n/8));
-    $("tbl").innerHTML = `<tr><th>Idade</th><th>Só com juros</th><th>Mínimo Coast</th></tr>` +
+    $("tbl").innerHTML = `<tr><th>Idade</th><th>Apenas rendendo</th><th>Mínimo Coast</th></tr>` +
       pts.filter((q,k)=>k%step===0||k===pts.length-1).map(q=>`<tr><td>${q.age}</td><td>${brl.format(q.A)}</td><td>${brl.format(q.B)}</td></tr>`).join("");
   }
 
@@ -794,9 +789,9 @@ $("wa").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(WHATS
       ${xt.map(a=>`<text class="ax" x="${x(a)}" y="${H-8}" text-anchor="middle">${a} anos</text>`).join("")}
       <path d="${line("B")}" fill="none" stroke="${C_B}" stroke-width="2" stroke-dasharray="6 5" stroke-linecap="round"/>
       <path d="${line("A")}" fill="none" stroke="${C_A}" stroke-width="2" stroke-linecap="round"/>
-      <line id="xh" y1="${T}" y2="${H-B}" stroke="#9A9284" stroke-width="1" visibility="hidden"/>
-      <circle id="dA" r="5" fill="${C_A}" stroke="#1A1814" stroke-width="2" visibility="hidden"/>
-      <circle id="dB" r="5" fill="${C_B}" stroke="#1A1814" stroke-width="2" visibility="hidden"/>
+      <line id="xh" y1="${T}" y2="${H-B}" stroke="#5E6878" stroke-width="1" visibility="hidden"/>
+      <circle id="dA" r="5" fill="${C_A}" stroke="#FFFFFF" stroke-width="2" visibility="hidden"/>
+      <circle id="dB" r="5" fill="${C_B}" stroke="#FFFFFF" stroke-width="2" visibility="hidden"/>
       <rect x="${L}" y="${T}" width="${W-L-R}" height="${H-T-B}" fill="transparent" id="hit"/>`;
     const hit = svg.querySelector("#hit"), xh = svg.querySelector("#xh"), dA = svg.querySelector("#dA"), dB = svg.querySelector("#dB");
     const show = ev => {
@@ -818,6 +813,7 @@ $("wa").href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(WHATS
   render();
 })();
 
+/* nav: fica sólida ao rolar */
 const nav = $("nav");
 addEventListener("scroll", () => nav.classList.toggle("solid", scrollY > 40), {passive:true});
 
