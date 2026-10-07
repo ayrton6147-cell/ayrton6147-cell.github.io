@@ -334,9 +334,33 @@ footer .wrap{display:grid;gap:var(--s3)}
 .more:hover{background:var(--navy);border-color:var(--navy);color:var(--white)}
 .more[hidden]{display:none}
 
+/* cases no celular: só o essencial à vista, o técnico atrás de um botão */
+.case-more{display:none}
+@media(max-width:767px){
+  .case:not(.open) .det{display:none}
+  .case-more{display:inline-flex}
+  .case.open .case-more::after{content:" ↑"}
+  .case .trad{margin-top:var(--s3)}
+  /* mais compacto no celular */
+  .filters{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;margin-right:calc(-1 * var(--s3));padding-right:var(--s3)}
+  .filters::-webkit-scrollbar{display:none}
+  .chip{flex:none}
+  .also .gallery{grid-template-columns:1fr 1fr;gap:var(--s2)}
+  .also figcaption{font-size:10px;padding:6px 8px}
+  .portrait{max-width:260px}
+  .hero{padding-top:110px}
+  .facts{margin-top:var(--s6)}
+  .chap{padding:var(--s4) 0}
+  .chap .yr{font-size:28px}
+  .head{margin-bottom:var(--s5)}
+  .rule{padding-bottom:var(--s4)}
+}
+
 /* ritmo vertical mais enxuto */
 section{padding:104px 0}
-@media(max-width:767px){section{padding:72px 0}.case{padding:var(--s6) 0}.contact{padding:96px 0}}
+@media(max-width:767px){section{padding:60px 0}.case{padding:var(--s5) 0}.contact{padding:80px 0}}
+.dark .more{color:var(--on-dark);border-color:var(--line-dark)}
+.dark .more:hover{background:var(--on-dark);color:var(--navy);border-color:var(--on-dark)}
 
 /* no celular, o botão do menu só aparece depois de rolar (a abertura já tem o seu) */
 @media(max-width:999px){nav:not(.solid) .btn{opacity:0;pointer-events:none}nav .btn{transition:opacity .3s,background .3s,color .3s}}
@@ -447,16 +471,16 @@ section{padding:104px 0}
       <div class="rv">
         <span class="num">Case 01 <span class="status st-prod">Em produção</span></span>
         <h3>O robô que fecha o mês, mas não aperta o botão.</h3>
-        <p class="sum">O fechamento mensal exigia redigitar cada pagamento de uma planilha num ERP acessado remotamente, onde nenhuma ferramenta de automação enxerga a tela. Testei a digitação automática até provar que ela embaralha campos sem avisar. Redesenhei o processo: a IA monta a fila, valida, aplica o de-para e confere no final. Eu digito e confirmo.</p>
+        <p class="sum det">O fechamento mensal exigia redigitar cada pagamento de uma planilha num ERP acessado remotamente, onde nenhuma ferramenta de automação enxerga a tela. Testei a digitação automática até provar que ela embaralha campos sem avisar. Redesenhei o processo: a IA monta a fila, valida, aplica o de-para e confere no final. Eu digito e confirmo.</p>
         <p class="trad"><b>Traduzindo:</b> o trabalho repetitivo e sujeito a erro ficou com a máquina. A decisão de gravar ficou comigo. Resultado: nenhuma divergência.</p>
         <div class="kpis">
           <div class="kpi"><b>3</b><span>fechamentos mensais concluídos</span></div>
           <div class="kpi"><b>86</b><span>lançamentos conferidos um a um</span></div>
           <div class="kpi"><b>100%</b><span>de cobertura da planilha</span></div>
         </div>
-        <div class="tags"><span>Python</span><span>PowerShell</span><span>Visão por pixel</span><span>Excel COM</span><span>Claude Code</span></div>
+        <div class="tags det"><span>Python</span><span>PowerShell</span><span>Visão por pixel</span><span>Excel COM</span><span>Claude Code</span></div>
       </div>
-      <div class="case-media rv">
+      <div class="case-media det rv">
         <div class="panel">
           <h4>O fluxo, etapa por etapa</h4>
           <ol class="flow">
@@ -475,14 +499,14 @@ section{padding:104px 0}
       <div class="rv">
         <span class="num">Case 02 <span class="status st-prod">Em produção</span></span>
         <h3>Uma casa de research dentro de uma skill.</h3>
-        <p class="sum">Relatórios de mercado e de resultados trimestrais com padrão de casa de análise: dados atuais buscados na web, voz de analista sênior, identidade visual própria e memória entre edições. Cobre renda fixa, ações, fundos imobiliários, câmbio, cripto e balanços, comparando o resultado com o consenso linha a linha.</p>
+        <p class="sum det">Relatórios de mercado e de resultados trimestrais com padrão de casa de análise: dados atuais buscados na web, voz de analista sênior, identidade visual própria e memória entre edições. Cobre renda fixa, ações, fundos imobiliários, câmbio, cripto e balanços, comparando o resultado com o consenso linha a linha.</p>
         <p class="trad"><b>Traduzindo:</b> o que levava dias de pesquisa e diagramação sai numa sessão, com cada número apontando de onde veio.</p>
         <div class="kpis">
           <div class="kpi"><b>2</b><span>edições periódicas publicadas</span></div>
           <div class="kpi"><b>6</b><span>relatórios temáticos</span></div>
           <div class="kpi"><b>6</b><span>classes de ativo cobertas</span></div>
         </div>
-        <div class="tags"><span>Skill Claude</span><span>Pesquisa web</span><span>Python</span><span>PDF e DOCX</span><span>Git</span></div>
+        <div class="tags det"><span>Skill Claude</span><span>Pesquisa web</span><span>Python</span><span>PDF e DOCX</span><span>Git</span></div>
       </div>
       <figure class="case-media shot rv"><img src="assets/prova-relatorio.jpg" alt="Capa de uma edição do relatório de mercado com o bloco Em 30 segundos" width="1000" height="693" loading="lazy"><figcaption>Capa real da edição 002 · marca omitida</figcaption></figure>
     </article>
@@ -491,11 +515,11 @@ section{padding:104px 0}
       <div class="rv">
         <span class="num">Case 03 <span class="status st-build">Piloto</span></span>
         <h3>Três minutos que dizem o que fazer, não o que aconteceu.</h3>
-        <p class="sum">O Giro do Time é um áudio diário às 7h30 no grupo dos assessores. A skill coleta os dados, escreve o roteiro para ser lido em voz alta e monta a mensagem que o assessor encaminha ao cliente. Como áudio de mercado é tratado como relatório de análise pela regulação, o roteiro passa por travas de compliance antes de ir ao ar.</p>
+        <p class="sum det">O Giro do Time é um áudio diário às 7h30 no grupo dos assessores. A skill coleta os dados, escreve o roteiro para ser lido em voz alta e monta a mensagem que o assessor encaminha ao cliente. Como áudio de mercado é tratado como relatório de análise pela regulação, o roteiro passa por travas de compliance antes de ir ao ar.</p>
         <p class="trad"><b>Traduzindo:</b> resumo de mercado o time ouve três dias por educação e abandona. Este diz qual cliente ligar e o que dizer a ele.</p>
-        <div class="tags"><span>Skill Claude</span><span>Roteiro falado</span><span>Compliance CVM</span></div>
+        <div class="tags det"><span>Skill Claude</span><span>Roteiro falado</span><span>Compliance CVM</span></div>
       </div>
-      <div class="case-media rv">
+      <div class="case-media det rv">
         <div class="panel">
           <h4>A anatomia dos três minutos</h4>
           <div class="bar" role="img" aria-label="Distribuição do tempo: O que mudou 40 segundos, Números 30, A pauta de hoje 60, Alerta 20, Encerramento 10">
@@ -515,14 +539,14 @@ section{padding:104px 0}
       <div class="rv">
         <span class="num">Case 04 <span class="status st-prod">Em produção</span></span>
         <h3>Um segundo cérebro com painel de controle.</h3>
-        <p class="sum">Cada aprendizado, erro e decisão vira nota no Obsidian, organizada em seis gavetas: aprendizados, contextos, playbooks, skills, agentes e referências. Um script lê o acervo e gera um painel em grafo 3D com alertas de nota órfã ou desatualizada. É a memória que os agentes consultam antes de trabalhar.</p>
+        <p class="sum det">Cada aprendizado, erro e decisão vira nota no Obsidian, organizada em seis gavetas: aprendizados, contextos, playbooks, skills, agentes e referências. Um script lê o acervo e gera um painel em grafo 3D com alertas de nota órfã ou desatualizada. É a memória que os agentes consultam antes de trabalhar.</p>
         <p class="trad"><b>Traduzindo:</b> eu não cometo o mesmo erro duas vezes. E a IA também não, porque ela lê o que eu já aprendi.</p>
         <div class="kpis">
           <div class="kpi"><b>78</b><span>notas</span></div>
           <div class="kpi"><b>316</b><span>conexões entre notas</span></div>
           <div class="kpi"><b>6</b><span>gavetas de conhecimento</span></div>
         </div>
-        <div class="tags"><span>Obsidian</span><span>Python</span><span>Three.js</span><span>Git</span></div>
+        <div class="tags det"><span>Obsidian</span><span>Python</span><span>Three.js</span><span>Git</span></div>
       </div>
       <figure class="case-media shot rv"><img src="assets/prova-painel.jpg" alt="Painel do segundo cérebro com setores, contadores de nós e conexões e um grafo 3D" width="1400" height="875" loading="lazy"><figcaption>Painel real, gerado a partir do acervo</figcaption></figure>
     </article>
@@ -601,7 +625,8 @@ section{padding:104px 0}
       <div><span class="kicker rv">VII · Skills autorais</span><h2 class="rv">Processos que viraram <em>comando.</em></h2></div>
       <p class="rv">Uma skill ensina a IA a executar um processo do meu jeito, sempre igual. Eu digito o comando; ela faz o resto. Todas escritas por mim.</p>
     </div>
-    <div class="ledger" id="ledger"></div>
+    <div class="collapsible" id="ledgerBox"><div class="ledger" id="ledger"></div>
+    <button class="more" data-more="ledgerBox" data-l="Ver todas as skills" data-c="Mostrar menos">Ver todas as skills</button></div>
   </div>
 </section>
 
@@ -752,8 +777,16 @@ $("filters").addEventListener("click", e => {
 });
 
 /* recolher: mostra só os primeiros itens de cada lista longa */
-const VISIBLE = {scars:3, rows:8, certs:6};
-const collapseLists = () => Object.entries(VISIBLE).forEach(([id,n]) => [...$(id).children].forEach((c,k) => c.classList.toggle("x", k >= n)));
+/* no celular, cada lista mostra menos itens; o botão some quando não há o que recolher */
+const MOBILE = matchMedia("(max-width:767px)");
+const visible = () => MOBILE.matches ? {scars:3, rows:5, certs:3, ledger:4} : {scars:3, rows:8, certs:6, ledger:99};
+const collapseLists = () => Object.entries(visible()).forEach(([id,n]) => {
+  const items = [...$(id).children];
+  items.forEach((c,k) => c.classList.toggle("x", k >= n));
+  const btn = $(id).parentElement.querySelector(":scope > .more");
+  if (btn && id !== "rows") btn.hidden = items.length <= n;
+});
+MOBILE.addEventListener("change", collapseLists);
 $("rowsMore").dataset.l = "Ver todos os " + PROJECTS.length + " projetos";
 $("rowsMore").textContent = $("rowsMore").dataset.l;
 document.querySelectorAll("[data-more]").forEach(b => b.addEventListener("click", () => {
@@ -763,6 +796,20 @@ document.querySelectorAll("[data-more]").forEach(b => b.addEventListener("click"
   box.querySelectorAll(".x.rv").forEach(e => e.classList.add("in"));
   if (!open) box.scrollIntoView({block:"start"});
 }));
+/* cases: botão "Ver como funciona" (só aparece no celular, via CSS) */
+document.querySelectorAll(".case").forEach(c => {
+  const b = document.createElement("button");
+  b.className = "more case-more"; b.type = "button"; b.setAttribute("aria-expanded","false");
+  b.textContent = "Ver como funciona";
+  b.addEventListener("click", () => {
+    const open = c.classList.toggle("open");
+    b.textContent = open ? "Mostrar menos" : "Ver como funciona";
+    b.setAttribute("aria-expanded", open);
+    c.querySelectorAll(".det.rv").forEach(e => e.classList.add("in"));
+    if (!open) c.scrollIntoView({block:"start"});
+  });
+  c.firstElementChild.appendChild(b);
+});
 /* com filtro ativo, o catálogo mostra todos os resultados e o botão some */
 $("filters").addEventListener("click", e => {
   const b = e.target.closest(".chip"); if(!b) return;
