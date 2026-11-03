@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Regra da família · EP 11</title>
+<meta name="description" content="A mensagem pronta para o grupo da família contra o golpe do falso parente: copia, cola e preenche a palavra secreta.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Regra da família · Dinheiro desenhado">
+<meta property="og:description" content="Copia, cola no grupo e preenche a palavra secreta.">
+<meta property="og:image" content="https://ayrton6147-cell.github.io/guias/regra-da-familia/regra-da-familia.png">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<style>
+:root{--ink:#0F1E33;--paper:#F6F4EF;--muted:#5E6878;--line:#DCD6CB;--blue:#2A5A92;--btn:#0F1E33;--btn-ink:#F6F4EF;--msg:#1F4E9C;--msg-ink:#F6F4EF;--zap:#1E7A46}
+@media (prefers-color-scheme:dark){:root{--ink:#E9EEF4;--paper:#0B1A2C;--muted:#9DAABB;--line:rgba(233,238,244,.14);--blue:#A9C3E3;--btn:#E9EEF4;--btn-ink:#0B1A2C;--msg:#24508F;--msg-ink:#F6F4EF;--zap:#2F9A5C}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.6}
+main{max-width:680px;margin:0 auto;padding:32px 16px 56px}
+.selo{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:Georgia,serif;font-weight:400;font-size:2rem;line-height:1.15;margin:6px 0 10px}
+.lead{color:var(--muted);margin-bottom:20px}
+.msg{background:var(--msg);color:var(--msg-ink);border-radius:16px;padding:20px;font-size:1.1rem;line-height:1.5}
+.botoes{display:grid;gap:10px;margin-top:14px}
+.btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:56px;padding:14px 20px;border:0;border-radius:12px;background:var(--btn);color:var(--btn-ink);font:inherit;font-weight:700;font-size:1.05rem;text-decoration:none;cursor:pointer}
+.btn.zap{background:var(--zap);color:#fff}
+.btn:active{transform:scale(.98)}
+.dica{font-size:.88rem;color:var(--muted);margin:10px 2px 0}
+.dica b{color:var(--ink);font-weight:600}
+h2{font-size:1.15rem;margin:32px 0 8px}
+ol{padding-left:1.4em}
+ol li:last-child{color:#C8331E;font-weight:600}
+.card{margin-top:28px}
+.card img{display:block;width:100%;height:auto;aspect-ratio:1080/1350;border-radius:6px;border:1px solid var(--line)}
+.fim{margin-top:28px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem}
+.fim p+p{margin-top:8px}
+a{color:var(--blue)}
+</style>
+</head>
+<body>
+<main>
+<p class="selo">Dinheiro desenhado · EP 11</p>
+<h1>Regra da família</h1>
+<p class="lead">Copia, cola no grupo da família e combina a palavra secreta com eles.</p>
+
+<p class="msg" id="msg">Gente, regra da casa: se chegar mensagem minha de número novo pedindo dinheiro, liga no meu número antigo antes de qualquer Pix. E a nossa palavra secreta é _______. Sem a palavra, não sou eu.</p>
+
+<div class="botoes">
+<button class="btn" id="copiar" type="button">Copiar a mensagem</button>
+<a class="btn zap" href="https://wa.me/?text=Gente%2C%20regra%20da%20casa%3A%20se%20chegar%20mensagem%20minha%20de%20n%C3%BAmero%20novo%20pedindo%20dinheiro%2C%20liga%20no%20meu%20n%C3%BAmero%20antigo%20antes%20de%20qualquer%20Pix.%20E%20a%20nossa%20palavra%20secreta%20%C3%A9%20_______.%20Sem%20a%20palavra%2C%20n%C3%A3o%20sou%20eu.">Mandar no WhatsApp</a>
+</div>
+<p class="dica">A palavra secreta <b>não</b> vai no grupo: combina por ligação ou pessoalmente. No grupo, só a regra.</p>
+
+<h2>O golpe tem sempre 4 passos</h2>
+<ol>
+<li>Número novo, "oi mãe"</li>
+<li>A tua foto, copiada do perfil</li>
+<li>Pressa: "tô sem acesso ao banco"</li>
+<li>Chave Pix no nome de outra pessoa</li>
+</ol>
+
+<div class="card">
+<img src="regra-da-familia.png" alt="Cartão Regra da família com a mensagem pronta e os 4 passos do golpe" width="1080" height="1350">
+<p class="dica">Prefere mandar a imagem? Toque e segure nela para salvar.</p>
+</div>
+
+<div class="fim">
+<p>24% dos brasileiros com 16 anos ou mais perderam dinheiro com golpe digital em 12 meses. Fonte: DataSenado/Nexus, out/2024.</p>
+<p>Episódio novo de seg, qua e sex no <a href="https://www.instagram.com/ayrton_althman/">@ayrton_althman</a>. Conteúdo educativo.</p>
+</div>
+</main>
+<script>
+document.getElementById('copiar').addEventListener('click', async function () {
+  var b = this, t = document.getElementById('msg').textContent;
+  try { await navigator.clipboard.writeText(t); }
+  catch (e) {
+    var r = document.createRange(); r.selectNodeContents(document.getElementById('msg'));
+    var s = getSelection(); s.removeAllRanges(); s.addRange(r);
+    try { document.execCommand('copy'); } catch (e2) {}
+  }
+  b.textContent = 'Copiado ✓';
+  setTimeout(function () { b.textContent = 'Copiar a mensagem'; }, 2500);
+});
+</script>
+</body>
+</html>
