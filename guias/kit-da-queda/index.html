@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kit da queda · Dinheiro desenhado</title>
+<meta name="description" content="Caiu, e agora? A conta da volta (quanto precisa subir pra empatar), o pedágio de quem vendeu no fundo em 2020, as 5 perguntas antes de vender no vermelho e o dinheiro separado por prazo.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="Kit da queda · Dinheiro desenhado">
+<meta property="og:description" content="Caiu 50%? Precisa subir 100% pra empatar. Faz a conta do teu investimento antes de decidir no susto.">
+<meta property="og:image" content="https://ayrton6147-cell.github.io/guias/kit-da-queda/kit-da-queda.jpg">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<style>
+:root{--ink:#0A0A0A;--paper:#F5F5F0;--muted:#5E5E57;--line:#DCDCD2;--card:#FFFFFF;--red:#C8331E;--lime:#D4FF00;--btn:#0A0A0A;--btn-ink:#F5F5F0}
+@media (prefers-color-scheme:dark){:root{--ink:#EDEDE6;--paper:#0E0E0C;--muted:#A3A39A;--line:rgba(237,237,230,.14);--card:#191916;--red:#FF6B55;--btn:#EDEDE6;--btn-ink:#0E0E0C}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.6}
+main{max-width:680px;margin:0 auto;padding:32px 16px 56px}
+.selo{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:Georgia,serif;font-weight:400;font-size:2rem;line-height:1.15;margin:6px 0 10px}
+h1 em{font-style:normal;color:var(--red)}
+.lead{color:var(--muted);margin-bottom:20px}
+h2{font-size:1.15rem;margin:32px 0 10px}
+.btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:56px;padding:14px 20px;border:0;border-radius:12px;background:var(--btn);color:var(--btn-ink);font:700 1.05rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none;cursor:pointer}
+.btn.sec{background:transparent;color:var(--ink);border:1.5px solid var(--ink);margin-top:14px}
+.dica{font-size:.88rem;color:var(--muted);margin:10px 2px 0}
+.calc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.calc label{display:block;font-size:.9rem;color:var(--muted);margin:0 0 6px}
+.calc label+.campo{margin-bottom:12px}
+.campo{display:flex;align-items:center;gap:8px;border:1.5px solid var(--line);border-radius:10px;padding:0 12px;background:var(--paper)}
+.campo span{font-weight:700;color:var(--muted)}
+.campo input{flex:1;min-width:0;border:0;background:transparent;color:var(--ink);font:700 1.4rem/1 system-ui,-apple-system,"Segoe UI",sans-serif;padding:12px 0;outline:none}
+.grande{margin-top:4px;padding:16px;border-radius:12px;background:#0A0A0A;color:#F5F5F0}
+.grande small{display:block;font-size:.85rem;color:#B8B8AE}
+.grande b{display:block;font:800 2.4rem/1.1 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--lime)}
+.grande p{margin-top:8px;font-size:.92rem;color:#E4E4DC}
+.volta{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.volta div{border-radius:10px;overflow:hidden;text-align:center;border:1px solid var(--line)}
+.volta .q{display:block;padding:6px 0;font-weight:800;color:var(--red);background:var(--card)}
+.volta .s{display:block;padding:6px 0;font-weight:800;background:var(--lime);color:#0A0A0A}
+.caso{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.caso div{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:.85rem;color:var(--muted)}
+.caso b{display:block;font-size:1.2rem;color:var(--ink)}
+.caso .dor b{color:var(--red)}
+.caso .sim{background:var(--lime);border-color:var(--lime);color:#0A0A0A}
+.caso .sim b{color:#0A0A0A}
+.perg{list-style:none;display:grid;gap:10px;counter-reset:p}
+.perg li{display:grid;grid-template-columns:30px 1fr;gap:10px;counter-increment:p}
+.perg li::before{content:counter(p);display:block;width:24px;height:24px;margin-top:2px;border-radius:5px;background:#0A0A0A;color:var(--lime);font:700 .85rem/24px Consolas,monospace;text-align:center}
+.gav{list-style:none;display:grid;gap:10px}
+.gav li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px}
+.gav i{display:block;font-style:normal;font:700 .75rem/1.4 Consolas,monospace;letter-spacing:.08em;color:var(--muted)}
+.prox{margin-top:32px;padding:18px;border-radius:12px;border:1.5px solid var(--ink)}
+.prox p{margin-bottom:12px}
+.card{margin-top:28px}
+.card img{display:block;width:100%;height:auto;aspect-ratio:794/1123;border-radius:6px;border:1px solid var(--line)}
+.fim{margin-top:28px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem}
+.fim p+p{margin-top:8px}
+a{color:inherit}
+</style>
+</head>
+<body>
+<main>
+<p class="selo">Dinheiro desenhado · Kit da queda</p>
+<h1>Caiu. <em>E agora?</em></h1>
+<p class="lead">Para ler antes de mexer no investimento que está no vermelho. Começa pela conta do teu caso.</p>
+
+<div class="calc">
+<label for="queda">Quanto o teu investimento caiu, do topo até hoje</label>
+<div class="campo"><span>−</span><input id="queda" inputmode="decimal" value="50"><span>%</span></div>
+<label for="valor">Quanto você tinha no topo (opcional)</label>
+<div class="campo"><span>R$</span><input id="valor" inputmode="decimal" value="10.000"></div>
+<div class="grande" aria-live="polite">
+<small>Pra voltar ao que era, precisa subir</small>
+<b id="sobe">+100%</b>
+<p id="reais">Dos R$ 10.000 sobraram R$ 5.000. Pra voltar, esses R$ 5.000 precisam virar R$ 10.000.</p>
+</div>
+<p class="dica">A queda corta o cheio. A volta só cresce o que sobrou. Conta pura: queda ÷ (1 − queda).</p>
+</div>
+
+<a class="btn sec" href="kit-da-queda.pdf" download>Baixar o kit em PDF</a>
+<p class="dica">Abriu pelo Instagram e o PDF não baixou? Toca nos três pontinhos no canto da tela, escolhe Abrir no navegador e toca no botão de novo.</p>
+
+<h2>A tabela da volta</h2>
+<div class="volta">
+<div><span class="q">−10%</span><span class="s">+11%</span></div>
+<div><span class="q">−20%</span><span class="s">+25%</span></div>
+<div><span class="q">−30%</span><span class="s">+43%</span></div>
+<div><span class="q">−40%</span><span class="s">+67%</span></div>
+<div><span class="q">−50%</span><span class="s">+100%</span></div>
+<div><span class="q">−60%</span><span class="s">+150%</span></div>
+<div><span class="q">−70%</span><span class="s">+233%</span></div>
+<div><span class="q">−80%</span><span class="s">+400%</span></div>
+<div><span class="q">−90%</span><span class="s">+900%</span></div>
+</div>
+
+<h2>O pedágio do pânico: R$ 10 mil no Ibovespa em 2020</h2>
+<div class="caso">
+<div>23/01/2020, o topo<b>R$ 10.000</b></div>
+<div class="dor">23/03/2020, o fundo<b>R$ 5.318</b></div>
+<div class="dor">Quem vendeu no fundo<b>−R$ 4.682</b></div>
+<div class="sim">07/01/2021<b>acima do topo</b></div>
+</div>
+<p class="dica">350 dias do topo ao topo. Quem vendeu no fundo transformou uma queda no papel em perda de verdade. Estimativa pelo índice, sem custos nem IR. Isso não garante que a próxima queda volte no mesmo prazo, nem que volte.</p>
+
+<h2>As 5 perguntas antes de vender no vermelho</h2>
+<ol class="perg">
+<li><span><b>Vou precisar desse dinheiro antes de ele ter tempo de voltar?</b> Se sim, o problema é de prazo, não de queda.</span></li>
+<li><span><b>O motivo de eu ter investido mudou, ou só o preço?</b></span></li>
+<li><span><b>Estou seguindo um plano ou o susto?</b> Decisão tomada na manchete do dia costuma ser a mais cara.</span></li>
+<li><span><b>Quanto essa queda pesa no patrimônio todo?</b> 30% de queda em 10% da carteira são 3% do total.</span></li>
+<li><span><b>Tem alavancagem?</b> Divide 1 por ela: 10x zera com 10% de queda, ou menos.</span></li>
+</ol>
+
+<h2>O plano que evita o pânico</h2>
+<p class="dica" style="margin:0 0 10px">O dinheiro separado por prazo, antes da próxima queda:</p>
+<ul class="gav">
+<li><i>ATÉ 1 ANO</i><b>Reserva e contas.</b> Fora da bolsa, com resgate diário. É ela que te deixa não vender no fundo.</li>
+<li><i>1 A 5 ANOS</i><b>Objetivo com data.</b> Renda fixa com vencimento perto da data do objetivo.</li>
+<li><i>MAIS DE 5 ANOS</i><b>O que aguenta anos.</b> A única parte que pode oscilar, na medida do teu perfil.</li>
+</ul>
+
+<div class="prox">
+<p><b>Quer saber em qual gaveta está cada parte do teu dinheiro?</b> Me manda no direct o que caiu e em quanto tempo você vai precisar dele.</p>
+<a class="btn" href="https://ig.me/m/ayrton_althman">Me chama no direct</a>
+<p class="dica" style="margin-bottom:0">Pra montar a reserva, a primeira gaveta: <a href="../renda-fixa-desenhada/">Guia nº 01 · Renda fixa desenhada</a>.</p>
+</div>
+
+<div class="card">
+<img src="kit-da-queda.jpg" alt="Página do kit em PDF com a tabela da volta, o caso de 2020, as 5 perguntas e as 3 gavetas" width="794" height="1123">
+</div>
+
+<div class="fim">
+<p>Fontes: B3, Ibovespa, fechamentos diários: topo 119.527,63 em 23/01/2020; mínima de fechamento 63.569,62 em 23/03/2020 (−46,82%); 1º fechamento acima do topo 122.385,92 em 07/01/2021; consulta em 28/10/2026. Conta própria: R$ 10.000 × 63.569,62 ÷ 119.527,63 = R$ 5.318. Alavancagem: conta ilustrativa, sem taxas nem juros; na prática a liquidação vem antes de zerar.</p>
+<p>Episódio novo de seg, qua e sex no <a href="https://www.instagram.com/ayrton_althman/">@ayrton_althman</a>. Conteúdo educativo, não é recomendação de investimento, nem para vender nem para manter. Rentabilidade passada não garante rentabilidade futura.</p>
+</div>
+</main>
+<script>
+(function(){
+  var q=document.getElementById('queda'), v=document.getElementById('valor');
+  var num=function(s){var n=parseFloat(String(s).replace(/\./g,'').replace(',','.'));return isFinite(n)?n:NaN;};
+  var brl=function(n){return 'R$ '+Math.round(n).toLocaleString('pt-BR');};
+  var pct=function(n){return n.toLocaleString('pt-BR',{maximumFractionDigits:n<100?1:0})+'%';};
+  function conta(){
+    var x=num(q.value), base=num(v.value), sobe=document.getElementById('sobe'), reais=document.getElementById('reais');
+    if(!(x>0)){sobe.textContent='+0%';reais.textContent='Sem queda, nada pra recuperar.';return;}
+    if(x>=100){sobe.textContent='não volta';reais.textContent='Caiu 100%: não sobrou nada pra crescer. É o que a alavancagem pode fazer.';return;}
+    var f=x/100, s=f/(1-f)*100;
+    sobe.textContent='+'+pct(s);
+    if(base>0){var sobrou=base*(1-f);reais.textContent='Dos '+brl(base)+' sobraram '+brl(sobrou)+'. Pra voltar, esses '+brl(sobrou)+' precisam virar '+brl(base)+'.';}
+    else{reais.textContent='Caiu '+pct(x)+'? Precisa subir '+pct(s)+' só pra empatar.';}
+  }
+  q.addEventListener('input',conta); v.addEventListener('input',conta); conta();
+})();
+</script>
+</body>
+</html>
