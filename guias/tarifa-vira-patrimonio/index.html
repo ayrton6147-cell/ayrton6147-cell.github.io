@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A tarifa que vira patrimônio · EP 15</title>
+<meta name="description" content="Quanto o pacote de tarifas do banco vira se você investir o mesmo valor todo mês: a conta em 10, 20 e 30 anos, os 3 degraus de um patrimônio que começa pequeno e a frase que libera o dinheiro.">
+<meta name="robots" content="noindex">
+<meta property="og:title" content="A tarifa que vira patrimônio · Dinheiro desenhado">
+<meta property="og:description" content="R$ 39,90 por mês, investidos por 30 anos, viram uns R$ 32,5 mil em dinheiro de hoje. Faz a conta com o teu valor.">
+<meta property="og:image" content="https://ayrton6147-cell.github.io/guias/tarifa-vira-patrimonio/a-tarifa-que-vira-patrimonio.jpg">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<style>
+:root{--ink:#0A0A0A;--paper:#F5F5F0;--muted:#5E5E57;--line:#DCDCD2;--card:#FFFFFF;--red:#C8331E;--green:#1F8A4C;--lime:#D4FF00;--btn:#0A0A0A;--btn-ink:#F5F5F0}
+@media (prefers-color-scheme:dark){:root{--ink:#EDEDE6;--paper:#0E0E0C;--muted:#A3A39A;--line:rgba(237,237,230,.14);--card:#191916;--red:#FF6B55;--green:#4CC982;--btn:#EDEDE6;--btn-ink:#0E0E0C}}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.6}
+main{max-width:680px;margin:0 auto;padding:32px 16px 56px}
+.selo{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:Georgia,serif;font-weight:400;font-size:2rem;line-height:1.15;margin:6px 0 10px}
+h1 em{font-style:normal;color:var(--green)}
+.lead{color:var(--muted);margin-bottom:20px}
+h2{font-size:1.15rem;margin:32px 0 10px}
+.btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:56px;padding:14px 20px;border:0;border-radius:12px;background:var(--btn);color:var(--btn-ink);font:700 1.05rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none;cursor:pointer}
+.btn:active{transform:scale(.98)}
+.btn.sec{background:transparent;color:var(--ink);border:1.5px solid var(--ink);margin-top:10px}
+.dica{font-size:.88rem;color:var(--muted);margin:10px 2px 0}
+.calc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.calc label{display:block;font-size:.9rem;color:var(--muted);margin-bottom:6px}
+.campo{display:flex;align-items:center;gap:8px;border:1.5px solid var(--line);border-radius:10px;padding:0 12px;background:var(--paper)}
+.campo span{font-weight:700;color:var(--muted)}
+.campo input{flex:1;min-width:0;border:0;background:transparent;color:var(--ink);font:700 1.4rem/1 system-ui,-apple-system,"Segoe UI",sans-serif;padding:12px 0;outline:none}
+.atalhos{display:flex;gap:6px;margin-top:10px;flex-wrap:wrap}
+.atalhos button{border:1.5px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:6px 11px;font:600 .88rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;cursor:pointer}
+.atalhos button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.rot2{font-size:.9rem;color:var(--muted);margin-top:14px}
+.tab{width:100%;border-collapse:separate;border-spacing:0 6px;margin-top:12px}
+.tab th{font-size:.78rem;font-weight:600;color:var(--muted);text-align:right;padding:0 10px}
+.tab th:first-child{text-align:left}
+.tab td{background:var(--paper);padding:10px;text-align:right;font-weight:700}
+.tab td:first-child{text-align:left;font-weight:600;color:var(--muted);border-radius:8px 0 0 8px}
+.tab td:last-child{border-radius:0 8px 8px 0}
+.tab .pago{color:var(--red)}
+.tab .vira{background:var(--lime);color:#0A0A0A}
+.juro{margin-top:10px;padding:12px 14px;border-radius:10px;background:#0A0A0A;color:#F5F5F0;font:600 .92rem/1.5 Consolas,"Courier New",monospace}
+.juro span{color:var(--lime)}
+.degraus{list-style:none;display:grid;gap:10px}
+.degraus li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.degraus b{display:block}
+.degraus i{font-style:normal;display:inline-block;background:#0A0A0A;color:var(--lime);border-radius:4px;padding:0 7px;font:700 .8rem/1.6 Consolas,monospace;margin-bottom:4px}
+.frase{padding:16px 18px;border-radius:12px;background:#0A0A0A;color:#F5F5F0;font:600 1rem/1.55 Consolas,"Courier New",monospace}
+.frase span{color:var(--lime)}
+.ok{display:none;font-size:.9rem;font-weight:700;margin-top:8px}
+.ok.on{display:block}
+.prox{margin-top:32px;padding:18px;border-radius:12px;border:1.5px solid var(--ink)}
+.prox p{margin-bottom:12px}
+.card{margin-top:28px}
+.card img{display:block;width:100%;height:auto;aspect-ratio:794/1123;border-radius:6px;border:1px solid var(--line)}
+.fim{margin-top:28px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem}
+.fim p+p{margin-top:8px}
+a{color:inherit}
+</style>
+</head>
+<body>
+<main>
+<p class="selo">Dinheiro desenhado · EP 15</p>
+<h1>A tarifa que vira <em>patrimônio</em></h1>
+<p class="lead">Cortar o pacote do banco é o primeiro passo. O que muda a tua vida é o segundo: investir a mesma quantia todo mês, no dia em que ela saía. Coloca o teu valor e olha quanto vira.</p>
+
+<div class="calc">
+<label for="valor">Quanto você vai investir por mês</label>
+<div class="campo"><span>R$</span><input id="valor" inputmode="decimal" value="39,90" aria-describedby="prem"></div>
+<div class="atalhos" aria-label="Valores rápidos">
+<button type="button" data-v="39,90">R$ 39,90</button><button type="button" data-v="100">R$ 100</button><button type="button" data-v="300">R$ 300</button><button type="button" data-v="1000">R$ 1.000</button>
+</div>
+<p class="rot2" id="rot-taxa">Ganho acima da inflação, por ano</p>
+<div class="atalhos taxas" role="group" aria-labelledby="rot-taxa">
+<button type="button" data-t="3" aria-pressed="false">3% conservador</button><button type="button" data-t="4" aria-pressed="false">4%</button><button type="button" data-t="5" aria-pressed="true">5%</button>
+</div>
+<table class="tab" aria-live="polite">
+<thead><tr><th>Prazo</th><th>Você põe</th><th>Investido, vira</th></tr></thead>
+<tbody>
+<tr><td>10 anos</td><td class="pago" id="p10"></td><td class="vira" id="v10"></td></tr>
+<tr><td>20 anos</td><td class="pago" id="p20"></td><td class="vira" id="v20"></td></tr>
+<tr><td>30 anos</td><td class="pago" id="p30"></td><td class="vira" id="v30"></td></tr>
+</tbody>
+</table>
+<p class="juro" id="juro"></p>
+<p class="dica" id="prem">Simulação ilustrativa, não é promessa: o ganho acima da inflação que você escolheu (padrão 5% ao ano), reais de hoje, aporte no fim de cada mês, sem impostos nem custos. O ganho real de qualquer investimento varia e pode ser menor.</p>
+</div>
+
+<a class="btn sec" href="a-tarifa-que-vira-patrimonio.pdf" download>Baixar o plano em PDF</a>
+<p class="dica">Abriu pelo Instagram e o PDF não baixou? Toca nos três pontinhos no canto da tela, escolhe Abrir no navegador e toca no botão de novo.</p>
+
+<h2>Os 3 degraus de um patrimônio que começa pequeno</h2>
+<ol class="degraus">
+<li><i>1</i><b>Reserva primeiro</b>Uns 6 meses do teu custo de vida em renda fixa com resgate diário e baixo risco. É o que evita vender investimento na pressa, no pior dia.</li>
+<li><i>2</i><b>Aporte no automático</b>Programa a transferência para o dia do salário, antes de gastar. O valor do pacote é o começo; aumenta quando a renda subir.</li>
+<li><i>3</i><b>Objetivo com prazo</b>Para o longo prazo, investimento que protege da inflação. Para data marcada, vencimento casado com a data. O <a href="../renda-fixa-desenhada/">Guia nº 01</a> explica cada um.</li>
+</ol>
+
+<h2>O primeiro passo: a frase que libera o dinheiro</h2>
+<p class="frase" id="frase">"Quero cancelar o pacote de tarifas e ficar <span>só com os serviços essenciais</span>, que são gratuitos pela Resolução CMN 3.919/2010. Peço o <span>número do protocolo</span>."</p>
+<button class="btn" id="copiar" type="button" style="margin-top:12px">Copiar a frase</button>
+<p class="ok" id="ok" role="status">Copiada. Cola no chat do app do teu banco e guarda o protocolo.</p>
+<p class="dica">De graça por regra, na conta de pessoa física: cartão de débito, até 4 saques e 2 extratos por mês, 2 transferências no mesmo banco, consultas pela internet, e Pix. Usa mais que isso? Faz a conta antes: às vezes o pacote compensa.</p>
+
+<div class="prox">
+<p><b>Quanto precisa juntar pra viver de renda?</b> A tabela do salário de renda mostra o tamanho do pote e quantos anos leva guardando todo mês.</p>
+<a class="btn" href="../salario-de-renda/">Ver o salário de renda</a>
+<p class="dica" style="margin-bottom:0">Quer montar o teu plano de aporte? <a href="https://ig.me/m/ayrton_althman">Me chama no direct</a>.</p>
+</div>
+
+<div class="card">
+<img src="a-tarifa-que-vira-patrimonio.jpg" alt="Página do PDF com a tabela pago em tarifa contra investido, os 3 degraus e a frase" width="794" height="1123">
+</div>
+
+<div class="fim">
+<p>Fontes: serviços essenciais gratuitos e conta sem pacote: Resolução CMN 3.919/2010, art. 2º, I (Banco Central; Idec, "Conheça os serviços bancários gratuitos"), consulta em 25/11/2026. Pix gratuito para pessoa física: Resolução BCB 19/2020. R$ 39,90 é o exemplo do vídeo, não é tarifa de nenhum banco.</p>
+<p>Episódio novo de seg, qua e sex no <a href="https://www.instagram.com/ayrton_althman/">@ayrton_althman</a>. Conteúdo educativo, não é recomendação de investimento. Rentabilidade passada não garante rentabilidade futura.</p>
+</div>
+</main>
+<script>
+(function(){
+  var i=Math.pow(1.05,1/12)-1;
+  document.querySelectorAll('.taxas button').forEach(function(b){b.addEventListener('click',function(){
+    i=Math.pow(1+Number(b.getAttribute('data-t'))/100,1/12)-1;
+    document.querySelectorAll('.taxas button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+    conta();
+  });});
+  var v=document.getElementById('valor');
+  var brl=function(n){return 'R$ '+Math.round(n).toLocaleString('pt-BR');};
+  function conta(){
+    var m=parseFloat(String(v.value).replace(/\./g,'').replace(',','.'));
+    if(!isFinite(m)||m<0)m=0;
+    [10,20,30].forEach(function(a){
+      var n=a*12, fv=m*(Math.pow(1+i,n)-1)/i;
+      document.getElementById('p'+a).textContent=brl(m*n);
+      document.getElementById('v'+a).textContent=brl(fv);
+    });
+    var n=360, fv=m*(Math.pow(1+i,n)-1)/i, pos=m*n;
+    document.getElementById('juro').innerHTML='Em 30 anos você põe '+brl(pos)+'. <span>O juro põe '+brl(fv-pos)+'</span>: mais do que você.';
+  }
+  v.addEventListener('input',conta);
+  document.querySelectorAll('.atalhos:not(.taxas) button').forEach(function(b){b.addEventListener('click',function(){v.value=b.getAttribute('data-v');conta();});});
+  conta();
+  var frase='Quero cancelar o pacote de tarifas e ficar só com os serviços essenciais, que são gratuitos pela Resolução CMN 3.919/2010. Peço o número do protocolo.';
+  var ok=document.getElementById('ok');
+  document.getElementById('copiar').addEventListener('click',function(){
+    function feito(){ok.classList.add('on');}
+    function velho(){var t=document.createElement('textarea');t.value=frase;t.setAttribute('readonly','');t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');feito();}catch(e){}document.body.removeChild(t);}
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(frase).then(feito,velho);}else{velho();}
+  });
+})();
+</script>
+</body>
+</html>
