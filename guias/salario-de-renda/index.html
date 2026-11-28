@@ -3,40 +3,69 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Salário de renda · EP 24</title>
-<meta name="description" content="Quanto precisa ter investido para receber 1, 2 ou 3 salários mínimos só com o rendimento, e quantos anos leva guardando todo mês.">
+<title>O meu salário de renda · EP 24</title>
+<meta name="description" content="Calculadora: quanto precisa ter investido para receber a renda que você quer só com o rendimento, e em quantos anos chega com o que você já tem e o que guarda por mês.">
 <meta name="robots" content="noindex">
-<meta property="og:title" content="O salário de renda · Dinheiro desenhado">
-<meta property="og:description" content="A tabela de 1, 2 e 3 salários de renda.">
-<meta property="og:image" content="https://ayrton6147-cell.github.io/guias/salario-de-renda/tabela-salario-de-renda.jpg">
+<meta property="og:title" content="O meu salário de renda · Dinheiro desenhado">
+<meta property="og:description" content="1 salário mínimo por mês de renda pede uns R$ 398 mil investidos. Faz a conta com a renda que você quer.">
+<meta property="og:image" content="https://ayrton6147-cell.github.io/guias/salario-de-renda/salario-de-renda.jpg">
 <link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
 <style>
-:root{--ink:#0A0A0A;--paper:#F5F5F0;--muted:#5E5E57;--line:#DCDCD2;--card:#FFFFFF;--red:#E5402A;--lime:#D4FF00;--btn:#0A0A0A;--btn-ink:#F5F5F0}
-@media (prefers-color-scheme:dark){:root{--ink:#EDEDE6;--paper:#0E0E0C;--muted:#A3A39A;--line:rgba(237,237,230,.14);--card:#191916;--red:#FF6B55;--btn:#EDEDE6;--btn-ink:#0E0E0C}}
+:root{--ink:#0A0A0A;--paper:#F5F5F0;--muted:#5E5E57;--line:#DCDCD2;--card:#FFFFFF;--red:#C8331E;--green:#1F8A4C;--lime:#D4FF00;--btn:#0A0A0A;--btn-ink:#F5F5F0}
+@media (prefers-color-scheme:dark){:root{--ink:#EDEDE6;--paper:#0E0E0C;--muted:#A3A39A;--line:rgba(237,237,230,.14);--card:#191916;--red:#FF6B55;--green:#4CC982;--btn:#EDEDE6;--btn-ink:#0E0E0C}}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--paper);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;font-size:16px;line-height:1.6}
 main{max-width:680px;margin:0 auto;padding:32px 16px 56px}
 .selo{font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 h1{font-family:Georgia,serif;font-weight:400;font-size:2rem;line-height:1.15;margin:6px 0 10px}
+h1 em{font-style:normal;color:var(--green)}
 .lead{color:var(--muted);margin-bottom:20px}
-.btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:56px;padding:14px 20px;border-radius:12px;background:var(--btn);color:var(--btn-ink);font-weight:700;font-size:1.05rem;text-decoration:none}
-.btn:active{transform:scale(.98)}
-.dica{font-size:.88rem;color:var(--muted);margin:10px 2px 0}
 h2{font-size:1.15rem;margin:32px 0 10px}
-.box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:6px 16px}
-.linha{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px dashed var(--line)}
-.linha:last-child{border-bottom:0}
-.linha b{font-size:1.15rem;white-space:nowrap}
-.linha.um b{color:var(--red)}
-table{width:100%;border-collapse:collapse;font-size:.95rem;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
-th,td{padding:10px 8px;text-align:left;border-bottom:1px dashed var(--line)}
-th{font-size:.78rem;letter-spacing:.04em;color:var(--muted);font-weight:700}
-tr:last-child td{border-bottom:0}
-td:first-child{font-weight:700;white-space:nowrap}
+.btn{display:flex;align-items:center;justify-content:center;width:100%;min-height:56px;padding:14px 20px;border:0;border-radius:12px;background:var(--btn);color:var(--btn-ink);font:700 1.05rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;text-decoration:none;cursor:pointer}
+.btn:active{transform:scale(.98)}
+.btn.sec{background:transparent;color:var(--ink);border:1.5px solid var(--ink);margin-top:10px}
+.dica{font-size:.88rem;color:var(--muted);margin:10px 2px 0}
+.calc{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}
+.calc label,.rot2{display:block;font-size:.9rem;color:var(--muted);margin-bottom:6px}
+.calc .bloco+.bloco{margin-top:16px}
+.campo{display:flex;align-items:center;gap:8px;border:1.5px solid var(--line);border-radius:10px;padding:0 12px;background:var(--paper)}
+.campo span{font-weight:700;color:var(--muted)}
+.campo input{flex:1;min-width:0;border:0;background:transparent;color:var(--ink);font:700 1.4rem/1 system-ui,-apple-system,"Segoe UI",sans-serif;padding:12px 0;outline:none}
+.atalhos{display:flex;gap:6px;margin-top:8px;flex-wrap:wrap}
+.atalhos button{border:1.5px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:6px 11px;font:600 .88rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;cursor:pointer}
+.atalhos button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.meu{margin-top:18px;border-radius:14px;background:#0A0A0A;color:#F5F5F0;padding:18px 18px 16px}
+.meu .t{font:700 .78rem/1.2 Consolas,"Courier New",monospace;letter-spacing:.12em;color:#B9B9AE;text-transform:uppercase}
+.meu .pote{font:800 2.1rem/1.1 system-ui,-apple-system,"Segoe UI",sans-serif;color:var(--lime);margin:6px 0 2px}
+.meu .sub{font-size:.92rem;color:#D6D6CC}
+.meu .linhas{margin-top:14px;display:grid;gap:8px}
+.meu .l{display:flex;justify-content:space-between;gap:12px;padding-top:8px;border-top:1px dashed rgba(245,245,240,.22);font-size:.95rem}
+.meu .l b{white-space:nowrap;text-align:right}
+.meu .l b.lime{color:var(--lime)}
+.meu .assina{margin-top:12px;font:700 .72rem/1.3 Consolas,monospace;letter-spacing:.08em;color:#8E8E84}
+.alav{width:100%;border-collapse:separate;border-spacing:0 6px;margin-top:6px}
+.alav th{font-size:.78rem;font-weight:600;color:var(--muted);text-align:right;padding:0 10px}
+.alav th:first-child{text-align:left}
+.alav td{background:var(--paper);padding:10px;text-align:right;font-weight:700}
+.alav td:first-child{text-align:left;font-weight:600;color:var(--muted);border-radius:8px 0 0 8px}
+.alav td:last-child{border-radius:0 8px 8px 0}
+.alav td+td{white-space:nowrap}
+.alav tr.agora td{background:var(--lime);color:#0A0A0A}
+table.ref{width:100%;border-collapse:collapse;font-size:.95rem;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.ref th,.ref td{padding:10px 8px;text-align:left;border-bottom:1px dashed var(--line)}
+.ref th{font-size:.78rem;letter-spacing:.04em;color:var(--muted);font-weight:700}
+.ref tr:last-child td{border-bottom:0}
+.ref td:first-child{font-weight:700;white-space:nowrap}
 .formula{padding:14px 16px;border-radius:12px;background:#0A0A0A;color:#F5F5F0;font:600 .95rem/1.5 Consolas,"Courier New",monospace}
 .formula span{color:var(--lime)}
+.passos{list-style:none;display:grid;gap:10px}
+.passos li{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.passos b{display:block}
+.passos i{font-style:normal;display:inline-block;background:#0A0A0A;color:var(--lime);border-radius:4px;padding:0 7px;font:700 .8rem/1.6 Consolas,monospace;margin-bottom:4px}
+.prox{margin-top:32px;padding:18px;border-radius:12px;border:1.5px solid var(--ink)}
+.prox p{margin-bottom:12px}
 .card{margin-top:28px}
-.card img{display:block;width:100%;height:auto;aspect-ratio:909/1285;border-radius:6px;border:1px solid var(--line)}
+.card img{display:block;width:100%;height:auto;aspect-ratio:794/1123;border-radius:6px;border:1px solid var(--line)}
 .fim{margin-top:28px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.92rem}
 .fim p+p{margin-top:8px}
 a{color:inherit}
@@ -45,38 +74,157 @@ a{color:inherit}
 <body>
 <main>
 <p class="selo">Dinheiro desenhado · EP 24</p>
-<h1>O salário de renda</h1>
-<p class="lead">Quanto precisa ter investido pra receber salários mínimos só com o rendimento, sem gastar o principal.</p>
+<h1>O meu salário de <em>renda</em></h1>
+<p class="lead">Quanto precisa ter investido pra receber a renda que você quer só com o rendimento, sem gastar o principal. E em quantos anos chega, com o que você já tem e o que guarda por mês.</p>
 
-<a class="btn" href="tabela-salario-de-renda.pdf" download>Baixar a tabela em PDF</a>
-
-<h2>Patrimônio necessário</h2>
-<div class="box">
-<div class="linha um"><span>1 salário (R$ 1.621)</span><b>R$ 397.877</b></div>
-<div class="linha"><span>2 salários (R$ 3.242)</span><b>R$ 795.754</b></div>
-<div class="linha"><span>3 salários (R$ 4.863)</span><b>R$ 1.193.631</b></div>
+<div class="calc">
+<div class="bloco">
+<label for="renda">A renda que você quer por mês</label>
+<div class="campo"><span>R$</span><input id="renda" inputmode="decimal" value="1.621"></div>
+<div class="atalhos" aria-label="Rendas rápidas">
+<button type="button" data-alvo="renda" data-v="1621">1 salário</button><button type="button" data-alvo="renda" data-v="3242">2 salários</button><button type="button" data-alvo="renda" data-v="4863">3 salários</button><button type="button" data-alvo="renda" data-v="10000">R$ 10 mil</button>
+</div>
+</div>
+<div class="bloco">
+<label for="tem">Quanto você já tem investido</label>
+<div class="campo"><span>R$</span><input id="tem" inputmode="decimal" value="0"></div>
+</div>
+<div class="bloco">
+<label for="aporte">Quanto você guarda por mês</label>
+<div class="campo"><span>R$</span><input id="aporte" inputmode="decimal" value="1.000"></div>
+<div class="atalhos" aria-label="Aportes rápidos">
+<button type="button" data-alvo="aporte" data-v="500">R$ 500</button><button type="button" data-alvo="aporte" data-v="1000">R$ 1.000</button><button type="button" data-alvo="aporte" data-v="1621">R$ 1.621</button><button type="button" data-alvo="aporte" data-v="3000">R$ 3.000</button>
+</div>
+</div>
+<div class="bloco">
+<p class="rot2" id="rot-taxa">Ganho acima da inflação, por ano</p>
+<div class="atalhos taxas" role="group" aria-labelledby="rot-taxa">
+<button type="button" data-t="3" aria-pressed="false">3% conservador</button><button type="button" data-t="4" aria-pressed="false">4%</button><button type="button" data-t="5" aria-pressed="true">5%</button>
+</div>
 </div>
 
-<h2>Quantos anos guardando todo mês</h2>
-<table>
-<tr><th>Aporte</th><th>1 salário</th><th>2 salários</th><th>3 salários</th></tr>
+<div class="meu" aria-live="polite">
+<p class="t">O meu número</p>
+<p class="pote" id="pote"></p>
+<p class="sub" id="sub"></p>
+<div class="linhas">
+<div class="l"><span>Chego lá em</span><b class="lime" id="prazo"></b></div>
+<div class="l"><span>Hoje o meu dinheiro já me paga</span><b id="hoje"></b></div>
+<div class="l"><span>Do pote, eu ponho / o juro põe</span><b id="divide"></b></div>
+</div>
+<p class="assina">PRINTA E GUARDA · @AYRTON_ALTHMAN · DINHEIRO DESENHADO</p>
+</div>
+
+<p class="rot2" style="margin-top:16px">E se você guardar mais por mês?</p>
+<table class="alav">
+<thead><tr><th>Guardando</th><th>Chega em</th><th>Ganha</th></tr></thead>
+<tbody id="alav"></tbody>
+</table>
+<p class="dica" id="prem">Simulação ilustrativa, não é promessa: o ganho acima da inflação que você escolheu (padrão 5% ao ano), valores em reais de hoje, aporte no fim de cada mês, sem impostos nem custos e sem gastar o principal. O ganho real de qualquer investimento varia e pode ser menor.</p>
+</div>
+
+<a class="btn sec" href="salario-de-renda.pdf" download>Baixar a tabela e o meu plano em PDF</a>
+<p class="dica">Abriu pelo Instagram e o PDF não baixou? Toca nos três pontinhos no canto da tela, escolhe Abrir no navegador e toca no botão de novo.</p>
+
+<h2>A tabela do vídeo: 1, 2 e 3 salários de renda</h2>
+<table class="ref">
+<tr><th>Guardando</th><th>1 salário<br>R$ 397.877</th><th>2 salários<br>R$ 795.754</th><th>3 salários<br>R$ 1.193.631</th></tr>
 <tr><td>R$ 500</td><td>29,6 anos</td><td>41,3 anos</td><td>48,6 anos</td></tr>
 <tr><td>R$ 1.000</td><td>19,7 anos</td><td>29,6 anos</td><td>36,3 anos</td></tr>
 <tr><td>R$ 1.621</td><td>14,2 anos</td><td>22,5 anos</td><td>28,4 anos</td></tr>
 </table>
+<p class="dica">Começando do zero, 5% ao ano acima da inflação. Salário mínimo de R$ 1.621.</p>
 
-<h2>Calcula o teu número</h2>
+<h2>A conta de bolso</h2>
 <p class="formula"><span>a renda que você quer por mês</span> ÷ 0,0041 = o tamanho do pote</p>
-<p class="dica">Exemplo: R$ 2.500 por mês ÷ 0,0041 ≈ R$ 610 mil.</p>
+<p class="dica">R$ 2.500 por mês ÷ 0,0041 ≈ R$ 610 mil. O 0,0041 é 5% ao ano acima da inflação, em taxa mensal.</p>
+
+<h2>Os 3 movimentos que encurtam o caminho</h2>
+<ol class="passos">
+<li><i>1</i><b>Aumentar o aporte pesa mais que caçar a taxa mágica</b>Olha a tabela "E se você guardar mais": cada real a mais por mês tira anos do prazo. Ganho prometido muito acima do mercado costuma vir com risco escondido.</li>
+<li><i>2</i><b>Aporte no dia do salário, no automático</b>Programa a transferência para o dia em que o dinheiro cai, antes de gastar. Quando a renda subir, o aporte sobe junto.</li>
+<li><i>3</i><b>Proteção da inflação no longo prazo</b>A conta inteira é "acima da inflação". Para um objetivo de décadas, o que conta é o investimento que protege o poder de compra. Antes disso, uma reserva com resgate diário evita vender na pressa.</li>
+</ol>
+
+<div class="prox">
+<p><b>Já tem dinheiro investido?</b> Me manda o print do teu número que eu te digo o que mais pesa no teu caminho: o aporte, o prazo ou o que você já tem.</p>
+<a class="btn" href="https://ig.me/m/ayrton_althman">Mandar o meu número no direct</a>
+<p class="dica" style="margin-bottom:0">Quer ver quanto um valor pequeno vira? <a href="../tarifa-vira-patrimonio/">A tarifa que vira patrimônio</a>. Medo da bolsa cair no caminho? <a href="../kit-da-queda/">O kit da queda</a>.</p>
+</div>
 
 <div class="card">
-<img src="tabela-salario-de-renda.jpg" alt="Tabela do salário de renda em PDF com o patrimônio para 1, 2 e 3 salários e os anos para chegar lá" width="909" height="1285">
+<img src="salario-de-renda.jpg" alt="Página do PDF com a tabela de 1, 2 e 3 salários de renda, a conta de bolso e os campos do meu plano" width="794" height="1123">
 </div>
 
 <div class="fim">
-<p>Premissa ilustrativa, não é promessa: 5% ao ano acima da inflação (0,4074% ao mês), reais de hoje, sem impostos, aportes no fim de cada mês. Salário mínimo de R$ 1.621 a partir de 01/01/2026 (Decreto nº 12.797/2025).</p>
+<p>Fontes: salário mínimo de R$ 1.621,00 a partir de 01/01/2026, Decreto nº 12.797, de 23/12/2025 (Planalto). Conta própria: taxa mensal real = (1 + taxa anual)^(1/12) − 1; a 5% ao ano, 0,40741% ao mês. Pote = renda ÷ taxa mensal. Prazo com o que já tem (T) e aporte (a): n = ln((pote·i + a) ÷ (T·i + a)) ÷ ln(1 + i).</p>
 <p>Episódio novo de seg, qua e sex no <a href="https://www.instagram.com/ayrton_althman/">@ayrton_althman</a>. Conteúdo educativo, não é recomendação de investimento. Rentabilidade passada não garante rentabilidade futura.</p>
 </div>
 </main>
+<script>
+(function(){
+  var taxa=5;
+  var $=function(id){return document.getElementById(id);};
+  var num=function(el){var m=parseFloat(String(el.value).replace(/\./g,'').replace(',','.'));return isFinite(m)&&m>0?m:0;};
+  var brl=function(n){return 'R$ '+Math.round(n).toLocaleString('pt-BR');};
+  var curto=function(n){
+    if(n>=1e6){return 'R$ '+(n/1e6).toLocaleString('pt-BR',{maximumFractionDigits:2})+' milhões';}
+    return brl(n);
+  };
+  function meses(pote,tem,a,i){
+    if(pote<=0||tem>=pote)return 0;
+    if(a<=0)return tem>0?Math.log(pote/tem)/Math.log(1+i):Infinity;
+    return Math.log((pote*i+a)/(tem*i+a))/Math.log(1+i);
+  }
+  function anos(m){
+    if(m===0)return 'já chegou';
+    if(!isFinite(m)||m>1200)return 'mais de 100 anos';
+    var a=m/12;
+    return a<1?'menos de 1 ano':a.toLocaleString('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:1})+' anos';
+  }
+  function quando(m){
+    if(m===0||!isFinite(m)||m>1200)return '';
+    var d=new Date();d.setMonth(d.getMonth()+Math.ceil(m));
+    return ' · em '+d.getFullYear();
+  }
+  function conta(){
+    var i=Math.pow(1+taxa/100,1/12)-1;
+    var r=num($('renda')),tem=num($('tem')),a=num($('aporte'));
+    var pote=r/i;
+    if(r<=0){
+      $('pote').textContent='—';$('sub').textContent='digita a renda que você quer por mês';
+      $('prazo').textContent='—';$('hoje').textContent=brl(tem*i)+' por mês';$('divide').textContent='—';$('alav').innerHTML='';
+      return;
+    }
+    $('pote').textContent=curto(pote);
+    $('sub').textContent='investidos pra receber '+brl(r)+' por mês sem tocar no principal';
+    var m=meses(pote,tem,a,i);
+    $('prazo').textContent=anos(m)+quando(m);
+    $('hoje').textContent=brl(tem*i)+' por mês';
+    if(m===0){$('divide').textContent='você já tem o pote';}
+    else if(!isFinite(m)||m>1200){$('divide').textContent='guarde algo por mês';}
+    else{var eu=tem+a*m,juro=Math.max(pote-eu,0);$('divide').textContent=Math.round(eu/pote*100)+'% / '+Math.round(juro/pote*100)+'%';}
+    var linhas=[[a,''],[a*1.5,' (+50%)'],[a*2,' (o dobro)']];
+    if(a<=0){linhas=[[0,''],[500,''],[1000,'']];}
+    $('alav').innerHTML=linhas.map(function(x,k){
+      var mm=meses(pote,tem,x[0],i),ganho;
+      if(k===0){ganho='hoje';}
+      else if(isFinite(m)&&m<=1200&&isFinite(mm)){var g=(m-mm)/12;ganho=g>=0.05?'−'+g.toLocaleString('pt-BR',{minimumFractionDigits:1,maximumFractionDigits:1})+' anos':'—';}
+      else{ganho='—';}
+      return '<tr'+(k===0?' class="agora"':'')+'><td>'+brl(x[0])+x[1]+'</td><td>'+anos(mm)+'</td><td>'+ganho+'</td></tr>';
+    }).join('');
+  }
+  ['renda','tem','aporte'].forEach(function(id){$(id).addEventListener('input',conta);});
+  document.querySelectorAll('.atalhos:not(.taxas) button').forEach(function(b){b.addEventListener('click',function(){
+    $(b.getAttribute('data-alvo')).value=Number(b.getAttribute('data-v')).toLocaleString('pt-BR');conta();
+  });});
+  document.querySelectorAll('.taxas button').forEach(function(b){b.addEventListener('click',function(){
+    taxa=Number(b.getAttribute('data-t'));
+    document.querySelectorAll('.taxas button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});
+    conta();
+  });});
+  conta();
+})();
+</script>
 </body>
 </html>
